@@ -1,0 +1,56 @@
+<mat-toolbar class="top-nav">
+  <!-- <button
+    mat-icon-button
+    (click)="drawer.toggle()"
+    class="menu"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button> -->
+  <button mat-icon-button>
+    <span routerLink="questionaire">Manage</span>
+  </button>
+  <button mat-icon-button>
+    <span>About Us</span>
+  </button>
+  <button mat-icon-button>
+    <img matCardAvatar src="/assets/PitchIT logo.png" />
+  </button>
+  <button mat-icon-button>
+    <span>Services</span>
+  </button>
+  <button mat-icon-button>
+    <span>Membership</span>
+  </button>
+
+</mat-toolbar>
+<mat-drawer-container [hasBackdrop]="false">
+  <mat-drawer #drawer class="drawer" mode="over">
+    <mat-card routerLink="questionaire">Join Us!</mat-card>
+  </mat-drawer>
+  
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+
+  <div class="bottom-nav">
+    <mat-toolbar >
+      
+      <button mat-icon-button>
+        <mat-icon>home</mat-icon>
+      </button>
+  
+      <button mat-icon-button style="flex-grow: .5;" aria-label="Example icon-button with menu icon">
+        <mat-icon>add</mat-icon>
+      </button>
+      
+      <button mat-icon-button>
+        <img matCardAvatar src="/assets/john.png" />
+      </button>
+    </mat-toolbar>
+  </div>
+</mat-drawer-container>
+
+
+
+

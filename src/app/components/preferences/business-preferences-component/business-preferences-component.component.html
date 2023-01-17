@@ -1,0 +1,108 @@
+<div>
+  <div class="logo-name">
+    <img src="/assets/PitchIT logo.png" />
+    <h1>PitchIT</h1>
+  </div>
+</div>
+
+<div class="main-preference-div">
+  <h1>Questionnaire</h1>
+  <button
+    mat-icon
+    matTooltip="Complete this form to personalise your investment opportunities. We'll use the information you provide to match you with relevant opportunities that align with your investment preferences."
+    aria-label="Button that displays a tooltip when focused or hovered over"
+  >
+    <mat-icon>info</mat-icon>
+  </button>
+</div>
+
+<div class="preference-form">
+  <div class="question">
+    Do you have competitive advantage over competitors?
+    <mat-form-field
+      ><mat-select>
+        <mat-option value="yes"> yes </mat-option>
+        <mat-option value="no"> no </mat-option>
+      </mat-select></mat-form-field
+    >
+  </div>
+
+  <div class="question">
+    Which Stage is the business growth stage?
+    <mat-form-field
+      ><mat-select>
+        <mat-option *ngFor="let stage of businessStages" [value]="stage">
+          {{ stage }}
+        </mat-option></mat-select
+      ></mat-form-field
+    >
+  </div>
+
+  <div class="question">
+    Is the business SEIS/EIS qualified?
+    <mat-form-field>
+      <mat-select>
+        <mat-option value="yes"> yes </mat-option>
+        <mat-option value="no"> no </mat-option>
+      </mat-select></mat-form-field
+    >
+  </div>
+
+  <div class="question">
+    Do you have a clear revenue model?
+    <mat-form-field>
+      <mat-select>
+        <mat-option value="yes"> yes </mat-option>
+        <mat-option value="no"> no </mat-option>
+      </mat-select></mat-form-field
+    >
+  </div>
+
+  <div class="question">
+    Have you carried out market research and analysis?
+    <mat-form-field>
+      <mat-select>
+        <mat-option value="yes"> yes </mat-option>
+        <mat-option value="no"> no </mat-option>
+      </mat-select></mat-form-field
+    >
+  </div>
+
+  <div class="question">
+    Have you done a financial projection?
+    <mat-form-field>
+      <mat-select>
+        <mat-option value="yes"> yes </mat-option>
+        <mat-option value="no"> no </mat-option>
+      </mat-select></mat-form-field
+    >
+  </div>
+
+  <div class="question">
+    Do you have a clear use of funds?
+    <mat-form-field>
+      <mat-select>
+        <mat-option value="yes"> yes </mat-option>
+        <mat-option value="no"> no </mat-option>
+      </mat-select></mat-form-field
+    >
+  </div>
+
+  <div class="question">
+    Do you have an exit strategy?
+    <mat-form-field>
+      <mat-select>
+        <mat-option value="yes"> yes </mat-option>
+        <mat-option value="no"> no </mat-option>
+      </mat-select></mat-form-field
+    >
+  </div>
+
+  
+
+  
+
+  <div class="question">
+    <button mat-raised-button routerLink="/home">Continue</button>
+  </div>
+</div>

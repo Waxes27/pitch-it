@@ -1,0 +1,170 @@
+
+
+.menu
+    margin-right: 20px
+
+.news
+  // right: 0
+  // position: fixed
+  background-color: red
+  height: 100%
+  // width: 25%
+
+mat-drawer-container
+  height: 100%
+  overflow: none
+
+.top-nav
+  background-color: rgb(19, 31, 161)
+  color: white
+  position: sticky
+  top: 0
+  padding: 3%
+  z-index: 1000
+
+.pitch-deck
+  display: flex
+  justify-content: space-between
+  padding-top: 4%
+
+  .user-dashboard
+    margin-top: auto
+    margin: 0 auto 
+    width: 25%
+    display: flex
+    flex-direction: column
+    padding: 0px
+    .top-dash
+      // padding: 10px
+      .search
+          background-color: #1A1955
+          padding: 20px
+          margin-bottom: 30px 
+          border-radius: 230px
+          width: 90%
+          color: white
+          mat-icon
+            margin-right: 20px
+        
+      .saved
+        display: flex
+        background-color: #1A1955
+        padding: 20px 40px
+        border-radius: 230px
+        color: white
+        align-items: center
+        cursor: pointer
+
+
+    .inbox
+      width: 70%
+
+      mat-card
+        padding: 0 5px
+        background-color: #ffffff00
+        box-shadow: none
+        margin-bottom: 20px
+        mat-card-header
+          padding: 10px
+          display: flex
+          border-radius: 10px
+          align-items: center
+          background-color: #010034
+
+          mat-card-subtitle
+            font-size: 15px
+            font-stretch: ultra-condensed
+          img
+            height: 60px
+            width: 60px
+
+
+
+  .pitches
+    width: 25%
+    margin-right: auto
+    mat-card
+      height: 70%
+      display: flex
+      flex-direction: column
+      .company-name
+        margin: auto
+        text-align: center
+      mat-card-content
+        h2
+          padding: 20px 0
+      button
+        background-color: white
+        color: black
+  
+  .news
+    margin: auto
+    display: flex
+    width: 30%
+    background-color: #1A1955
+    height: 80vh
+    border-radius: 20px
+    // justify-content: center
+    color: white
+    flex-direction: column
+
+    .news-description
+      text-decoration: underline
+      font-size: 20px
+      margin: 0 auto
+      padding: 15px 
+      a
+        color: white
+
+    .header
+      display: flex
+      flex-direction: column
+      // background-color: red
+      text-align: center
+
+      img
+        border-radius: 20px
+        margin: auto
+      
+    h1
+      padding: 20px
+
+
+mat-card
+  border-radius: 25px
+  transition: box-shadow 1s, padding 0.3s
+  width: 100%
+  margin-bottom: 10px
+  color: white
+  padding: 40px
+  background-color: #1A1955
+
+  mat-card-subtitle
+      color: white
+
+  .idea
+    text-align: center
+    transition: opacity 1s
+
+  mat-card-footer
+    float: right
+    padding-right: 10%
+
+
+  // &:hover
+    // background-color: rgb(121, 114, 108)
+    box-shadow: 1px 1px white
+    padding: 40px
+
+.bottom-nav
+  display: flex
+  justify-content: space-evenly
+  background-color: rgb(19, 31, 161)
+  color: white
+  position: sticky
+  bottom: 0
+  padding: 2%
+  z-index: 1000
+  transition: padding 2s
+  &:hover
+    padding: 3%
