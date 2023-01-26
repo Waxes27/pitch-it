@@ -1,54 +1,48 @@
 <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <div class="mainDiv">
-      <mat-form-field>
-        <mat-label>Business Name</mat-label>
-        <input matInput formControlName="name" type="text" />
-      </mat-form-field>
-      <br />
-      <mat-form-field color="accent">
-        <mat-label>Representataive First Name</mat-label>
-        <input matInput formControlName="surname" type="text" />
-      </mat-form-field>
-    
-      <br />
-      <mat-form-field>
-        <mat-label>Representataive Last Name</mat-label>
-        <input matInput formControlName="password" type="password" />
-      </mat-form-field>
-      <br />
-      <mat-form-field>
-        <mat-label>Companies House Number</mat-label>
-        <input matInput formControlName="username" type="text" />
-      </mat-form-field>
-      <br />
-
-      <mat-form-field>
-        <mat-label>Representataive Email</mat-label>
-        <input matInput formControlName="username" type="text" />
-      </mat-form-field>
-      <br />
-
-      <mat-form-field>
-        <mat-label>Telephone Number</mat-label>
-        <input matInput formControlName="username" type="text" />
-      </mat-form-field>
-      <br />
-
-      <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input matInput formControlName="password" type="text" />
-      </mat-form-field>
-      <br />
-    
-      <button mat-icon-button>
-        <mat-icon>send</mat-icon>
-        Register
-      </button>
-    </div>
-    
-    <div class="welcome">
-      Welcoming Businesses To PitchIT
-      <img src="/assets/PitchIT logo.png" alt="">
-    </div>
-  </form>
   
+  <div class="mainDiv">
+    <div class="welcome">
+      <img src="/assets/PitchIT logo.png" height="100">
+      <h2>
+        PitchIT
+      </h2>
+    </div>
+    As Business
+    <mat-form-field appearance="outline">
+      <mat-label>Representative first name</mat-label>
+      <input matInput formControlName="name" type="text" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="outline">
+      <mat-label>Representative last name</mat-label>
+      <input matInput formControlName="surname" type="text" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Current role</mat-label>
+      <input matInput formControlName="surname" type="text" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="surname" type="text" />
+    </mat-form-field>
+  
+    <br />
+    <mat-form-field appearance="outline">
+      <mat-label>Create a new password</mat-label>
+      <input matInput formControlName="password" type="password" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="outline">
+      <mat-label>Re-enter password</mat-label>
+      <input matInput formControlName="username" type="text" />
+    </mat-form-field>
+    <br />
+  
+    <button mat-icon-button>
+      <mat-icon>send</mat-icon>
+      Register
+    </button>
+  </div>
+</form>

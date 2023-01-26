@@ -10,13 +10,18 @@
         width: 40vh
         margin: 20px auto
         background-color: white
-        transition: background-color 0.5s ease-in-out,color 0.5s,padding 0.5s,font-size 0.5s
+        border-radius: 30px
+        transition: border-radius 2s,color 0.5s,padding 0.5s,font-size 0.5s
+        
 
         &:hover
-            background-color: rgb(19, 31, 161)
+            // background-color: rgb(19, 31, 161)
             color: white
             padding: 40px
-
+            border-radius: 90px
+            background-image: url('/assets/card_back.png')
+            // background-size: 100%
+            background-repeat: no-repeat
             mat-card-subtitle
                 color: white
                 font-size: 17px
