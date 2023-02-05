@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
+import {MatStepperModule} from '@angular/material/stepper'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,7 +29,8 @@ import { InvestorPreferencesComponentComponent } from './components/preferences/
 import { BusinessPreferencesComponentComponent } from './components/preferences/business-preferences-component/business-preferences-component.component';
 import {MatTooltipModule} from '@angular/material/tooltip'
 import {MatSlideToggleModule} from '@angular/material/slide-toggle'
-import {MatGridListModule} from '@angular/material/grid-list'
+import {MatGridListModule} from '@angular/material/grid-list';
+import { DetailsPageComponent } from './components/details-page/details-page.component'
 
 
 @NgModule({
@@ -44,8 +46,10 @@ import {MatGridListModule} from '@angular/material/grid-list'
     BusinessComponent,
     InvestorPreferencesComponentComponent,
     BusinessPreferencesComponentComponent,
+    DetailsPageComponent,
   ],
   imports: [
+    MatStepperModule,
     MatGridListModule,
     MatSlideToggleModule,
     MatTooltipModule,

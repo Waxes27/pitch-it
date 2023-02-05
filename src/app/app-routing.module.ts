@@ -12,6 +12,7 @@ import { InvestorComponent } from './components/register/investor/investor.compo
 import { BusinessComponent } from './components/register/business/business.component';
 import { InvestorPreferencesComponentComponent } from './components/preferences/investor-preferences-component/investor-preferences-component.component';
 import { BusinessPreferencesComponentComponent } from './components/preferences/business-preferences-component/business-preferences-component.component';
+import { DetailsPageComponent } from './components/details-page/details-page.component';
 
 const routes: Routes = [
   {path: "login", title: "Login",component: LoginComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   // {path: "InvestorComponent", title: "Patient Dash",component: PatientDashComponent, canActivate: [AuthGuard]},
   {path: "register/investor", title: "Register as an Investor",component: InvestorComponent},
   {path: "register/business", title: "Register as a Business",component: BusinessComponent},
+  {path: "details", title:"Details", component: DetailsPageComponent}
 ];
 
 
