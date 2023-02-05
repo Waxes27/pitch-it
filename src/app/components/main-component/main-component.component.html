@@ -1,12 +1,4 @@
-<mat-toolbar class="top-nav">
-  <!-- <button
-    mat-icon-button
-    (click)="drawer.toggle()"
-    class="menu"
-    aria-label="Example icon-button with menu icon"
-  >
-    <mat-icon>menu</mat-icon>
-  </button> -->
+<mat-toolbar class="top-nav" *ngIf="auth.isAuthenticated()">
   <button mat-icon-button>
     <span routerLink="questionaire">Manage</span>
   </button>
@@ -22,8 +14,8 @@
   <button mat-icon-button>
     <span>Membership</span>
   </button>
-
 </mat-toolbar>
+
 <mat-drawer-container [hasBackdrop]="false">
   <mat-drawer #drawer class="drawer" mode="over">
     <mat-card routerLink="questionaire">Join Us!</mat-card>

@@ -1,8 +1,9 @@
 .image
     position: absolute
-    left: 40%
-    width: 20%
-    height: 20%
+    left: 43%
+    width: 15vw
+    height: 15vh
+    top: 10%
 .signup
     display: flex
     justify-content: center
@@ -21,7 +22,10 @@
         background-color: white
         border-radius: 30px
         transition: border-radius 2s,color 0.5s,padding 0.5s,font-size 0.5s
-        
+
+        mat-card-header
+            display: flex
+            justify-content: center        
 
         &:hover
             // background-color: rgb(19, 31, 161)
@@ -34,3 +38,21 @@
             mat-card-subtitle
                 color: white
                 font-size: 17px
+
+.welcome
+    margin: 0px auto
+    color: black
+    width: 33%
+
+    padding: none
+    display: flex
+    justify-content: center
+    padding: 30px
+    // flex-direction: column
+    align-items: center
+    font-weight: 400
+    font-size: 80px
+    color: white
+
+    ::ng-deep h2
+        font-size: 30px

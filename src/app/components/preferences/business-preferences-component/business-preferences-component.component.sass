@@ -1,16 +1,20 @@
+
+.preference
+    // background-color: red
+    height: 70%
+    margin: auto
+    // overflow-y: scroll
+    
 h1
-    font-size: 40px
+    font-size: 20px
     font-weight: 700
     color: white
-
 
 .logo-name
     display: flex
     align-items: center
     img
-        width: 50px
-    
-
+        width: 150px
 
 .main-preference-div
     // background-color: red
@@ -18,12 +22,10 @@ h1
     display: flex
     justify-content: center
     button
-        background-color: #010034
+        background-color: transparent
         border: none
         color: white
         align-self: baseline
-    
-
 
 .preference-form
     // background-color: red
@@ -32,11 +34,9 @@ h1
     font-size: 20px
     margin: 0 10%
 
-        
-
     .question
         display: flex
-        // padding: 05px
+
         justify-content: space-between
         align-items: baseline
         align-content: center
@@ -45,28 +45,33 @@ h1
             margin: auto
             background-color: #1A1955
             color: white
-            // padding: 15px
+            padding: 15px
             border-radius: 30px
 
         mat-select
-            // border-radius: 10px
-            // padding: 10px
+            border-radius: 10px
+            // padding: 5px
             width: 90%
-            color: back
+            color: white
             background-color: white
 
         mat-slide-toggle
-            // background-color: red
-            color: green
             width: 5%
-            margin: 0 10%
+            margin: 30px 10%
             transform: scale(2)
-            .mat-checked
-                background-color: red
 
         mat-form-field
-            width: 33%
+            width: 23%
+            *
+                padding: 0px
+
 
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline
     background-color: white
     border-radius: 10px
+
+::ng-deep .mat-form-field-wrapper
+    padding: 5px
+
+::ng-deep button .info-button
+    background-color: white
