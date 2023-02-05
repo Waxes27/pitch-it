@@ -1,4 +1,4 @@
-<mat-toolbar class="top-nav" *ngIf="auth.isAuthenticated()">
+<mat-toolbar class="top-nav" *ngIf="!auth.isAuthenticated()">
   <button mat-icon-button>
     <span routerLink="questionaire">Manage</span>
   </button>
