@@ -30,7 +30,10 @@ import { BusinessPreferencesComponentComponent } from './components/preferences/
 import {MatTooltipModule} from '@angular/material/tooltip'
 import {MatSlideToggleModule} from '@angular/material/slide-toggle'
 import {MatGridListModule} from '@angular/material/grid-list';
-import { DetailsPageComponent } from './components/details-page/details-page.component'
+import { DetailsPageComponent } from './components/details-page/details-page.component';
+import { PitchesComponent } from './pages/pitches/pitches.component';
+import { CompanyDetailsComponent } from './pages/pitches/company-details/company-details.component';
+import { PitchQuestionnaireComponent } from './pages/pitches/pitch-questionnaire/pitch-questionnaire.component'
 
 
 @NgModule({
@@ -47,6 +50,9 @@ import { DetailsPageComponent } from './components/details-page/details-page.com
     InvestorPreferencesComponentComponent,
     BusinessPreferencesComponentComponent,
     DetailsPageComponent,
+    PitchesComponent,
+    CompanyDetailsComponent,
+    PitchQuestionnaireComponent,
   ],
   imports: [
     MatStepperModule,

@@ -13,6 +13,8 @@ import { BusinessComponent } from './components/register/business/business.compo
 import { InvestorPreferencesComponentComponent } from './components/preferences/investor-preferences-component/investor-preferences-component.component';
 import { BusinessPreferencesComponentComponent } from './components/preferences/business-preferences-component/business-preferences-component.component';
 import { DetailsPageComponent } from './components/details-page/details-page.component';
+import { PitchesComponent } from './pages/pitches/pitches.component';
+import { PitchQuestionnaireComponent } from './pages/pitches/pitch-questionnaire/pitch-questionnaire.component';
 
 const routes: Routes = [
   {path: "login", title: "Login",component: LoginComponent},
@@ -21,10 +23,11 @@ const routes: Routes = [
   {path: "questionaire", title: "Sign up as...",component: QuestionaireComponentComponent},
   {path: "preferences/investor", title: "Sign up as...",component: InvestorPreferencesComponentComponent},
   {path: "preferences/business", title: "Sign up as...",component: BusinessPreferencesComponentComponent},
-  // {path: "InvestorComponent", title: "Patient Dash",component: PatientDashComponent, canActivate: [AuthGuard]},
   {path: "register/investor", title: "Register as an Investor",component: InvestorComponent},
   {path: "register/business", title: "Register as a Business",component: BusinessComponent},
-  {path: "details", title:"Details", component: DetailsPageComponent}
+  {path: "details", title:"Details", component: DetailsPageComponent},
+  {path: "pitch/new", title: "Patient Dash",component: PitchesComponent},
+  {path: "pitch/new/questionnaire", title: "Patient Dash",component: PitchQuestionnaireComponent},
 ];
 
 
