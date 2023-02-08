@@ -15,6 +15,7 @@ import { BusinessPreferencesComponentComponent } from './components/preferences/
 import { DetailsPageComponent } from './components/details-page/details-page.component';
 import { PitchesComponent } from './pages/pitches/pitches.component';
 import { PitchQuestionnaireComponent } from './pages/pitches/pitch-questionnaire/pitch-questionnaire.component';
+import { CompanyDetailsComponent } from './pages/pitches/company-details/company-details.component';
 
 const routes: Routes = [
   {path: "login", title: "Login",component: LoginComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: "details", title:"Details", component: DetailsPageComponent},
   {path: "pitch/new", title: "Patient Dash",component: PitchesComponent},
   {path: "pitch/new/questionnaire", title: "Patient Dash",component: PitchQuestionnaireComponent},
+  {path: "pitch/new/company-details", title: "Patient Dash",component: CompanyDetailsComponent},
 ];
 
 
