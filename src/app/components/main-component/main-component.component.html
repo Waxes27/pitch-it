@@ -1,4 +1,4 @@
-<mat-toolbar class="top-nav" *ngIf="!auth.isAuthenticated()">
+<!-- <mat-toolbar class="top-nav" *ngIf="!auth.isAuthenticated()">
   <button mat-icon-button>
     <span routerLink="questionaire">Manage</span>
   </button>
@@ -14,36 +14,72 @@
   <button mat-icon-button>
     <span>Membership</span>
   </button>
-</mat-toolbar>
+</mat-toolbar> -->
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <div class="column">
+      <button mat-icon-button>
+        <img
+          src="/assets/PitchIT logo.png"
+          alt=""
+          width="46.47"
+          height="28.13"
+        />
+      </button>
+      <button mat-icon-button>
+        <img
+          src="/assets/dashboard_logo.svg"
+          alt=""
+          width="46.47"
+          height="28.13"
+        />
+      </button>
 
-<mat-drawer-container [hasBackdrop]="false">
-  <mat-drawer #drawer class="drawer" mode="over">
-    <mat-card routerLink="questionaire">Join Us!</mat-card>
+      <button mat-icon-button>
+        <img
+          src="/assets/tools.svg"
+          alt=""
+          width="46.47"
+          height="28.13"
+        />
+      </button>
+
+      <button mat-icon-button>
+        <img
+          src="/assets/search.svg"
+          alt=""
+          width="46.47"
+          height="28.13"
+        />
+      </button>
+
+      <button mat-icon-button>
+        <img
+          src="/assets/heart.svg"
+          alt=""
+          width="46.47"
+          height="28.13"
+        />
+      </button>
+
+      <button mat-icon-button>
+        <img
+          src="/assets/accessibility.svg"
+          alt=""
+          width="46.47"
+          height="28.13"
+        />
+      </button>
+
+      <button mat-icon-button>
+        <img
+          src="/assets/settings.svg"
+          alt=""
+          width="46.47"
+          height="28.13"
+        />
+      </button>
+    </div>
   </mat-drawer>
-  
-  <mat-drawer-content>
-    <router-outlet></router-outlet>
-    
-  </mat-drawer-content>
-  <div class="bottom-nav">
-    <mat-toolbar >
-      
-      <button mat-icon-button>
-        <mat-icon>home</mat-icon>
-      </button>
-  
-      <button mat-icon-button style="flex-grow: .5;" aria-label="Example icon-button with menu icon">
-        <mat-icon >add</mat-icon>
-      </button>
-      
-      <button mat-icon-button>
-        <img matCardAvatar src="/assets/john.png" />
-      </button>
-    </mat-toolbar>
-  </div>
-  
+  <mat-drawer-content></mat-drawer-content>
 </mat-drawer-container>
-
-
-
-

@@ -16,6 +16,10 @@ import { DetailsPageComponent } from './components/details-page/details-page.com
 import { PitchesComponent } from './pages/pitches/pitches.component';
 import { PitchQuestionnaireComponent } from './pages/pitches/pitch-questionnaire/pitch-questionnaire.component';
 import { CompanyDetailsComponent } from './pages/pitches/company-details/company-details.component';
+import { BusinessDetailsComponent } from './pages/pitches/business-details/business-details.component';
+import { MarketDetailsComponent } from './pages/pitches/market-details/market-details.component';
+import { TeamDetailsComponent } from './pages/pitches/team-details/team-details.component';
+
 
 const routes: Routes = [
   {path: "login", title: "Login",component: LoginComponent},
@@ -30,6 +34,9 @@ const routes: Routes = [
   {path: "pitch/new", title: "Patient Dash",component: PitchesComponent},
   {path: "pitch/new/questionnaire", title: "Patient Dash",component: PitchQuestionnaireComponent},
   {path: "pitch/new/company-details", title: "Patient Dash",component: CompanyDetailsComponent},
+  {path: "pitch/new/business-details", title: "Patient Dash",component: BusinessDetailsComponent},
+  {path: "pitch/new/market-details", title: "Patient Dash",component: MarketDetailsComponent},
+  {path: "pitch/new/team-details", title: "Patient Dash",component: TeamDetailsComponent},
 ];
 
 
