@@ -11,7 +11,7 @@ export class MainComponentComponent implements OnInit {
   constructor(public auth: AuthService,private router: Router) {
     
   }
-  routesList = ["/","/","/","/","/",]
+  routesList = ["/","/questionaire","/login","/","/",]
   checkRoute(){
     
     for (var key in this.routesList) {
