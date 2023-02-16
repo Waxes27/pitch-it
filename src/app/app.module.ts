@@ -38,6 +38,7 @@ import { PitchQuestionnaireComponent } from "./pages/pitches/pitch-questionnaire
 import { MarketDetailsComponent } from "./pages/pitches/market-details/market-details.component";
 import { BusinessDetailsComponent } from "./pages/pitches/business-details/business-details.component";
 import { TeamDetailsComponent } from './pages/pitches/team-details/team-details.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { TeamDetailsComponent } from './pages/pitches/team-details/team-details.
     PitchQuestionnaireComponent,
     MarketDetailsComponent,
     BusinessDetailsComponent,
-    TeamDetailsComponent
+    TeamDetailsComponent,
+    LandingPageComponent
   ],
   imports: [
     MatStepperModule,

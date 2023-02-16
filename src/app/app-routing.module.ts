@@ -19,9 +19,11 @@ import { CompanyDetailsComponent } from './pages/pitches/company-details/company
 import { BusinessDetailsComponent } from './pages/pitches/business-details/business-details.component';
 import { MarketDetailsComponent } from './pages/pitches/market-details/market-details.component';
 import { TeamDetailsComponent } from './pages/pitches/team-details/team-details.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 
 const routes: Routes = [
+  {path: "", title: "Welcome",component: LandingPageComponent},
   {path: "login", title: "Login",component: LoginComponent},
   {path: "home", title: "Welcome Home",component: HomeComponent},
   {path: "investor-dashboard", title: "Investor Dashboard",component: InvestorDashboardComponent},
