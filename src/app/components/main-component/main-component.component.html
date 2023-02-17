@@ -16,7 +16,7 @@
   </button>
 </mat-toolbar> -->
 <mat-drawer-container class="example-container">
-  <mat-drawer mode="side" (opened)="!checkRoute()" >
+  <mat-drawer mode="side" [opened]="!checkRoute()" >
     <div class="column">
       <button mat-icon-button>
         <img
