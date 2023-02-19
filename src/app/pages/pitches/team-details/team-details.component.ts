@@ -6,8 +6,22 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   templateUrl: './team-details.component.html',
   styleUrls: ['./team-details.component.sass']
 })
+
 export class TeamDetailsComponent implements OnInit {
-  registrationForm = new FormGroup({
+
+  
+  members: Members[] = [
+    {
+      name: "John Doe",
+      role: "CEO",
+      about:" Lorem Ipsum?"
+    }
+  ];
+
+  selected : number = 0;
+
+
+  teamForm = new FormGroup({
     name: new FormControl('',[<any>Validators.required]),
     surname: new FormControl('', [<any>Validators.required]),
     DOB: new FormControl('', [<any>Validators.required, Validators.pattern("")]),
@@ -16,9 +30,16 @@ export class TeamDetailsComponent implements OnInit {
     role: new FormControl('')
   });
 
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+}
+
+interface Members {
+  name: string;
+  role: string;
+  about: string;
 }

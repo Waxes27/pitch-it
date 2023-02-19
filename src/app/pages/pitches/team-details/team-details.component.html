@@ -2,7 +2,29 @@
   <div class="header">
     <h1>The Team</h1>
   </div>
-  <form [formGroup]="registrationForm">
+  <form [formGroup]="teamForm">
+    <mat-form-field appearance="fill">
+      <mat-label>How many Top Level memebers are present</mat-label>
+      <mat-select [(value)]="selected">
+        <mat-option value="1">1</mat-option>
+        <mat-option value="2">2</mat-option>
+        <mat-option value="3">3</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <div>
+      
+      <mat-card *ngFor="let member of members" class="member-card">
+          Name here
+          About here
+      </mat-card>
+    </div>
+    <!-- <mat-select placeholder="Memeber Role" name="item">
+      <mat-option *ngFor="let member of members" [value]="member.value">
+        {{member.viewValue}}
+      </mat-option>
+    </mat-select> -->
     <div>
       
     </div>
