@@ -5,7 +5,7 @@
   <form [formGroup]="teamForm">
     <mat-form-field appearance="fill">
       <mat-label>How many Top Level memebers are present</mat-label>
-      <mat-select [(value)]="selected">
+      <mat-select [(value)]="selected" (valueChange)="changeSelected()">
         <mat-option value="1">1</mat-option>
         <mat-option value="2">2</mat-option>
         <mat-option value="3">3</mat-option>
@@ -15,10 +15,11 @@
 
     <div>
       
-      <mat-card *ngFor="let member of members" class="member-card">
+      <mat-card *ngFor="let number of numbers"  class="member-card">
           Name here
           About here
       </mat-card>
+
     </div>
     <!-- <mat-select placeholder="Memeber Role" name="item">
       <mat-option *ngFor="let member of members" [value]="member.value">

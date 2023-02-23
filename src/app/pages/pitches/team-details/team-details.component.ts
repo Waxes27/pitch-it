@@ -10,6 +10,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class TeamDetailsComponent implements OnInit {
 
   
+
+  
   members: Members[] = [
     {
       name: "John Doe",
@@ -18,7 +20,8 @@ export class TeamDetailsComponent implements OnInit {
     }
   ];
 
-  selected : number = 0;
+  selected : number = 3;
+  numbers = Array(this.selected).fill(this.selected).map((x,i)=>i);
 
 
   teamForm = new FormGroup({
@@ -30,10 +33,24 @@ export class TeamDetailsComponent implements OnInit {
     role: new FormControl('')
   });
 
+  
 
-  constructor() { }
+
+  constructor() { 
+    
+  }
 
   ngOnInit(): void {
+  }
+
+  
+
+  changeSelected(){
+    console.log(this.selected)
+    
+    this.numbers = Array(this.selected).fill(this.selected).map((x,i)=>i)
+    console.log(this.numbers)
+    
   }
 
 }

@@ -11,14 +11,14 @@ export class MainComponentComponent implements OnInit {
   constructor(public auth: AuthService,private router: Router) {
     
   }
-  routesList = ["/","/questionaire","/login","/register/investor","/preferences/investor","/register/business","/preferences/business"]
+  routesList = ["/","/questionaire","/login","/register/investor","/preferences/investor","/register/business","/preferences/business","/membership"]
   checkRoute(){
     
     for (var key in this.routesList) {
-      console.log(this.routesList[key]);
+      // console.log(this.routesList[key]);
       
       if (this.router.url == this.routesList[key]){
-        console.log("true and equal");
+        // console.log("true and equal");
         
         return true
       }
