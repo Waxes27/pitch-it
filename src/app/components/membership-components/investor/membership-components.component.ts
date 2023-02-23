@@ -5,7 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './membership-components.component.html',
   styleUrls: ['./membership-components.component.sass']
 })
-export class MembershipComponentsComponent implements OnInit {
+export class InvestorMembershipComponentsComponent implements OnInit {
+onSubmit() {
+  console.log("Submitting and redirecting");
+  
+}
 
   constructor() { }
 

@@ -39,7 +39,8 @@ import { MarketDetailsComponent } from "./pages/pitches/market-details/market-de
 import { BusinessDetailsComponent } from "./pages/pitches/business-details/business-details.component";
 import { TeamDetailsComponent } from './pages/pitches/team-details/team-details.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
-import { MembershipComponentsComponent } from './components/membership-components/membership-components.component';
+import { InvestorMembershipComponentsComponent } from "./components/membership-components/investor/membership-components.component";
+import { CompanyMembershipComponentsComponent } from "./components/membership-components/company/membership-components.component";
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { MembershipComponentsComponent } from './components/membership-component
     BusinessDetailsComponent,
     TeamDetailsComponent,
     LandingPageComponent,
-    MembershipComponentsComponent
+    InvestorMembershipComponentsComponent,
+    CompanyMembershipComponentsComponent
   ],
   imports: [
     MatStepperModule,
