@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
-
+import { NgCreditCardModule } from "angular-credit-card";
 import { MatStepperModule } from "@angular/material/stepper";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -42,6 +42,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { InvestorMembershipComponentsComponent } from "./components/membership-components/investor/membership-components.component";
 import { CompanyMembershipComponentsComponent } from "./components/membership-components/company/membership-components.component";
 import { DocumentDetailsComponent } from './pages/pitches/document-details/document-details.component';
+import { PaymentPageComponent } from './pages/pitches/payment-page/payment-page.component';
 
 @NgModule({
   declarations: [
@@ -66,10 +67,12 @@ import { DocumentDetailsComponent } from './pages/pitches/document-details/docum
     LandingPageComponent,
     InvestorMembershipComponentsComponent,
     CompanyMembershipComponentsComponent,
-    DocumentDetailsComponent
+    DocumentDetailsComponent,
+    PaymentPageComponent
   ],
   imports: [
     MatStepperModule,
+    NgCreditCardModule,
     MatGridListModule,
     MatSlideToggleModule,
     MatTooltipModule,
