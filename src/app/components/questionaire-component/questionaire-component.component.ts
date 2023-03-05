@@ -17,11 +17,11 @@ export class QuestionaireComponentComponent implements OnInit {
   }
 
   clickInvestor() {
-    this.router.navigate(['/membership/investor'])
+    this.router.navigate(['/register/investor'])
   }
 
   clickBusiness() {
-    this.router.navigate(['/membership/company'])
+    this.router.navigate(['/register/company'])
   }
 
 }

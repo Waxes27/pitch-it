@@ -23,7 +23,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { InvestorMembershipComponentsComponent } from './components/membership-components/investor/membership-components.component';
 import { CompanyMembershipComponentsComponent } from './components/membership-components/company/membership-components.component';
 import { DocumentDetailsComponent } from './pages/pitches/document-details/document-details.component';
-import { PaymentPageComponent } from './pages/pitches/payment-page/payment-page.component';
+import { PaymentPageComponent } from './pages/pitches/payment-page-company/payment-page.component';
 
 
 const routes: Routes = [
@@ -32,11 +32,15 @@ const routes: Routes = [
   {path: "home", title: "Welcome Home",component: HomeComponent},
   {path: "investor-dashboard", title: "Investor Dashboard",component: InvestorDashboardComponent},
   {path: "questionaire", title: "Sign up as...",component: QuestionaireComponentComponent},
+
   {path: "preferences/investor", title: "Sign up as...",component: InvestorPreferencesComponentComponent},
   {path: "preferences/business", title: "Sign up as...",component: BusinessPreferencesComponentComponent},
+
   {path: "register/investor", title: "Register as an Investor",component: InvestorComponent},
   {path: "register/business", title: "Register as a Business",component: BusinessComponent},
+
   {path: "details", title:"Details", component: DetailsPageComponent},
+
   {path: "pitch/new", title: "Patient Dash",component: PitchesComponent},
   {path: "pitch/new/questionnaire", title: "Patient Dash",component: PitchQuestionnaireComponent},
   {path: "pitch/new/company-details", title: "Patient Dash",component: CompanyDetailsComponent},
