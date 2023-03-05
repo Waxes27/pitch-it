@@ -1,0 +1,13 @@
+com/serveTechIT/ServeTechIt/user/registration/RegistrationService.class
+com/serveTechIT/ServeTechIt/user/AppUser.class
+com/serveTechIT/ServeTechIt/user/login/UserLoginController.class
+com/serveTechIT/ServeTechIt/controllers/HomeController.class
+com/serveTechIT/ServeTechIt/user/UserRepository.class
+com/serveTechIT/ServeTechIt/user/registration/UserRegistrationController.class
+com/serveTechIT/ServeTechIt/user/enums/AppUserRole.class
+com/serveTechIT/ServeTechIt/user/AppUserService.class
+com/serveTechIT/ServeTechIt/ServeTechApplication.class
+com/serveTechIT/ServeTechIt/user/login/LoginRequest.class
+com/serveTechIT/ServeTechIt/security/config/WebSecurityConfig.class
+com/serveTechIT/ServeTechIt/user/registration/RegistrationRequest.class
+com/serveTechIT/ServeTechIt/security/PasswordEncoder.class
