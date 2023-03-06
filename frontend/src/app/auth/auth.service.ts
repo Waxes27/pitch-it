@@ -41,7 +41,9 @@ export class AuthService {
 
   registerInvestor(formData: FormData){
     this.isLoggedIn = true;
-    this.router.navigate(["/preferences/investor"])
+
+    console.log(formData.getAll)
+    // this.router.navigate(["/preferences/investor"])
     
 
     return true;
