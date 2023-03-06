@@ -14,8 +14,7 @@ public class Preferences {
     
     private @Id @GeneratedValue Long id;
 
-    // @OneToOne 
-    // @JoinColumn(name = "industry")
+
     // private Industry industry;
 
     // @OneToOne 

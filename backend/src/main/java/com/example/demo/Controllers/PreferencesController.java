@@ -37,7 +37,7 @@ public class PreferencesController {
 
 
     @PostMapping("/preferences")
-    Preferences newPreferences(@RequestBody Preferences p) {
+    ResponseEntity<?> newPreferences(@RequestBody Preferences p) {
         Preferences preferences = repository.save(p);
         EntityModel<Preferences> entity = EntityModel.of(preferences,
             linkTo(methodOn(PreferencesController.class).one(preferences.getId())).withSelfRel());
