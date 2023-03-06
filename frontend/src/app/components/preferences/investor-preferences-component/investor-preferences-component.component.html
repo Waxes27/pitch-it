@@ -1,0 +1,89 @@
+<div class="preference">
+  <div>
+    <div class="logo-name">
+      <img src="/assets/PitchIT logo.png" />
+      <h1>PitchIT</h1>
+    </div>
+  </div>
+  
+  <div class="main-preference-div">
+    <h1>Preferences</h1>
+    <button
+      class="info-button"
+      mat-icon
+      matTooltip="Complete this form to personalise your investment opportunities. We'll use the information you provide to match you with relevant opportunities that align with your investment preferences."
+    >
+      <mat-icon>info</mat-icon>
+    </button>
+  </div>
+  
+  <div class="preference-form">
+    <div class="question">
+      Which industry are most likely to invest in?
+      <mat-form-field appearance="outline"
+        ><mat-select placeholder="Industry">
+          <mat-option *ngFor="let industry of industries" [value]="industry">
+            {{ industry }}
+          </mat-option>
+        </mat-select></mat-form-field
+      >
+    </div>
+  
+    <div class="question">
+      Preferred Location?
+      <mat-form-field appearance="outline"
+        ><mat-select placeholder="Location">
+          <mat-option *ngFor="let location of locations" [value]="location">
+            {{ location }}
+          </mat-option></mat-select
+        ></mat-form-field
+      >
+    </div>
+  
+    <div class="question">
+      Preferred product stage?
+      <mat-form-field appearance="outline">
+        <mat-select placeholder="Product Stage">
+          <mat-option *ngFor="let productStage of productStages" [value]="productStage">
+            {{ productStage }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  
+    <div class="question">
+      Customer Group
+      <mat-form-field appearance="outline">
+        <mat-select placeholder="Customer Group">
+          <mat-option *ngFor="let customerGroup of customerGroups" [value]="customerGroup">
+            {{ customerGroup }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  
+    <div class="question">
+      Investment Stage
+      <mat-form-field appearance="outline" 
+        ><mat-select placeholder="Investment Stage">
+          <mat-option *ngFor="let investmentStage of investmentStages" [value]="investmentStage">
+            {{ investmentStage }}
+          </mat-option>
+        </mat-select></mat-form-field
+      >
+    </div>
+  
+    <div class="question">
+      <div>SEIS/EIS preference</div>
+      <mat-slide-toggle checked="true" color="primary"></mat-slide-toggle>
+    </div>
+  
+    <div class="question">
+      <button mat-raised-button routerLink="/membership/investor">
+        Continue
+      </button>
+    </div>
+  </div>
+</div>
+
+

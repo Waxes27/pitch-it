@@ -1,0 +1,95 @@
+
+
+.menu
+    margin-right: 20px
+
+.pitch
+  &:hover
+    cursor: pointer
+    
+
+mat-drawer-container
+  height: 100%
+  overflow: none
+
+.top-nav
+  background-color: rgb(19, 31, 161)
+  color: white
+  position: sticky
+  top: 0
+  padding: 3%
+  z-index: 1000
+
+.dash-top
+  width: 100%
+  display: flex
+  justify-content: center
+  img
+    width: 90%
+.pitch-deck
+  display: flex
+  justify-content: space-evenly
+  // padding-top: 4%
+  padding: 0px
+
+
+  .pitches
+    display: grid
+    width: 100%
+    // box-shadow: 20.9709px 20.9709px 41.9417px rgba(0, 0, 0, 0.25)
+    // border-radius: 20px
+    padding: 0% 0%
+    grid-template-columns: 1fr 1fr 
+
+
+    img
+      width: 63%
+      // height: 120%
+      margin: 0 30%
+
+
+
+    // mat-card
+    //   height: 40%
+    //   display: flex
+    //   flex-direction: column
+    //   .company-name
+    //     margin: auto
+    //     text-align: center
+    //   mat-card-content
+    //     h2
+    //       padding: 20px 0
+    //   button
+    //     background-color: white
+    //     color: black
+  
+  
+
+
+mat-card
+  border-radius: 25px
+  transition: box-shadow 1s, padding 0.3s
+  width: 100%
+  margin-bottom: 10px
+  color: white
+  padding: 40px
+  background-image: url('/assets/card_back.png')
+  background-size: 100%
+  background-repeat: no-repeat
+
+  mat-card-subtitle
+      color: white
+
+  .idea
+    text-align: center
+    transition: opacity 1s
+
+  mat-card-footer
+    float: right
+    padding-right: 10%
+
+
+  // &:hover
+    // background-color: rgb(121, 114, 108)
+    box-shadow: 1px 1px white
+    padding: 40px
