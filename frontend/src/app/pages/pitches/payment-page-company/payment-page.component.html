@@ -1,0 +1,27 @@
+<ng-credit-card
+  [name]="name"
+  [number]="number"
+  [cvc]="cvc"
+  [expiry]="expiry"
+></ng-credit-card>
+
+
+<div class="cardForm">
+    <div class="card-number">
+        <input [ngModel]="number" placeholder="Card Number Here" (ngModelChange)="number = $event">
+    </div>
+    <div class="name">
+        <input [ngModel]="name" placeholder="Card Name Here" (ngModelChange)="name = $event">
+    </div>
+    <div class="expiry">
+        <input [ngModel]="expiry" placeholder="Expiry (MM/YY)" (ngModelChange)="expiry = $event">
+    </div>
+    <div class="cvc">
+        <input [ngModel]="cvc" placeholder="CVC Here" (ngModelChange)="cvc = $event">
+    </div>
+</div>
+<div class="footer" routerLink="/pitch/new" routerLinkActive="router-link-active" >
+    <button>Continue</button>
+</div>
+
+
