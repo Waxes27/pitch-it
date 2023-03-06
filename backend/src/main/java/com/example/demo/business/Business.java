@@ -9,7 +9,8 @@ public class Business {
     
     private @Id @GeneratedValue Long id;
     private String name;
-    private String representativeFirstName;
+    private String representativeFirstName
+    ;
     private String representativeLastName;
     private String role;
     private String email;

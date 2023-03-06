@@ -6,8 +6,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.example.demo.Models.Industry;
-import com.example.demo.Models.Location;
+import com.example.demo.Models.IndustryModel;
+import com.example.demo.Models.LocationModel;
 import com.example.demo.Repositories.IndustryRepository;
 import com.example.demo.Repositories.LocationRepository;
 
@@ -27,18 +27,18 @@ public class LoadBusinessDatabase {
     }
 
 
-    @Bean
-    CommandLineRunner initIndustryData(IndustryRepository repository) {    
-        return args -> {
-            log.info("Preloading " + repository.save(new Industry("Industry 1")));
-        };
-    }
+    // @Bean
+    // CommandLineRunner initIndustryData(IndustryRepository repository) {    
+    //     return args -> {
+    //         log.info("Preloading " + repository.save(new IndustryModel("Industry 1")));
+    //     };
+    // }
 
 
-    @Bean
-    CommandLineRunner initLocationData(LocationRepository repository) {    
-        return args -> {
-            log.info("Preloading " + repository.save(new Location("Location 1")));
-        };
-    }
+    // @Bean
+    // CommandLineRunner initLocationData(LocationRepository repository) {    
+    //     return args -> {
+    //         log.info("Preloading " + repository.save(new LocationModel("Location 1")));
+    //     };
+    // }
 }

@@ -6,38 +6,32 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-public class Industry {
+public class ProductStageModel {
     
     private @Id @GeneratedValue Long id;
-    private @Column String industryName;
 
+    private @Column String stageName;
 
-    public Industry() {
+    public ProductStageModel() {
     }
 
-
-    public Industry(String industryName) {
-        this.industryName = industryName;
+    public ProductStageModel(String stageName) {
+        this.stageName = stageName;
     }
-
 
     public Long getId() {
         return id;
     }
 
-
     public void setId(Long id) {
         this.id = id;
     }
 
-
-    public String getIndustryName() {
-        return industryName;
+    public String getStageName() {
+        return stageName;
     }
 
-
-    public void setIndustryName(String industryName) {
-        this.industryName = industryName;
+    public void setStageName(String stageName) {
+        this.stageName = stageName;
     }
-    
 }

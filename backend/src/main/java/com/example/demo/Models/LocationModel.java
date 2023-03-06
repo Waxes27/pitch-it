@@ -6,18 +6,18 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-public class Location {
+public class LocationModel {
  
     private @Id @GeneratedValue Long id;
     
     private @Column String locationName;
 
 
-    public Location() {
+    public LocationModel() {
     }
 
 
-    public Location(String locationName) {
+    public LocationModel(String locationName) {
         this.locationName = locationName;
     }
 
