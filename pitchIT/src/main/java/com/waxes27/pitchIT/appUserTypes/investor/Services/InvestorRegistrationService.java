@@ -1,4 +1,6 @@
-package com.waxes27.pitchIT.User;
+package com.waxes27.pitchIT.appUserTypes.investor.Services;
+
+import com.waxes27.pitchIT.appUserTypes.investor.repository.InvestorRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -7,17 +9,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class AppUserService implements UserDetailsService {
-    private final UserRepository userRepository;
+
+public class InvestorRegistrationService implements UserDetailsService {
+
+    private final InvestorRepository investorRepository;
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepository.findByUserName(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-    }
-
-    public String signUpUser(IUser user){
-        userRepository.findByUserName(user.getUsername());
-        return "";
+        return null;
     }
 }
