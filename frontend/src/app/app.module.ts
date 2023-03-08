@@ -44,6 +44,7 @@ import { CompanyMembershipComponentsComponent } from "./components/membership-co
 import { DocumentDetailsComponent } from './pages/pitches/document-details/document-details.component';
 import { PaymentPageComponent } from './pages/pitches/payment-page-company/payment-page.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { InvestorSplashComponent } from './pages/splash-pages/investor-splash/investor-splash.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { RegisterComponent } from './pages/register/register.component';
     CompanyMembershipComponentsComponent,
     DocumentDetailsComponent,
     PaymentPageComponent,
-    RegisterComponent
+    RegisterComponent,
+    InvestorSplashComponent
   ],
   imports: [
     MatStepperModule,
