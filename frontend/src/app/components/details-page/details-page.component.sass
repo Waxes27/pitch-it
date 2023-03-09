@@ -39,39 +39,32 @@ mat-stepper
 
 
 .team-div
+    background-color: red
+    padding: 5%
+    border-radius: 40px
+    background: rgba( 255, 255, 255, 0.7 )
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )
+    backdrop-filter: blur( 16.5px )
+    -webkit-backdrop-filter: blur( 16.5px )
     margin: auto
-    display: flex
-    justify-content: space-between
-
-    mat-card
-        border-radius: 25px
-        transition: box-shadow 1s, padding 0.3s
-        width: 25%
-        margin-bottom: 10px
-        color: white
-        padding: 40px
-        background-image: url('/assets/card_back.png')
-        background-size: 100%
-        background-repeat: no-repeat
-
-        mat-card-subtitle
-            color: white
-
-        .idea
-            text-align: center
-            transition: opacity 1s
-            border: none
-
-        mat-card-footer
-            float: right
-            padding-right: 10%
+    
+    .member
+        display: flex
         
-        .avatar
-            border-radius: 40px
-            margin: auto
+        .intro
+            padding: 5%
+            color: black
+            display: flex
+            flex-direction: column
+            justify-content: space-between
 
+            h1
+                font-size: 250%
+            
 
-        padding: 40px
+    
+
+    
 
 .topic
     padding: 2% 2%

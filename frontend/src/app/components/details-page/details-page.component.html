@@ -1,5 +1,5 @@
 <div class="top-details">
-  <img src="/assets/top_details.svg" alt="" srcset="">
+  <img src="/assets/top_details.svg" alt="" srcset="" />
 </div>
 
 <div>
@@ -116,21 +116,24 @@
       <ng-template matStepLabel>The Team</ng-template>
 
       <div class="team-div">
-        <mat-card>
-          <mat-card-content class="idea">
-            <img class="avatar" src="/assets/john.png" height="100px" />
-            <mat-card-subtitle>CTO</mat-card-subtitle>
-            <h2>Callum Long</h2>
+        <div class="member">
+          <img class="avatar" src="/assets/john.png" />
+          <div class="intro">
+            <h1>Meet Mike,</h1>
+            <div>
+              Lorem ipsum dolor sit amet consectetur adipiscing elit massa
+              consectetur in molestie augue sed sed augue nibh et quis nibh
+              faucibus sem non cursus lectus nibh volutpat aliquam sed est nibh
+              adipiscing hendrerit rhoncus, sed dolor tortor pellentesque quis
+              molestie volutpat volutpat euismod sit non sit sed.
+            </div>
+            <div class="socials">
+              <img src="/assets/socials.svg" alt="">
+            </div>
+          </div>
+        </div>
 
-            <!-- <h3 class="company-name">Who am I?</h3> -->
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consequuntur, odit expedita ipsa doloribus quod, eius aspernatur
-            labore libero dolorum aliquid necessitatibus ea tenetur voluptatibus
-            tempore totam numquam fuga, fugit inventore!
-          </mat-card-content>
-        </mat-card>
-
-        <mat-card>
+        <!-- <mat-card>
           <mat-card-content class="idea">
             <img class="avatar" src="/assets/john.png" height="100px" />
             <mat-card-subtitle>CEO</mat-card-subtitle>
@@ -148,21 +151,20 @@
             quisquam maiores porro necessitatibus sit obcaecati adipisci?
             Consequuntur, laboriosam voluptate!
           </mat-card-content>
-        </mat-card>
+        </mat-card> -->
 
-        <mat-card>
+        <!-- <mat-card>
           <mat-card-content class="idea">
             <img class="avatar" src="/assets/john.png" height="100px" />
             <mat-card-subtitle>Senior Developer</mat-card-subtitle>
             <h2>Michael Steele</h2>
 
-            <!-- <h3 class="company-name">Who am I?</h3> -->
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Consequuntur, odit expedita ipsa doloribus quod, eius aspernatur
             labore libero dolorum aliquid necessitatibus ea tenetur voluptatibus
             tempore totam numquam fuga, fugit inventore!
           </mat-card-content>
-        </mat-card>
+        </mat-card> -->
       </div>
     </mat-step>
 
@@ -190,9 +192,7 @@
 
     <mat-step>
       <ng-template matStepLabel>Appointments</ng-template>
-      <img class="appointments" src="/assets/appointments.svg" srcset="">
-
-      
+      <img class="appointments" src="/assets/appointments.svg" srcset="" />
     </mat-step>
   </mat-stepper>
 </div>
