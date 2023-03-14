@@ -1,27 +1,64 @@
-<ng-credit-card
-  [name]="name"
-  [number]="number"
-  [cvc]="cvc"
-  [expiry]="expiry"
-></ng-credit-card>
+<div class="outer">
+  <div class="main">
+    <img src="/assets/payment-back.svg" alt="" height="100%">
+    <div class="inner">
+      <ng-credit-card
+        [name]="name"
+        [number]="number"
+        [cvc]="cvc"
+        [expiry]="expiry"
+      ></ng-credit-card>
+      <div class="cardForm">
+        <div class="inputs">
+          <div class="card-number card-header">
+            <input
+              [ngModel]="number"
+              placeholder="Card Number"
+              (ngModelChange)="number = $event"
+            />
+          </div>
+          <div class="name card-header">
+            <input
+              [ngModel]="name"
+              placeholder="Cardholder Name"
+              (ngModelChange)="name = $event"
+            />
+          </div>
+          <div class="expiry card-footer">
+            <input
+              [ngModel]="expiry"
+              placeholder="Expiration date"
+              (ngModelChange)="expiry = $event"
+            />
+          </div>
+          <div class="cvc card-footer">
+            <input
+              [ngModel]="cvc"
+              placeholder="Security Code"
+              (ngModelChange)="cvc = $event"
+            />
+          </div>
+        </div>
+        <div class="footer">
+          <div>
+            Please review our terms and conditions before making your payment.
+          </div>
+          <div class="tc">
+            <input type="checkbox" name="" id="">
+            <label for="">I Agree to Terms & Conditions</label>
+          </div>
+          <div>
+            
+          </div>
 
-
-<div class="cardForm">
-    <div class="card-number">
-        <input [ngModel]="number" placeholder="Card Number Here" (ngModelChange)="number = $event">
+          <div
+            routerLink="/splash/investor"
+            routerLinkActive="router-link-active"
+          >
+            <button>Pay Now</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="name">
-        <input [ngModel]="name" placeholder="Card Name Here" (ngModelChange)="name = $event">
-    </div>
-    <div class="expiry">
-        <input [ngModel]="expiry" placeholder="Expiry (MM/YY)" (ngModelChange)="expiry = $event">
-    </div>
-    <div class="cvc">
-        <input [ngModel]="cvc" placeholder="CVC Here" (ngModelChange)="cvc = $event">
-    </div>
+  </div>
 </div>
-<div class="footer" routerLink="/splash/investor" routerLinkActive="router-link-active" >
-    <button>Continue</button>
-</div>
-
-

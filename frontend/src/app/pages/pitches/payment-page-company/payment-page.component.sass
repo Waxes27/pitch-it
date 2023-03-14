@@ -1,27 +1,91 @@
-.cardForm
-    padding: 10%
-    // background-color: red
+ng-credit-card
+    scale: 1
+
+.outer
+    width: 100%
+    height: 100%
     display: flex
-    justify-content: center
-    div
-        margin: auto
-        input
-            border: none
-            border-radius: 30px
-            padding: 5% 3%
+    justify-content: flex-end
+    .main
+        margin: auto 0px
+        display: flex
+        flex-direction: column
+        width: 100%
+        height: 85vh
+        justify-content: flex-start
+        // background-color: #6F4FF2
+        // border-radius: 80px 0 0 80px
+
+        .inner
+            min-width: 700px
+            max-height: 800px
+            display: flex
+            flex-direction: column
+            width: 40%
+            height: 50%
+            margin: auto 0px
+            margin-left: auto
+            justify-content: space-between
+            position: absolute
+            right: 0
+            padding-right: min(300px, 17%)
+            padding-right: max(50px, 17%)
+            // padding: 8% 16%
+            border-radius: 80px 0 0px 80px
+
+            .cardForm
+                
+                width: 100%
+                height: 100%
+                // background-color: red
+                color: white
+                display: flex
+                justify-content: space-between
+                align-content: center
+                align-items: center
+                flex-direction: column
+                margin-top: 10%
+
+                .inputs
+                    max-width: 400px
+                    margin-left: 20%
+                    display: grid
+                    grid-template-columns: repeat(2, 30%)
+                    width: 100%
+                    column-gap: 10%
+                    row-gap: 10%
+                    
+                    div
+                        width: 100%
+                        margin: auto
+
+                    .card-header
+                        grid-column-start: 1
+                        grid-column-end: 3
+
 .footer
-    // background-color: red
     display: flex
-    justify-content: center
+    flex-direction: column
+    padding: 15%
+    .tc
+        padding: 5%
+        display: flex
+        align-content: flex-start
+        align-items: flex-start
+        justify-content: flex-start
+        input
+            padding: 0
+            margin: 0
+            width: 10%
     button
-        padding: 1em 3%
         border: none
-        border-radius: 30px
-        transition-duration: 1s
-        &:hover
-            background: rgba( 255, 255, 255, 0.25 )
-            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )
-            backdrop-filter: blur( 3.5px )
-            -webkit-backdrop-filter: blur( 3.5px )
-            border-radius: 10px
-            
+        padding: 2% 7%
+        border-radius: 10px
+        color: white
+        background-color: #6F4FF2
+
+input
+    padding: 3%
+    width: 100%
+    border-radius: 30px
+    border: none
