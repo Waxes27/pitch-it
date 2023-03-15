@@ -45,6 +45,7 @@ import { DocumentDetailsComponent } from './pages/pitches/document-details/docum
 import { PaymentPageComponent } from './pages/pitches/payment-page-company/payment-page.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { InvestorSplashComponent } from './pages/splash-pages/investor-splash/investor-splash.component';
+import { AppointmentBookingComponent } from './components/appointment-booking/appointment-booking.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { InvestorSplashComponent } from './pages/splash-pages/investor-splash/in
     DocumentDetailsComponent,
     PaymentPageComponent,
     RegisterComponent,
-    InvestorSplashComponent
+    InvestorSplashComponent,
+    AppointmentBookingComponent
   ],
   imports: [
     MatStepperModule,

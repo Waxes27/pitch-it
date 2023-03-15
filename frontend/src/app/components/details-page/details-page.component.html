@@ -190,9 +190,12 @@
       </div>
     </mat-step>
 
-    <mat-step>
+    <mat-step class="appointments-step">
       <ng-template matStepLabel>Appointments</ng-template>
-      <img class="appointments" src="/assets/appointments.svg" srcset="" />
+      <div class="appointments-div">
+        <img class="appointments" src="/assets/appointments.svg" srcset="" />
+        <button routerLink="/booking/new">Next</button>
+      </div>
     </mat-step>
   </mat-stepper>
 </div>

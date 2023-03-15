@@ -1,0 +1,42 @@
+<div class="main">
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+  
+        <div class="mainDiv">
+            <div class="welcome">
+                <h1>PitchIT</h1>
+            </div>
+            <label for="">Name</label>
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" type="text" />
+            </mat-form-field>
+            <br />
+            <label for="">Email</label>
+            <mat-form-field appearance="outline">
+                <mat-label>email</mat-label>
+                <input matInput formControlName="email" type="text" />
+            </mat-form-field>
+            <br>
+            <label for="">Phone Number</label>
+            <mat-form-field appearance="outline">
+                <mat-label>number</mat-label>
+                <input matInput formControlName="number" type="text" />
+            </mat-form-field>
+
+            <div class="footer">
+                <h4>Appointment details</h4>
+                <h4>Class-ify
+                    <br>
+                    28th April at 11:10am <br>
+                    With Mike <br>
+                    30mins
+                </h4>
+            </div>
+
+            <div class="buttonDiv">
+                <button mat-raised-button>Book</button>
+            </div>
+        </div>
+    </form>
+</div>
+

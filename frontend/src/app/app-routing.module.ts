@@ -26,6 +26,7 @@ import { DocumentDetailsComponent } from './pages/pitches/document-details/docum
 import { PaymentPageComponent } from './pages/pitches/payment-page-company/payment-page.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { InvestorSplashComponent } from './pages/splash-pages/investor-splash/investor-splash.component';
+import { AppointmentBookingComponent } from './components/appointment-booking/appointment-booking.component';
 
 
 const routes: Routes = [
@@ -51,6 +52,8 @@ const routes: Routes = [
   {path: "pitch/new/market-details", title: "Patient Dash",component: MarketDetailsComponent},
   {path: "pitch/new/team-details", title: "Patient Dash",component: TeamDetailsComponent},
   {path: "pitch/new/document-details", title: "Patient Dash",component: DocumentDetailsComponent},
+
+  {path: "booking/new", title: "Patient Dash",component: AppointmentBookingComponent},
 
   {path: "membership/investor", title: "Patient Dash",component: InvestorMembershipComponentsComponent},
   {path: "membership/company", title: "Patient Dash",component: CompanyMembershipComponentsComponent},
