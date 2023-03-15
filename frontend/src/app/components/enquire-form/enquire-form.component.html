@@ -1,0 +1,47 @@
+<div class="main">
+  <div class="mainDiv">
+    <form [formGroup]="enquireForm" (ngSubmit)="onSubmit()">
+      <div class="header">
+        <h2>Enquiry form for pitching masterclass</h2>
+      </div>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" type="text" />
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="text" />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input matInput formControlName="phone" type="text" />
+      </mat-form-field>
+      <br />
+
+
+      <mat-form-field appearance="outline">
+        <mat-label>
+          Hi there, I am enquiring about the pitching masterclass and would like
+          more details regarding this Thanks, Mike</mat-label
+        >
+        <textarea
+          matInput
+          formControlName="message"
+          type="text"
+          rows="4"
+          cols="50"
+        >
+        </textarea>
+      </mat-form-field>
+      <br />
+
+      <div class="buttonDiv">
+          <button mat-raised-button>Send</button>
+      </div>
+    </form>
+  </div>
+</div>

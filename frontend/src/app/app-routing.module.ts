@@ -28,6 +28,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { InvestorSplashComponent } from './pages/splash-pages/investor-splash/investor-splash.component';
 import { AppointmentBookingComponent } from './components/appointment-booking/appointment-booking.component';
 import { InvestComponent } from './components/invest/invest.component';
+import { EnquireComponent } from './components/enquire/enquire.component';
+import { EnquireFormComponent } from './components/enquire-form/enquire-form.component';
 
 
 const routes: Routes = [
@@ -57,6 +59,9 @@ const routes: Routes = [
   {path: "booking/new", title: "Patient Dash",component: AppointmentBookingComponent},
 
   {path: "invest", title: "Patient Dash",component: InvestComponent},
+
+  {path: "enquire", title: "Patient Dash",component: EnquireComponent},
+  {path: "enquire/form", title: "Patient Dash",component: EnquireFormComponent},
 
   {path: "membership/investor", title: "Patient Dash",component: InvestorMembershipComponentsComponent},
   {path: "membership/company", title: "Patient Dash",component: CompanyMembershipComponentsComponent},

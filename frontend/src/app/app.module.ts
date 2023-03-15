@@ -48,6 +48,8 @@ import { InvestorSplashComponent } from './pages/splash-pages/investor-splash/in
 import { AppointmentBookingComponent } from './components/appointment-booking/appointment-booking.component';
 import { InvestComponent } from './components/invest/invest.component';
 import { CurrencyMaskModule } from "ng2-currency-mask";
+import { EnquireComponent } from './components/enquire/enquire.component';
+import { EnquireFormComponent } from './components/enquire-form/enquire-form.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +79,9 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
     RegisterComponent,
     InvestorSplashComponent,
     AppointmentBookingComponent,
-    InvestComponent
+    InvestComponent,
+    EnquireComponent,
+    EnquireFormComponent
   ],
   imports: [
     CurrencyMaskModule,
