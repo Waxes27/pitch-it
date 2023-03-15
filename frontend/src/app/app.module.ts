@@ -46,6 +46,8 @@ import { PaymentPageComponent } from './pages/pitches/payment-page-company/payme
 import { RegisterComponent } from './pages/register/register.component';
 import { InvestorSplashComponent } from './pages/splash-pages/investor-splash/investor-splash.component';
 import { AppointmentBookingComponent } from './components/appointment-booking/appointment-booking.component';
+import { InvestComponent } from './components/invest/invest.component';
+import { CurrencyMaskModule } from "ng2-currency-mask";
 
 @NgModule({
   declarations: [
@@ -74,9 +76,11 @@ import { AppointmentBookingComponent } from './components/appointment-booking/ap
     PaymentPageComponent,
     RegisterComponent,
     InvestorSplashComponent,
-    AppointmentBookingComponent
+    AppointmentBookingComponent,
+    InvestComponent
   ],
   imports: [
+    CurrencyMaskModule,
     MatStepperModule,
     NgCreditCardModule,
     MatGridListModule,

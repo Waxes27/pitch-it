@@ -1,0 +1,46 @@
+<div class="main">
+    <div class="invest-div">
+        <img src="/assets/invest-header.svg" alt="">
+        <div class="invest-content">
+            <h1>Invest in Class-ify</h1>
+            <div>
+                <h2>Investment</h2>
+                <h5>Share price: £{{sharePrice}} </h5>
+                
+            </div>
+            <form action="" [formGroup]="investForm" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Amount</mat-label>
+                    <input currencyMask matInput formControlName="amount" [options]="{
+                        prefix : '£',
+                        align: 'left'
+                    }" type="text" />
+                </mat-form-field>
+                <h5>The minimum investment is £20,000</h5>
+                <div class="calculations">
+                    <div class="total">
+                        <div>
+                            <h2>
+                                Total(£):
+                            </h2>
+                        </div> 
+                        <div>£{{investForm.value.amount}}</div>
+                    </div>
+                    <div class="shares" >
+                        <div>
+                            <h2>
+                                Total Shares:
+                            </h2>
+                        </div> 
+                        <div>{{calculateShare()}}</div>
+                    </div>
+                </div>
+                <div class="button-div">
+                    <button>Continue</button>
+                </div>
+            </form>
+            
+            
+        </div>
+    </div>
+</div>
