@@ -58,6 +58,7 @@ import { AccountInfoSettingComponent } from './components/account-info-setting/a
 import { NotificationsSettingComponent } from './components/notifications-setting/notifications-setting.component';
 import { BillingSettingComponent } from './components/billing-setting/billing-setting.component';
 import { SecuritySettingsComponent } from './components/security-settings/security-settings.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { SecuritySettingsComponent } from './components/security-settings/securi
     NotificationsSettingComponent,
     BillingSettingComponent,
     SecuritySettingsComponent,
+    ContactUsComponent,
   ],
   imports: [
     CurrencyMaskModule,
