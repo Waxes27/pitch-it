@@ -34,6 +34,7 @@ import { DetailsPageComponent } from "./components/details-page/details-page.com
 import { PitchesComponent } from "./pages/pitches/pitches.component";
 import { CompanyDetailsComponent } from "./pages/pitches/company-details/company-details.component";
 import { PitchQuestionnaireComponent } from "./pages/pitches/pitch-questionnaire/pitch-questionnaire.component";
+import { MatSliderModule } from "@angular/material/slider";
 // import { TextBoxModule, NumericTextBoxModule, MaskedTextBoxModule, SliderModule, UploaderModule, ColorPickerModule, SignatureModule, RatingModule } from '@syncfusion/ej2-angular-inputs';
 import { MarketDetailsComponent } from "./pages/pitches/market-details/market-details.component";
 import { BusinessDetailsComponent } from "./pages/pitches/business-details/business-details.component";
@@ -54,6 +55,7 @@ import { MembershipCardComponent } from './components/membership-components/memb
 import { SettingsComponent } from './pages/settings/settings.component';
 import { SettingsNavComponent } from './components/settings-nav/settings-nav.component';
 import { AccountInfoSettingComponent } from './components/account-info-setting/account-info-setting.component';
+import { NotificationsSettingComponent } from './components/notifications-setting/notifications-setting.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +91,8 @@ import { AccountInfoSettingComponent } from './components/account-info-setting/a
     MembershipCardComponent,
     SettingsComponent,
     SettingsNavComponent,
-    AccountInfoSettingComponent
+    AccountInfoSettingComponent,
+    NotificationsSettingComponent,
   ],
   imports: [
     CurrencyMaskModule,
@@ -114,6 +117,7 @@ import { AccountInfoSettingComponent } from './components/account-info-setting/a
     MatCardModule,
     MatDatepickerModule,
     MatExpansionModule,
+    MatSliderModule
     // TextBoxModule, NumericTextBoxModule, MaskedTextBoxModule, SliderModule, UploaderModule, ColorPickerModule, SignatureModule, RatingModule
   ],
   providers: [],
