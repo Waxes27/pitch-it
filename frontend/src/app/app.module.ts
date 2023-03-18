@@ -50,6 +50,10 @@ import { InvestComponent } from './components/invest/invest.component';
 import { CurrencyMaskModule } from "ng2-currency-mask";
 import { EnquireComponent } from './components/enquire/enquire.component';
 import { EnquireFormComponent } from './components/enquire-form/enquire-form.component';
+import { MembershipCardComponent } from './components/membership-components/membership-card/membership-card.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { SettingsNavComponent } from './components/settings-nav/settings-nav.component';
+import { AccountInfoSettingComponent } from './components/account-info-setting/account-info-setting.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +85,11 @@ import { EnquireFormComponent } from './components/enquire-form/enquire-form.com
     AppointmentBookingComponent,
     InvestComponent,
     EnquireComponent,
-    EnquireFormComponent
+    EnquireFormComponent,
+    MembershipCardComponent,
+    SettingsComponent,
+    SettingsNavComponent,
+    AccountInfoSettingComponent
   ],
   imports: [
     CurrencyMaskModule,

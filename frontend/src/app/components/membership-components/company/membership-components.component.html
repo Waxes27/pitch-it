@@ -1,17 +1,55 @@
 <div class="main">
-    <div class="header">
-        <div class="header-component"></div>
-        <div class="header-component">
-            <h1>
-                Choose your plan
-            </h1>
-        </div>
-        <div class="header-component">
-
-        </div>
+  <div class="header">
+    <div class="header-component"></div>
+    <div class="header-component">
+      <h1>Choose your plan</h1>
     </div>
+    <div class="header-component"></div>
+  </div>
 
-    <form action="" (submit)="onSubmit()">
+  <div class="membership-cards-container">
+    <app-membership-card
+      [price]="19.99"
+      [package]="'Starter'"
+      [perks]="[
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+      ]"
+    ></app-membership-card>
+    <app-membership-card
+      [price]="99.99"
+      [package]="'Advanced'"
+      [perks]="[
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+      ]"
+    ></app-membership-card>
+    <app-membership-card
+      [price]="299.99"
+      [package]="'Platinum'"
+      [perks]="[
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+      ]"
+    ></app-membership-card>
+  </div>
+
+  <!-- <form action="" (submit)="onSubmit()">
         <div class="memberships">
             <div class="plan">
                 <div class="m-header">
@@ -69,10 +107,6 @@
                     <button type="submit" routerLink="/payment">Select</button>
                 </div>
             </div>
-    
-            
         </div>
-    </form>
-
-    
+    </form> -->
 </div>
