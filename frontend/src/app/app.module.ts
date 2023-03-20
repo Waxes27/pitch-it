@@ -34,6 +34,7 @@ import { DetailsPageComponent } from "./components/details-page/details-page.com
 import { PitchesComponent } from "./pages/pitches/pitches.component";
 import { CompanyDetailsComponent } from "./pages/pitches/company-details/company-details.component";
 import { PitchQuestionnaireComponent } from "./pages/pitches/pitch-questionnaire/pitch-questionnaire.component";
+import { MatSliderModule } from "@angular/material/slider";
 // import { TextBoxModule, NumericTextBoxModule, MaskedTextBoxModule, SliderModule, UploaderModule, ColorPickerModule, SignatureModule, RatingModule } from '@syncfusion/ej2-angular-inputs';
 import { MarketDetailsComponent } from "./pages/pitches/market-details/market-details.component";
 import { BusinessDetailsComponent } from "./pages/pitches/business-details/business-details.component";
@@ -50,7 +51,14 @@ import { InvestComponent } from './components/invest/invest.component';
 import { CurrencyMaskModule } from "ng2-currency-mask";
 import { EnquireComponent } from './components/enquire/enquire.component';
 import { EnquireFormComponent } from './components/enquire-form/enquire-form.component';
-import { InvestorProfileComponent } from './pages/profile-page/investor-profile/investor-profile.component';
+import { MembershipCardComponent } from './components/membership-components/membership-card/membership-card.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { SettingsNavComponent } from './components/settings-nav/settings-nav.component';
+import { AccountInfoSettingComponent } from './components/account-info-setting/account-info-setting.component';
+import { NotificationsSettingComponent } from './components/notifications-setting/notifications-setting.component';
+import { BillingSettingComponent } from './components/billing-setting/billing-setting.component';
+import { SecuritySettingsComponent } from './components/security-settings/security-settings.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +91,14 @@ import { InvestorProfileComponent } from './pages/profile-page/investor-profile/
     InvestComponent,
     EnquireComponent,
     EnquireFormComponent,
-    InvestorProfileComponent
+    MembershipCardComponent,
+    SettingsComponent,
+    SettingsNavComponent,
+    AccountInfoSettingComponent,
+    NotificationsSettingComponent,
+    BillingSettingComponent,
+    SecuritySettingsComponent,
+    ContactUsComponent,
   ],
   imports: [
     CurrencyMaskModule,
@@ -108,6 +123,7 @@ import { InvestorProfileComponent } from './pages/profile-page/investor-profile/
     MatCardModule,
     MatDatepickerModule,
     MatExpansionModule,
+    MatSliderModule
     // TextBoxModule, NumericTextBoxModule, MaskedTextBoxModule, SliderModule, UploaderModule, ColorPickerModule, SignatureModule, RatingModule
   ],
   providers: [],

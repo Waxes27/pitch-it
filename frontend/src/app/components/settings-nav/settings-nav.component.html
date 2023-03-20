@@ -1,0 +1,21 @@
+<main>
+  <div class="header-container">
+    <h1>Settings</h1>
+  </div>
+  <div class="nav-links">
+    <ul>
+      <li (click)="changeView('accountInformation')">Account Information</li>
+      <li>Notifications</li>
+      <li>Billing & Payments</li>
+      <li>Privacy & Security</li>
+      <li>Contact Us</li>
+    </ul>
+  </div>
+
+  <div
+    *ngIf="currentView === 'accountInformation'"
+    class="accountInformation-view"
+  >
+  <p>account-information</p>
+</div>
+</main>
