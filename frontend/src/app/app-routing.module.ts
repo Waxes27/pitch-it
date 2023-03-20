@@ -30,6 +30,7 @@ import { AppointmentBookingComponent } from './components/appointment-booking/ap
 import { InvestComponent } from './components/invest/invest.component';
 import { EnquireComponent } from './components/enquire/enquire.component';
 import { EnquireFormComponent } from './components/enquire-form/enquire-form.component';
+import { InvestorProfileComponent } from './pages/profile-page/investor-profile/investor-profile.component';
 
 
 const routes: Routes = [
@@ -57,6 +58,8 @@ const routes: Routes = [
   {path: "pitch/new/document-details", title: "Patient Dash",component: DocumentDetailsComponent},
 
   {path: "booking/new", title: "Patient Dash",component: AppointmentBookingComponent},
+
+  {path: "profile/investor", title: "Patient Dash",component: InvestorProfileComponent},
 
   {path: "invest", title: "Patient Dash",component: InvestComponent},
 

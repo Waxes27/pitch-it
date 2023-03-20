@@ -50,6 +50,7 @@ import { InvestComponent } from './components/invest/invest.component';
 import { CurrencyMaskModule } from "ng2-currency-mask";
 import { EnquireComponent } from './components/enquire/enquire.component';
 import { EnquireFormComponent } from './components/enquire-form/enquire-form.component';
+import { InvestorProfileComponent } from './pages/profile-page/investor-profile/investor-profile.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { EnquireFormComponent } from './components/enquire-form/enquire-form.com
     AppointmentBookingComponent,
     InvestComponent,
     EnquireComponent,
-    EnquireFormComponent
+    EnquireFormComponent,
+    InvestorProfileComponent
   ],
   imports: [
     CurrencyMaskModule,
