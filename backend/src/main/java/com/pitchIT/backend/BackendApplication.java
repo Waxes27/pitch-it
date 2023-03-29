@@ -1,13 +1,13 @@
-package com.waxes27.pitchIT;
+package com.pitchIT.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PitchItApplication {
+public class BackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PitchItApplication.class, args);
+		SpringApplication.run(BackendApplication.class, args);
 	}
 
 }
