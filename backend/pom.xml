@@ -25,7 +25,7 @@
 	</properties>
 
 	<modules>
-		<module>Pitch</module>
+		<module>modules/Pitch</module>
 	</modules>
 
 	<dependencyManagement>
