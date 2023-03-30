@@ -1,0 +1,15 @@
+/home/babahle/Projects/pitch-it/pitchIt/src/main/java/com/pitchIt/pitchIt/business/exceptions/GlobalExceptionHandler.java
+/home/babahle/Projects/pitch-it/pitchIt/src/main/java/com/pitchIt/pitchIt/PitchItApplication.java
+/home/babahle/Projects/pitch-it/pitchIt/src/main/java/com/pitchIt/pitchIt/investor/entities/Investor.java
+/home/babahle/Projects/pitch-it/pitchIt/src/main/java/com/pitchIt/pitchIt/preference/repositories/UserPrefencesRepository.java
+/home/babahle/Projects/pitch-it/pitchIt/src/main/java/com/pitchIt/pitchIt/investor/repositories/InvestorRepository.java
+/home/babahle/Projects/pitch-it/pitchIt/src/main/java/com/pitchIt/pitchIt/requests/UserPreferenceRequest.java
+/home/babahle/Projects/pitch-it/pitchIt/src/main/java/com/pitchIt/pitchIt/business/exceptions/BusinessNotFoundException.java
+/home/babahle/Projects/pitch-it/pitchIt/src/main/java/com/pitchIt/pitchIt/investor/controllers/InvestorController.java
+/home/babahle/Projects/pitch-it/pitchIt/src/main/java/com/pitchIt/pitchIt/business/controllers/BusinessController.java
+/home/babahle/Projects/pitch-it/pitchIt/src/main/java/com/pitchIt/pitchIt/requests/LoginRequest.java
+/home/babahle/Projects/pitch-it/pitchIt/src/main/java/com/pitchIt/pitchIt/business/repositories/BusinessRepository.java
+/home/babahle/Projects/pitch-it/pitchIt/src/main/java/com/pitchIt/pitchIt/business/entities/Business.java
+/home/babahle/Projects/pitch-it/pitchIt/src/main/java/com/pitchIt/pitchIt/preference/entities/UserPreference.java
+/home/babahle/Projects/pitch-it/pitchIt/src/main/java/com/pitchIt/pitchIt/preference/controllers/UserPreferencesController.java
+/home/babahle/Projects/pitch-it/pitchIt/src/main/java/com/pitchIt/pitchIt/business/exceptions/BusinessAlreadyExistsException.java
