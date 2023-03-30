@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/business")
-// Add "/api" path here
+@CrossOrigin
 public class BusinessController {
     private final BusinessRepository repository;
 
