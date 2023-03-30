@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { AuthService } from "src/app/auth/auth.service";
 
 @Component({
@@ -29,9 +29,15 @@ export class LoginComponent implements OnInit {
       username: this.loginForm.get("username")?.value,
       passwird: this.loginForm.get("password")?.value,
     };
-
+    let httpOptions = {
+      header: new HttpHeaders({
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      }),
+      body: JSON.stringify(formData)
+    };
     this.http
-      .post("http://localhost:8080/api/business/sign-in", formData)
+      .post("http://localhost:8080/api/business/sign-in", httpOptions)
       .subscribe((data) => {
         console.log(data);
       });
