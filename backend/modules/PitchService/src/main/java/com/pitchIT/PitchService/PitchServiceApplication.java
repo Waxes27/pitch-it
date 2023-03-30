@@ -1,14 +1,13 @@
-package com.pitchIT.backend;
+package com.pitchIT.PitchService;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BackendApplication {
+public class PitchServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BackendApplication.class, args);
+		SpringApplication.run(PitchServiceApplication.class, args);
 	}
 
 }
