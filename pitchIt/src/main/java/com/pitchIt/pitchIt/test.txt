@@ -1,0 +1,14 @@
+curl -v -X POST localhost:8080/api/investor/sign-up -H 'Content-type:application/json' -d '{"firstName": "Thato", "lastName": "Moletsane", "email": "thatomoletsane@gmail.com", "password": "password"}' | json_pp
+
+        String industry,
+        String location,
+        String developmentStage,
+        String customerGroup,
+        String investmentStage,
+        boolean seisPreference
+
+{"industry": "INDUSTRY", "location": "LOCATION", "developmentStage": "DEV_2", "customerGroup": "GROUP_1", "investmentStage": "STAGE_1", "seisPreference": "True"}
+
+/sign-up/preference/{uid}
+
+curl -v -X POST localhost:8080/api/user/sign-up/preference/1 -H 'Content-type:application/json' -d '{"industry": "INDUSTRY", "location": "LOCATION", "developmentStage": "DEV_2", "customerGroup": "GROUP_1", "investmentStage": "STAGE_1", "seisPreference": "True"}' | json_pp
