@@ -1,9 +1,7 @@
 package com.pitchIT.PitchService.models;
 
 import com.pitchIT.PitchService.models.socials.Socials;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.net.URI;
@@ -11,6 +9,7 @@ import java.net.URI;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class CompanyDetails {
     @Getter(AccessLevel.NONE)
     @Setter(AccessLevel.NONE)
@@ -33,4 +32,13 @@ public class CompanyDetails {
     @Transient
     private Socials socials;
 
+    public CompanyDetails(String name, String registrationNumber, String country, String registeredCompanyName, String sector, String businessGrowthStage, Socials socials) {
+        this.name = name;
+        this.registrationNumber = registrationNumber;
+        this.country = country;
+        this.registeredCompanyName = registeredCompanyName;
+        this.sector = sector;
+        this.businessGrowthStage = businessGrowthStage;
+        this.socials = socials;
+    }
 }

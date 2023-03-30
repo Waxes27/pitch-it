@@ -1,14 +1,14 @@
 package com.pitchIT.PitchService.models;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
-@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Pitch {
     private boolean passedQuestion;
 
@@ -20,29 +20,27 @@ public class Pitch {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Getter(AccessLevel.NONE)
-    @Setter(AccessLevel.NONE)
     @OneToOne(mappedBy = "pitch", cascade = CascadeType.ALL, optional = false, orphanRemoval = true)
     private CompanyDetails companyDetails;
 
-    @Getter(AccessLevel.NONE)
-    @Setter(AccessLevel.NONE)
     @OneToOne(mappedBy = "pitch", cascade = CascadeType.ALL, optional = false, orphanRemoval = true)
     private BusinessDetails businessDetails;
 
-    @Getter(AccessLevel.NONE)
-    @Setter(AccessLevel.NONE)
     @OneToOne(mappedBy = "pitch", cascade = CascadeType.ALL, optional = false, orphanRemoval = true)
     private MarketDetails marketDetails;
 
-    @Getter(AccessLevel.NONE)
-    @Setter(AccessLevel.NONE)
     @OneToOne(mappedBy = "pitch", cascade = CascadeType.ALL, optional = false, orphanRemoval = true)
     private Documents documents;
 
-    @Getter(AccessLevel.NONE)
-    @Setter(AccessLevel.NONE)
     @OneToOne(mappedBy = "pitch", cascade = CascadeType.ALL, optional = false, orphanRemoval = true)
     private MemberDetails memberDetails;
 
+    public Pitch(boolean passedQuestion, CompanyDetails companyDetails, BusinessDetails businessDetails, MarketDetails marketDetails, Documents documents, MemberDetails memberDetails) {
+        this.passedQuestion = passedQuestion;
+        this.companyDetails = companyDetails;
+        this.businessDetails = businessDetails;
+        this.marketDetails = marketDetails;
+        this.documents = documents;
+        this.memberDetails = memberDetails;
+    }
 }
