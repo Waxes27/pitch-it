@@ -58,7 +58,7 @@ export class BusinessComponent implements OnInit {
     };
 
     this.http
-      .post("http://192.168.0.134:8080/api/business/sign-up", body)
+      .post("http://localhost:8080/api/business/sign-up", body)
       .subscribe((data) => {
         console.log(data);
       });
