@@ -28,14 +28,14 @@ services:
         -Dspring.cloud.config.server.native.searchLocations=/var/config-data
     depends_on:
       - postgres
-#    ports:
-#      - 8888:8888
+    ports:
+      - "8080:8080"
 
 
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
-  pitch-Service:
+  pitch-service:
     image: modules/pitchservice:0.0.1-SNAPSHOT
 #    environment:
 #      - JAVA_OPTS=
