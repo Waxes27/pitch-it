@@ -1,6 +1,6 @@
-package com.pitchIt.pitchIt.repositories;
+package com.pitchIt.pitchIt.business.repositories;
 
-import com.pitchIt.pitchIt.entities.Business;
+import com.pitchIt.pitchIt.business.entities.Business;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
