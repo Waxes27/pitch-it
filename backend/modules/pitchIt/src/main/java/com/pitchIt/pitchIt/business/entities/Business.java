@@ -1,4 +1,4 @@
-package com.pitchIt.pitchIt.entities;
+package com.pitchIt.pitchIt.business.entities;
 
 import javax.persistence.*;
 import java.util.Objects;
