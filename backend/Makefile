@@ -1,11 +1,7 @@
-docker-build:
+docker-build-run:
+	mvn install package -DskipTests
 	chmod +x scripts/*
 	./scripts/docker_build.sh
 	chmod -x scripts/*
-	mvn clean install package -DskipTests
-	docker-compose up
-
-clean:
-	chmod +x scripts/*
-	./scripts/reinit-db.sh
-	chmod -x scripts/*
+	docker-compose up -d
+	mvn test
