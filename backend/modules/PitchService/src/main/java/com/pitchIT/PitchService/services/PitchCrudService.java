@@ -31,9 +31,7 @@ public class PitchCrudService {
             Documents documents,
             MarketDetails marketDetails,
             MemberDetails memberDetails
-
     ){
-
         Pitch pitch = Pitch.builder()
             .businessDetails(businessDetailsRepository.save(businessDetails))
             .companyDetails(companyDetailsRepository.save(companyDetails))
@@ -42,10 +40,7 @@ public class PitchCrudService {
             .memberDetails(memberDetailsRepository.save(memberDetails))
             .build();
 
-
         pitchRepository.save(pitch);
-
-
     }
 
 
