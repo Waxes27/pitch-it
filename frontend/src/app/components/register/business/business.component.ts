@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 
@@ -25,6 +25,11 @@ export class BusinessComponent implements OnInit {
       <any>Validators.required,
       <any>Validators.minLength(6),
     ]),
+
+    email: new FormControl("", [
+      <any>Validators.required,
+      <any>Validators.email
+    ]),
     password: new FormControl("", [
       <any>Validators.required,
       <any>Validators.minLength(8),
@@ -33,19 +38,27 @@ export class BusinessComponent implements OnInit {
   });
 
   onSubmit() {
-  
     let body = {
+      representativeFirstName: this.registrationForm.get("name")?.value,
       name: this.registrationForm.get("name")?.value,
-      surname: this.registrationForm.get("surname")?.value,
-      DOB: this.registrationForm.get("DOB")?.value,
-      username: this.registrationForm.get("username")?.value,
-      password: this.registrationForm.get("password")?.value,
-      role: "Business"
+      representativeLastName: this.registrationForm.get("surname")?.value,
+      email: this.registrationForm.get("email")?.value,
+      DOB: "03/05/2023",
+      username: "babs",
+      password: "ihsbnb",
+      representativeRole: "Business",
     };
 
+    let httpOptions = {
+      header: new HttpHeaders({
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      }),
+      body: JSON.stringify(body),
+    };
 
     this.http
-      .post("http://localhost:8080/api/business/sign-up", body)
+      .post("http://192.168.0.134:8080/api/business/sign-up", body)
       .subscribe((data) => {
         console.log(data);
       });
