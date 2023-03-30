@@ -1,4 +1,4 @@
-package com.pitchIt.pitchIt.exceptions;
+package com.pitchIt.pitchIt.business.exceptions;
 
 public class BusinessNotFoundException extends RuntimeException {
 
