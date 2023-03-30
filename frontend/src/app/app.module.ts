@@ -59,6 +59,7 @@ import { NotificationsSettingComponent } from './components/notifications-settin
 import { BillingSettingComponent } from './components/billing-setting/billing-setting.component';
 import { SecuritySettingsComponent } from './components/security-settings/security-settings.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { BusinessProfileComponent } from './pages/profile-page/business-profile/business-profile.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +100,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
     BillingSettingComponent,
     SecuritySettingsComponent,
     ContactUsComponent,
+    BusinessProfileComponent,
   ],
   imports: [
     CurrencyMaskModule,

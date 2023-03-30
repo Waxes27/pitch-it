@@ -31,6 +31,7 @@ import { InvestComponent } from "./components/invest/invest.component";
 import { EnquireComponent } from "./components/enquire/enquire.component";
 import { EnquireFormComponent } from "./components/enquire-form/enquire-form.component";
 import { SettingsComponent } from "./pages/settings/settings.component";
+import { BusinessProfileComponent } from "./pages/profile-page/business-profile/business-profile.component";
 
 const routes: Routes = [
   { path: "", title: "Welcome", component: LandingPageComponent },
@@ -101,6 +102,11 @@ const routes: Routes = [
     path: "pitch/new/team-details",
     title: "Patient Dash",
     component: TeamDetailsComponent,
+  },
+  {
+    path: "profile",
+    title: "Patient Dash",
+    component: BusinessProfileComponent,
   },
   {
     path: "pitch/new/document-details",
