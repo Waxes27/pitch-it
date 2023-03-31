@@ -11,15 +11,14 @@ import java.net.URI;
 @Setter
 @NoArgsConstructor
 public class CompanyDetails {
-    @Getter(AccessLevel.NONE)
-    @Setter(AccessLevel.NONE)
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL, optional = false, orphanRemoval = true)
-    @JoinColumn(name = "pitch_id", nullable = false, unique = true)
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "pitch_id", nullable = false ,unique = true)
     private Pitch pitch;
 
     private String name;
@@ -40,5 +39,21 @@ public class CompanyDetails {
         this.sector = sector;
         this.businessGrowthStage = businessGrowthStage;
         this.socials = socials;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("CompanyDetails{");
+        sb.append("id=").append(id);
+        sb.append(", pitch=").append(pitch);
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", registrationNumber='").append(registrationNumber).append('\'');
+        sb.append(", country='").append(country).append('\'');
+        sb.append(", registeredCompanyName='").append(registeredCompanyName).append('\'');
+        sb.append(", sector='").append(sector).append('\'');
+        sb.append(", businessGrowthStage='").append(businessGrowthStage).append('\'');
+        sb.append(", socials=").append(socials);
+        sb.append('}');
+        return sb.toString();
     }
 }

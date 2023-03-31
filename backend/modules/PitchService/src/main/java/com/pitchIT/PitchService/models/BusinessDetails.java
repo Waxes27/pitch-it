@@ -10,15 +10,24 @@ import javax.persistence.*;
 @Getter
 @Setter
 public class BusinessDetails {
-    @Getter(AccessLevel.NONE)
-    @Setter(AccessLevel.NONE)
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+    private String name;
 
-    @OneToOne(cascade = CascadeType.ALL, optional = false, orphanRemoval = true)
-    @JoinColumn(name = "pitch_id", nullable = false, unique = true)
+
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "pitch_id", unique = true)
     private Pitch pitch;
 
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("BusinessDetails{");
+        sb.append("id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

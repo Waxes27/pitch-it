@@ -32,15 +32,23 @@ public class PitchCrudService {
             MarketDetails marketDetails,
             MemberDetails memberDetails
     ){
+//        Pitch pitch = pitchRepository.save(new Pitch());
+//        companyDetails.setPitch(pitch);
+//        businessDetails.setPitch(pitch);
+        System.out.println(companyDetails);
+        companyDetails = companyDetailsRepository.save(companyDetails);
+//        companyDetails.setPitch();
+
         Pitch pitch = Pitch.builder()
-            .businessDetails(businessDetailsRepository.save(businessDetails))
-            .companyDetails(companyDetailsRepository.save(companyDetails))
+                 .companyDetails(companyDetails)
+                 .businessDetails(businessDetailsRepository.save(businessDetails))
             .documents(documentsRepository.save(documents))
             .marketDetails(marketDetailsRepository.save(marketDetails))
             .memberDetails(memberDetailsRepository.save(memberDetails))
             .build();
 
-        pitchRepository.save(pitch);
+        System.out.println(pitchRepository.save(pitch));
+
     }
 
 
