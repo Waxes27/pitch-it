@@ -27,7 +27,7 @@ public class InvestorController {
         }
     }
 
-    @GetMapping("/sign-in")
+    @PostMapping("/sign-in")
     ResponseEntity signIn(@RequestBody LoginRequest loginRequest) {
         Investor investor = repository.signIn(loginRequest.email(), loginRequest.password());
 

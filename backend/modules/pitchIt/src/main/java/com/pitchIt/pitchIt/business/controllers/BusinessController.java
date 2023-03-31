@@ -35,7 +35,7 @@ public class BusinessController {
     }
 
 
-    @GetMapping("/sign-in")
+    @PostMapping("/sign-in")
     ResponseEntity signIn(@RequestBody LoginRequest request) {
         Business business = repository.findByEmail(request.email(), request.password());
         if (business != null) {
