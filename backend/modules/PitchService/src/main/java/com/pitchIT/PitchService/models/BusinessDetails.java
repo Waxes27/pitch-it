@@ -19,7 +19,7 @@ public class BusinessDetails {
 
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "pitch_id", unique = true)
+    @JoinColumn(name = "pitch_id", unique = true,referencedColumnName = "id")
     private Pitch pitch;
 
     @Override

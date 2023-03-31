@@ -1,5 +1,6 @@
 package com.pitchIT.PitchService.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,6 +22,8 @@ public class Pitch {
     @OneToOne(mappedBy = "pitch", cascade = CascadeType.ALL, orphanRemoval = true)
     private CompanyDetails companyDetails;
 
+    private String title;
+
     @OneToOne(mappedBy = "pitch", cascade = CascadeType.ALL, orphanRemoval = true)
     private BusinessDetails businessDetails;
 
@@ -35,14 +38,13 @@ public class Pitch {
     private MemberDetails memberDetails;
 
 
-
     public Pitch(boolean passedQuestion, CompanyDetails companyDetails, BusinessDetails businessDetails, MarketDetails marketDetails, Documents documents, MemberDetails memberDetails) {
-        this.passedQuestion = passedQuestion;
+        this.passedQuestion = true;
         this.companyDetails = companyDetails;
-        this.businessDetails = businessDetails;
-        this.marketDetails = marketDetails;
-        this.documents = documents;
-        this.memberDetails = memberDetails;
+//        this.businessDetails = businessDetails;
+//        this.marketDetails = marketDetails;
+//        this.documents = documents;
+//        this.memberDetails = memberDetails;
     }
 
     @Override

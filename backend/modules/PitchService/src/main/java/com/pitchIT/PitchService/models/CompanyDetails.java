@@ -1,24 +1,24 @@
 package com.pitchIT.PitchService.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pitchIT.PitchService.models.socials.Socials;
 import lombok.*;
 
 import javax.persistence.*;
-import java.net.URI;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 public class CompanyDetails {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "pitch_id" ,unique = true)
+    @JoinColumn(name = "pitch_id")
+    @JsonIgnore
     private Pitch pitch;
 
     private String name;
@@ -45,7 +45,6 @@ public class CompanyDetails {
     public String toString() {
         final StringBuffer sb = new StringBuffer("{");
         sb.append("id:").append(id);
-        sb.append(", pitch:").append(pitch);
         sb.append(", name:'").append(name).append('\'');
         sb.append(", registrationNumber:'").append(registrationNumber).append('\'');
         sb.append(", country:'").append(country).append('\'');

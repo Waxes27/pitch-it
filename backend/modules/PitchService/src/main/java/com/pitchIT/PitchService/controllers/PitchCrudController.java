@@ -1,7 +1,7 @@
 package com.pitchIT.PitchService.controllers;
 
 
-import com.pitchIT.PitchService.models.Pitch;
+import com.pitchIT.PitchService.models.*;
 import com.pitchIT.PitchService.requests.PitchDetailsRequest;
 import com.pitchIT.PitchService.services.PitchCrudService;
 import lombok.AllArgsConstructor;
@@ -20,13 +20,26 @@ public class PitchCrudController {
 
     @PostMapping
     public ResponseEntity createUserPitch(@RequestBody PitchDetailsRequest pitchDetailsRequest){
+        Pitch pitchTemplate = new Pitch(
+                true,
+                new CompanyDetails(),
+                new BusinessDetails(),
+                new MarketDetails(),
+                new Documents(),
+                new MemberDetails()
+
+        );
+
+//        pitchTemplate.setTitle("PitchIT");
 
         Pitch pitch = service.savePitch(
                 pitchDetailsRequest.businessDetails(),
                 pitchDetailsRequest.companyDetails(),
                 pitchDetailsRequest.documents(),
                 pitchDetailsRequest.marketDetails(),
-                pitchDetailsRequest.memberDetails()
+                pitchDetailsRequest.memberDetails(),
+                pitchTemplate
+
         );
 
         return new ResponseEntity(pitch, HttpStatus.CREATED);
