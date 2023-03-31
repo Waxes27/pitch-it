@@ -1,9 +1,9 @@
 import { CompanyDetailsRequest } from "./CompanyDetailsRequest";
 
 export class PitchRequest {
-  companyRequest: CompanyDetailsRequest;
+  companyRequestData: CompanyDetailsRequest;
 
-  constructor(companyRequest: CompanyDetailsRequest) {
-    this.companyRequest = companyRequest;
+  constructor(companyRequestData: CompanyDetailsRequest) {
+    this.companyRequestData = companyRequestData;
   }
 }
