@@ -1,6 +1,11 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-business",
@@ -8,7 +13,8 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
   styleUrls: ["./business.component.sass"],
 })
 export class BusinessComponent implements OnInit {
-  constructor(private http: HttpClient) {}
+  error: string = "";
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -28,9 +34,13 @@ export class BusinessComponent implements OnInit {
 
     email: new FormControl("", [
       <any>Validators.required,
-      <any>Validators.email
+      <any>Validators.email,
     ]),
     password: new FormControl("", [
+      <any>Validators.required,
+      <any>Validators.minLength(8),
+    ]),
+    confirmedPassword: new FormControl("", [
       <any>Validators.required,
       <any>Validators.minLength(8),
     ]),
@@ -45,22 +55,28 @@ export class BusinessComponent implements OnInit {
       email: this.registrationForm.get("email")?.value,
       DOB: "03/05/2023",
       username: "babs",
-      password: "ihsbnb",
+      password: this.registrationForm.get("password")?.value,
+      confirmedPassword: this.registrationForm.get("confirmedPassword")?.value,
       representativeRole: "Business",
     };
-
-    let httpOptions = {
-      header: new HttpHeaders({
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      }),
-      body: JSON.stringify(body),
-    };
-
-    this.http
-      .post("http://localhost:8080/api/business/sign-up", body)
-      .subscribe((data) => {
-        console.log(data);
-      });
+    let passowrdsMatch: boolean =
+      this.registrationForm.get("password")?.value ===
+      this.registrationForm.get("confirmedPassword")?.value;
+    if (body && passowrdsMatch) {
+      this.http
+        .post("http://localhost:8080/api/business/sign-up", body)
+        .subscribe(
+          (data: object) => {
+            if (data) {
+              this.router.navigate(["preferences/business"]);
+            }
+          },
+          (error: HttpErrorResponse) => {
+            this.error = error.error;
+          }
+        );
+    }else{
+      this.error = "The passwords don't match"
+    }
   }
 }

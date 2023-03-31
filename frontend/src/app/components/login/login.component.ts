@@ -29,15 +29,8 @@ export class LoginComponent implements OnInit {
       username: this.loginForm.get("username")?.value,
       passwird: this.loginForm.get("password")?.value,
     };
-    let httpOptions = {
-      header: new HttpHeaders({
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      }),
-      body: JSON.stringify(formData)
-    };
     this.http
-      .post("http://localhost:8080/api/business/sign-in", httpOptions)
+      .post("http://localhost:8080/api/business/sign-in", formData)
       .subscribe((data) => {
         console.log(data);
       });

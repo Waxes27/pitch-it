@@ -8,6 +8,9 @@
       </h2>
     </div>
     <h4>As Business</h4>
+    <div class="error-text-container">
+      <span class="error-text">{{ error }}</span>
+    </div>
     <mat-form-field appearance="outline">
       <mat-label>Representative first name</mat-label>
       <input matInput formControlName="name" type="text" />
@@ -36,10 +39,12 @@
     <br />
     <mat-form-field appearance="outline">
       <mat-label>Re-enter password</mat-label>
-      <input matInput formControlName="username" type="text" />
+      <input matInput formControlName="confirmedPassword" type="password" />
     </mat-form-field>
     <br />
+  <div class="login-text-container">
     <a routerLink="/login">Or click here to login!</a>
+  </div>
 
     <div class="question">
       <button mat-raised-button>Continue</button>

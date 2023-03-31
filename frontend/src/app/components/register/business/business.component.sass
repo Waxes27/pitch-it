@@ -1,15 +1,21 @@
 
 form
-    width: 40%
+    width: 80%
     padding: 50px
     justify-content: space-between
     margin: auto
+    text-align: center
+
+    input:-webkit-autofill,
+    textarea:-webkit-autofill,
+    select:-webkit-autofill
+        background-color: transparent !important
 
 
     .mainDiv
         
         padding: 30px
-        width: 50%
+        width: 60%
         margin: auto
         ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper
             padding: 0px
@@ -59,3 +65,15 @@ h4
 
     ::ng-deep h2
         font-size: 30px
+
+.login-text-container
+    margin: 20px 0px
+
+.error-text-container
+    margin: 20px 0px
+    .error-text
+        color: red
+        font-weight: bold
+        font-size: 18px
+        white-space: nowrap
+    
