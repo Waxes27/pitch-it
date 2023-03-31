@@ -25,7 +25,7 @@ public class PitchCrudService {
 
 
 
-    public void savePitch(
+    public Pitch savePitch(
             BusinessDetails businessDetails,
             CompanyDetails companyDetails,
             Documents documents,
@@ -47,8 +47,7 @@ public class PitchCrudService {
             .memberDetails(memberDetailsRepository.save(memberDetails))
             .build();
 
-        System.out.println(pitchRepository.save(pitch));
-
+        return pitchRepository.save(pitch);
     }
 
 

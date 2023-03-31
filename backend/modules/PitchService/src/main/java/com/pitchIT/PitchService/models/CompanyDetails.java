@@ -18,7 +18,7 @@ public class CompanyDetails {
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "pitch_id", nullable = false ,unique = true)
+    @JoinColumn(name = "pitch_id" ,unique = true)
     private Pitch pitch;
 
     private String name;
@@ -43,16 +43,16 @@ public class CompanyDetails {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("CompanyDetails{");
-        sb.append("id=").append(id);
-        sb.append(", pitch=").append(pitch);
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", registrationNumber='").append(registrationNumber).append('\'');
-        sb.append(", country='").append(country).append('\'');
-        sb.append(", registeredCompanyName='").append(registeredCompanyName).append('\'');
-        sb.append(", sector='").append(sector).append('\'');
-        sb.append(", businessGrowthStage='").append(businessGrowthStage).append('\'');
-        sb.append(", socials=").append(socials);
+        final StringBuffer sb = new StringBuffer("{");
+        sb.append("id:").append(id);
+        sb.append(", pitch:").append(pitch);
+        sb.append(", name:'").append(name).append('\'');
+        sb.append(", registrationNumber:'").append(registrationNumber).append('\'');
+        sb.append(", country:'").append(country).append('\'');
+        sb.append(", registeredCompanyName:'").append(registeredCompanyName).append('\'');
+        sb.append(", sector:'").append(sector).append('\'');
+        sb.append(", businessGrowthStage:'").append(businessGrowthStage).append('\'');
+        sb.append(", socials:").append(socials);
         sb.append('}');
         return sb.toString();
     }
