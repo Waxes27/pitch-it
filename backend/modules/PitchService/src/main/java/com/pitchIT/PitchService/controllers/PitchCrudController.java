@@ -19,27 +19,18 @@ public class PitchCrudController {
     private final PitchCrudService service;
 
     @PostMapping
-    public ResponseEntity createUserPitch(@RequestBody PitchDetailsRequest pitchDetailsRequest){
-        Pitch pitchTemplate = new Pitch(
-                true,
-                new CompanyDetails(),
-                new BusinessDetails(),
-                new MarketDetails(),
-                new Documents(),
-                new MemberDetails()
+    public ResponseEntity createUserPitch(@RequestBody PitchDetailsRequest pitchDetailsRequest, @RequestParam String userId){
 
-        );
 
 //        pitchTemplate.setTitle("PitchIT");
 
         Pitch pitch = service.savePitch(
+                userId,
                 pitchDetailsRequest.businessDetails(),
                 pitchDetailsRequest.companyDetails(),
                 pitchDetailsRequest.documents(),
                 pitchDetailsRequest.marketDetails(),
-                pitchDetailsRequest.memberDetails(),
-                pitchTemplate
-
+                pitchDetailsRequest.memberDetails()
         );
 
         return new ResponseEntity(pitch, HttpStatus.CREATED);

@@ -28,7 +28,8 @@ public class CompanyDetails {
     private String sector;
     private String businessGrowthStage;
 
-    @Transient
+
+    @OneToOne(mappedBy = "companyDetails", cascade = CascadeType.ALL, orphanRemoval = true)
     private Socials socials;
 
     public CompanyDetails(String name, String registrationNumber, String country, String registeredCompanyName, String sector, String businessGrowthStage, Socials socials) {

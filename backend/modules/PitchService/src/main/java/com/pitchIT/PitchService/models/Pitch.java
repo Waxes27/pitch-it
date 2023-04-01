@@ -18,11 +18,10 @@ public class Pitch {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+    private String username;
 
     @OneToOne(mappedBy = "pitch", cascade = CascadeType.ALL, orphanRemoval = true)
     private CompanyDetails companyDetails;
-
-    private String title;
 
     @OneToOne(mappedBy = "pitch", cascade = CascadeType.ALL, orphanRemoval = true)
     private BusinessDetails businessDetails;
@@ -38,20 +37,27 @@ public class Pitch {
     private MemberDetails memberDetails;
 
 
-    public Pitch(boolean passedQuestion, CompanyDetails companyDetails, BusinessDetails businessDetails, MarketDetails marketDetails, Documents documents, MemberDetails memberDetails) {
+    public Pitch(String username, CompanyDetails companyDetails, BusinessDetails businessDetails, MarketDetails marketDetails, Documents documents, MemberDetails memberDetails) {
         this.passedQuestion = true;
         this.companyDetails = companyDetails;
-//        this.businessDetails = businessDetails;
-//        this.marketDetails = marketDetails;
-//        this.documents = documents;
-//        this.memberDetails = memberDetails;
+        this.businessDetails = businessDetails;
+        this.marketDetails = marketDetails;
+        this.documents = documents;
+        this.memberDetails = memberDetails;
+        this.username = username;
     }
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("{");
-        sb.append("id:").append(id);
-        sb.append(", companyDetails:").append(companyDetails);
+        final StringBuffer sb = new StringBuffer("Pitch{");
+        sb.append("passedQuestion=").append(passedQuestion);
+        sb.append(", id=").append(id);
+        sb.append(", username='").append(username).append('\'');
+        sb.append(", companyDetails=").append(companyDetails);
+        sb.append(", businessDetails=").append(businessDetails);
+        sb.append(", marketDetails=").append(marketDetails);
+        sb.append(", documents=").append(documents);
+        sb.append(", memberDetails=").append(memberDetails);
         sb.append('}');
         return sb.toString();
     }

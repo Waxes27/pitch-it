@@ -1,5 +1,6 @@
 package com.pitchIT.PitchService.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,19 +16,20 @@ public class BusinessDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-    private String name;
-
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "pitch_id", unique = true,referencedColumnName = "id")
+    @JoinColumn(name = "pitch_id")
+    @JsonIgnore
     private Pitch pitch;
 
-    @Override
-    public String toString() {
-        final StringBuffer sb = new StringBuffer("BusinessDetails{");
-        sb.append("id=").append(id);
-        sb.append(", name='").append(name).append('\'');
-        sb.append('}');
-        return sb.toString();
-    }
+    private String product;
+    private String problemSolved;
+    private String businessModel;
+    private String reasonForRaising;
+
+
+
+
+
+
 }

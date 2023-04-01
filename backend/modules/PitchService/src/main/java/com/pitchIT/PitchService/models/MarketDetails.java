@@ -1,5 +1,6 @@
 package com.pitchIT.PitchService.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,9 +17,12 @@ public class MarketDetails {
     @Column(name = "id", nullable = false)
     private Long id;
 
-
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "pitch_id", unique = true)
+    @JsonIgnore
     private Pitch pitch;
+
+    private String marketResearch;
+    private String keyCompetitors;
 
 }

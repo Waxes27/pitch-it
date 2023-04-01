@@ -1,10 +1,11 @@
 package com.pitchIT.PitchService.models;
 
-import lombok.AccessLevel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+
 
 @Entity
 @Getter
@@ -18,6 +19,9 @@ public class MemberDetails {
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "pitch_id", unique = true)
+    @JsonIgnore
     private Pitch pitch;
+
+
 
 }
