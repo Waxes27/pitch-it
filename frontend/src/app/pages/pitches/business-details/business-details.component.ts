@@ -1,30 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-business-details',
-  templateUrl: './business-details.component.html',
-  styleUrls: ['./business-details.component.sass']
+  selector: "app-business-details",
+  templateUrl: "./business-details.component.html",
+  styleUrls: ["./business-details.component.sass"],
 })
 export class BusinessDetailsComponent implements OnInit {
-
   businessDetails = new FormGroup({
-    name: new FormControl('',[<any>Validators.required]),
-    surname: new FormControl('', [<any>Validators.required]),
-    DOB: new FormControl('', [<any>Validators.required, Validators.pattern("")]),
-    username: new FormControl('', [<any>Validators.required, <any>Validators.minLength(6)]),
-    password: new FormControl('', [<any>Validators.required, <any>Validators.minLength(8)]),
-    role: new FormControl('')
+    product: new FormControl("", [<any>Validators.required]),
+    problemSolved: new FormControl("", [<any>Validators.required]),
+    businessModel: new FormControl("", [<any>Validators.required]),
+    raising: new FormControl("", [<any>Validators.required]),
   });
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onSubmit() {
+    this.router.navigate(["/pitch/new/market-details"]);
   }
-
-  onSubmit(){
-    this.router.navigate(['/pitch/new/market-details'])
-  }
-
 }

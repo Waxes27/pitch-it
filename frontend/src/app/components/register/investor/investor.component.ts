@@ -10,44 +10,43 @@ import { Router } from "@angular/router";
   styleUrls: ["./investor.component.sass"],
 })
 export class InvestorComponent implements OnInit {
-  constructor(private http: HttpClient, private auth: AuthService) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {}
 
   roles = ["Investor", "Business"];
 
   registrationForm = new FormGroup({
-    name: new FormControl("", [<any>Validators.required]),
-    surname: new FormControl("", [<any>Validators.required]),
-    DOB: new FormControl("", [
-      <any>Validators.required,
-      Validators.pattern(""),
-    ]),
-    username: new FormControl("", [
-      <any>Validators.required,
-      <any>Validators.minLength(6),
-    ]),
+    firstName: new FormControl("", [<any>Validators.required]),
+    lastName: new FormControl("", [<any>Validators.required]),
+
+    email: new FormControl("", [<any>Validators.required]),
     password: new FormControl("", [
       <any>Validators.required,
       <any>Validators.minLength(8),
     ]),
-    role: new FormControl(""),
+    confirmPassword: new FormControl("", [
+      <any>Validators.required,
+      <any>Validators.minLength(8),
+    ]),
   });
 
+
   onSubmit() {
+
     let body = {
-      name: this.registrationForm.get("name")?.value,
-      surname: this.registrationForm.get("surname")?.value,
-      DOB: this.registrationForm.get("DOB")?.value,
-      username: this.registrationForm.get("username")?.value,
+      firstName: this.registrationForm.get("firstName")?.value,
+      lastName: this.registrationForm.get("lastName")?.value,
+      email: this.registrationForm.get("email")?.value,
       password: this.registrationForm.get("password")?.value,
-      role: "Business",
+    
     };
 
     this.http
-      .post("http://localhost:8080/api/business/sign-up", body)
+      .post("http://localhost:8081/register/investor", body)
       .subscribe((data) => {
         console.log(data);
+        this.router.navigate(["membership/investor"])
       });
   }
 }
