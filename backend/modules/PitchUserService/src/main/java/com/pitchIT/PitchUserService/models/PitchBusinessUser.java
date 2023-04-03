@@ -126,7 +126,7 @@ public class PitchBusinessUser implements UserDetails {
         sb.append(", 'businessName':'").append(businessName).append('\'');
         sb.append(", 'representativeFirstName':'").append(representativeFirstName).append('\'');
         sb.append(", 'representativeLastName':'").append(representativeLastName).append('\'');
-        sb.append(", 'businessRole':").append(businessRole);
+        sb.append(", 'businessRole':'").append(businessRole).append('\'');
         sb.append('}');
         return sb.toString();
     }

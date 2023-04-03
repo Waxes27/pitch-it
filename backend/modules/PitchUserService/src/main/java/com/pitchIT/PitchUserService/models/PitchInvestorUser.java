@@ -123,7 +123,7 @@ public class PitchInvestorUser implements UserDetails {
         sb.append("'id':'").append(id).append('\'');
         sb.append(", 'firstName':'").append(firstName).append('\'');
         sb.append(", 'lastName':'").append(lastName).append('\'');
-        sb.append(", 'investorRole':").append(investorRole);
+        sb.append(", 'investorRole':'").append(investorRole).append('\'');
         sb.append(", 'email':'").append(email).append('\'');
         sb.append(", 'password':'").append(password).append('\'');
         sb.append('}');
