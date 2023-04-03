@@ -18,7 +18,7 @@ public class PitchController {
     @PostMapping
     public String createPitch(@RequestBody PitchDetailsRequest pitchDetailsRequest, @RequestParam String userId){
         restTemplate.postForEntity(
-                "http://localhost:10001/api/pitch?userId="+userId,
+                "http://pitch-service:10001/api/pitch?userId="+userId,
                 pitchDetailsRequest,
                 ResponseEntity.class);
 
