@@ -2,20 +2,20 @@
     <div class="header">
       <h1>The Market</h1>
     </div>
-    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="marketDetailsForm" (ngSubmit)="onSubmit()">
       <div>
           <h2>Market Research</h2>
           <!-- <mat-form-field appearance="outline">
   
           </mat-form-field> -->
-          <textarea name="" id="" cols="100" rows="8"></textarea>
+          <textarea formControlName="marketResearch" name="" id="" cols="100" rows="8"></textarea>
         </div>
         <div>
           <h2>Key competitors & our advantages</h2>
-          <textarea name="" id="" cols="100" rows="8"></textarea>
+          <textarea formControlName="advantages" name="" id="" cols="100" rows="8"></textarea>
         </div>
         
-        <div class="button-div" routerLink="/pitch/new/team-details">
+        <div class="button-div">
             <button type="submit">continue</button>
         </div>
     </form>

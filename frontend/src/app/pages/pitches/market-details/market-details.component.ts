@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FormDataService } from 'src/app/services/FormDataService';
 
 @Component({
   selector: 'app-market-details',
@@ -7,21 +9,27 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./market-details.component.sass']
 })
 export class MarketDetailsComponent implements OnInit {
-onSubmit() {
-throw new Error('Method not implemented.');
-}
-  registrationForm = new FormGroup({
-    name: new FormControl('',[<any>Validators.required]),
-    surname: new FormControl('', [<any>Validators.required]),
-    DOB: new FormControl('', [<any>Validators.required, Validators.pattern("")]),
-    username: new FormControl('', [<any>Validators.required, <any>Validators.minLength(6)]),
-    password: new FormControl('', [<any>Validators.required, <any>Validators.minLength(8)]),
-    role: new FormControl('')
+
+  marketDetailsForm = new FormGroup({
+    marketResearch: new FormControl('',[<any>Validators.required]),
+    advantages: new FormControl('', [<any>Validators.required]),
   });
 
-  constructor() { }
+  constructor(private formDataService: FormDataService ,private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  onSubmit() {
+    let data = {
+      marketDetails: this.marketDetailsForm.value
+    }
+
+    this.formDataService.updateData(data);
+    console.log(this.formDataService.currentData);
+    this.router.navigate(["/pitch/new/team-details"]);
+    }
+
+  
 
 }

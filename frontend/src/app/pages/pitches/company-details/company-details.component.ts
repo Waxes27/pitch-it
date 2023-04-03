@@ -28,7 +28,10 @@ export class CompanyDetailsComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    this.formDataService.updateData(this.companyDetails.value);
+    let data = {
+      companyDetails: this.companyDetails.value
+    }
+    this.formDataService.updateData(data);
     console.log(this.formDataService.currentData);
     this.router.navigate(["/pitch/new/business-details"]);
   }

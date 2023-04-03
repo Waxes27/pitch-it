@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { FormDataService } from "src/app/services/FormDataService";
 
 @Component({
   selector: "app-business-details",
@@ -15,11 +16,16 @@ export class BusinessDetailsComponent implements OnInit {
     raising: new FormControl("", [<any>Validators.required]),
   });
 
-  constructor(private router: Router) {}
+  constructor(private formDataService: FormDataService ,private router: Router) {}
 
   ngOnInit(): void {}
 
   onSubmit() {
+    let data = {
+      businessDetails: this.businessDetails.value
+    }
+    this.formDataService.updateData(data);
+    console.log(this.formDataService.currentData);
     this.router.navigate(["/pitch/new/market-details"]);
   }
 }

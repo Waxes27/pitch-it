@@ -1,16 +1,19 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class FormDataService {
-  private formData = new BehaviorSubject<any>({});
+  private formDataSet: any[] = [];
+  private formData = new BehaviorSubject<any[]>(this.formDataSet);
   currentData = this.formData.asObservable();
 
-  constructor() { }
+  constructor() {}
 
   updateData(data: any) {
-    this.formData.next(data);
+    this.formDataSet.push(data);
+
+    this.formData.next(this.formDataSet);
   }
 }
