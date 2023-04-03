@@ -30,10 +30,11 @@ public class LoginController {
     PasswordEncoder passwordEncoder = new PasswordEncoder();
 
     @PostMapping(path = "/login")
-    public String login(
+    public Object login(
             @RequestParam("username") String username,
             @RequestParam("password") String password
     ){
+
         JSONObject jsonObject = new JSONObject();
         System.out.println(username +" : "+password);
 
@@ -47,7 +48,7 @@ public class LoginController {
             SecurityContextHolder.getContext().setAuthentication(authentication);
             System.out.println("Logging in");
 
-            return authentication.getPrincipal().toString();
+            return authentication.getPrincipal();
 
         }catch (Exception e){
             return e.getMessage();

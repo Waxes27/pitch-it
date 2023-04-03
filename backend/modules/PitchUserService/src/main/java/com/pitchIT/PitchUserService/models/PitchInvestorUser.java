@@ -118,8 +118,8 @@ public class PitchInvestorUser implements UserDetails {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
+
+    public JSONObject toJsonObject() {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("id",id);
         jsonObject.put("firstName",firstName);
@@ -127,6 +127,6 @@ public class PitchInvestorUser implements UserDetails {
         jsonObject.put("investorRole",investorRole);
         jsonObject.put("email",email);
         jsonObject.put("password",password);
-        return jsonObject.toString();
+        return jsonObject;
     }
 }
