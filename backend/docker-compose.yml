@@ -45,5 +45,5 @@ services:
     depends_on:
       - users
       - postgres
-#    ports:
-#      - "8081:8081"
+    ports:
+      - "10001:10001"

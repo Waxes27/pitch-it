@@ -21,9 +21,6 @@ public class PitchCrudController {
     @PostMapping
     public ResponseEntity createUserPitch(@RequestBody PitchDetailsRequest pitchDetailsRequest, @RequestParam String userId){
 
-
-//        pitchTemplate.setTitle("PitchIT");
-
         Pitch pitch = service.savePitch(
                 userId,
                 pitchDetailsRequest.businessDetails(),
