@@ -28,10 +28,10 @@ public class PitchController {
     }
 
     @GetMapping
-    public ResponseEntity<Pitch> getPitchesByUserId(@RequestBody PitchDetailsRequest pitchDetailsRequest, @RequestParam String userId){
+    public ResponseEntity<Pitch> getPitchesByUserId(@RequestParam String username){
 
         return restTemplate.getForEntity(
-                "http://pitch-service:10001/api/pitch?username="+userId,
+                "http://pitch-service:10001/api/pitch?username="+username,
                 Pitch.class);
     }
 
