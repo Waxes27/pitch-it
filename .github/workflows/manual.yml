@@ -20,5 +20,5 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Install Docker
-      run: pwd;ls
+      run: git clone git@github.com:Waxes27/pitch-it.git;cd pitch-it/backend;make
 
