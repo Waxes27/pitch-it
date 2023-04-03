@@ -17,13 +17,13 @@ public class PitchController {
 
 
     @PostMapping
-    public String createPitch(@RequestBody PitchDetailsRequest pitchDetailsRequest, @RequestParam String userId){
-        restTemplate.postForEntity(
+    public ResponseEntity<Pitch> createPitch(@RequestBody PitchDetailsRequest pitchDetailsRequest, @RequestParam String userId){
+        ResponseEntity<Pitch> pitch= restTemplate.postForEntity(
                 "http://pitch-service:10001/api/pitch?userId="+userId,
                 pitchDetailsRequest,
                 Pitch.class);
 
-        return "";
+        return pitch;
     }
     
 }
