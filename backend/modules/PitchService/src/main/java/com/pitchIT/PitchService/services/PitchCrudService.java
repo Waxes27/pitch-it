@@ -57,8 +57,8 @@ public class PitchCrudService {
 
     }
 
-    public Pitch getPitchByUserId(String userId){
-        System.out.println(pitchRepository.findById(Long.valueOf(userId)));
+    public Pitch getPitchByUsername(String username){
+        System.out.println(pitchRepository.findByUsername(username));
         return new Pitch();
     }
 }

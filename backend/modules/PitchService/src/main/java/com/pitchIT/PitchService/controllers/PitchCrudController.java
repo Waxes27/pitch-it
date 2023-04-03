@@ -37,9 +37,7 @@ public class PitchCrudController {
     }
     @GetMapping
     public ResponseEntity getUserPitch(){
-
-
-
+        service.getPitchByUsername("waxes27");
         return new ResponseEntity("Error Getting Pitches", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
