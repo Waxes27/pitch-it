@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/pitch")
 @AllArgsConstructor
@@ -28,11 +30,12 @@ public class PitchController {
     }
 
     @GetMapping
-    public ResponseEntity<Pitch> getPitchesByUserId(@RequestParam String username){
+    public ResponseEntity<List> getPitchesByUserId(@RequestParam String username){
+
 
         return restTemplate.getForEntity(
                 "http://pitch-service:10001/api/pitch?username="+username,
-                Pitch.class);
+                List.class);
     }
 
 
