@@ -19,7 +19,7 @@ services:
 #      - 8761:8761
 # ----------------------------------------------------------------------------------------------------------------------------------
   users:
-    image: modules/pitchit:0.0.1-SNAPSHOT
+    image: modules/pitchuserservice:0.0.1-SNAPSHOT
     volumes:
       - ./config-data:/var/config-data
     environment:
@@ -45,18 +45,5 @@ services:
     depends_on:
       - users
       - postgres
-    ports:
-      - "8081:8081"
-
-
-#  school-ui:
-#    image: developer.okta.com/microservice-docker-school-ui:0.0.1-SNAPSHOT
-#    environment:
-#      - JAVA_OPTS=
-#        -DEUREKA_SERVER=http://discovery:8761/eureka
-#    restart: on-failure
-#    depends_on:
-#      - discovery
-#      - config
 #    ports:
-#      - 8080:8080
+#      - "8081:8081"
