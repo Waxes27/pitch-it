@@ -122,7 +122,7 @@ public class PitchBusinessUser implements UserDetails {
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("{");
-        sb.append("'id':").append(id);
+        sb.append("'id':'").append(id).append('\'');
         sb.append(", 'businessName':'").append(businessName).append('\'');
         sb.append(", 'representativeFirstName':'").append(representativeFirstName).append('\'');
         sb.append(", 'representativeLastName':'").append(representativeLastName).append('\'');
