@@ -20,5 +20,5 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Install Docker
-      run: JAVA_HOME=/home/pitch/SDKMAN/candidates/java/current;cd pitch-it/backend;make
+      run: JAVA_HOME=/home/pitch/SDKMAN/candidates/java/current;cd pitch-it/backend;sudo make
 
