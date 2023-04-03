@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 import { FormDataService } from "src/app/services/FormDataService";
 
 @Component({
@@ -20,16 +21,15 @@ export class CompanyDetailsComponent implements OnInit {
     country: new FormControl("", [<any>Validators.required]),
     companyName: new FormControl("", [<any>Validators.required]),
     sector: new FormControl("", [<any>Validators.required]),
-
   });
 
-  constructor(private formDataService: FormDataService) {}
+  constructor(private formDataService: FormDataService, private router: Router) {}
 
   ngOnInit(): void {}
 
   onSubmit() {
-      this.formDataService.updateData(this.companyDetails.value)
-      console.log(this.formDataService.currentData);
-      
+    this.formDataService.updateData(this.companyDetails.value);
+    console.log(this.formDataService.currentData);
+    this.router.navigate(["/pitch/new/business-details"]);
   }
 }

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class BusinessDetailsComponent implements OnInit {
 
-  registrationForm = new FormGroup({
+  businessDetails = new FormGroup({
     name: new FormControl('',[<any>Validators.required]),
     surname: new FormControl('', [<any>Validators.required]),
     DOB: new FormControl('', [<any>Validators.required, Validators.pattern("")]),
