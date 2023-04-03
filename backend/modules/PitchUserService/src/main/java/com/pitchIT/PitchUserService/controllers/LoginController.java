@@ -55,7 +55,7 @@ public class LoginController {
     }
 
     @PostMapping(path = "/register/business")
-    public String registerBusiness(@RequestBody BusinessRegisterRequest registerRequest){
+    public PitchBusinessUser registerBusiness(@RequestBody BusinessRegisterRequest registerRequest){
         System.out.println(registerRequest);
 
         PitchBusinessUser businessUser = new PitchBusinessUser(
@@ -66,13 +66,13 @@ public class LoginController {
                 registerRequest.email(),
                 passwordEncoder.bCryptPasswordEncoder().encode(registerRequest.password())
         );
-        userService.registerBusinessUserByEmail(businessUser);
+        businessUser = userService.registerBusinessUserByEmail(businessUser);
 
-        return businessUser.toString();
+        return businessUser;
     }
 
     @PostMapping(path = "/register/investor")
-    public JSONObject registerInvestor(@RequestBody InvestorRegisterRequest registerRequest){
+    public PitchInvestorUser registerInvestor(@RequestBody InvestorRegisterRequest registerRequest){
         System.out.println(registerRequest);
 
         PitchInvestorUser investorUser = new PitchInvestorUser(
@@ -83,8 +83,6 @@ public class LoginController {
                 passwordEncoder.bCryptPasswordEncoder().encode(registerRequest.password())
         );
         investorUser = userService.registerInvestorUserByEmail(investorUser);
-
-        System.out.println("LAST PRINT"+investorUser);
-        return new JSONObject(investorUser);
+        return investorUser;
     }
 }

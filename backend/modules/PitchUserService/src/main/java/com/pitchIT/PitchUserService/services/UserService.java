@@ -30,9 +30,9 @@ public class UserService implements UserDetailsService {
     }
 
 
-    public String registerBusinessUserByEmail(PitchBusinessUser pitchBusinessUser){
+    public PitchBusinessUser registerBusinessUserByEmail(PitchBusinessUser pitchBusinessUser){
         System.out.println(businessUserRepository.save(pitchBusinessUser));
-        return pitchBusinessUser.toString();
+        return pitchBusinessUser;
     }
 
     public PitchInvestorUser registerInvestorUserByEmail(PitchInvestorUser investorUser) {
