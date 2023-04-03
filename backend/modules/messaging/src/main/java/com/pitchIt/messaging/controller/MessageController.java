@@ -1,7 +1,9 @@
 package com.pitchIt.messaging.controller;
 
 import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,11 +13,20 @@ import com.pitchIt.messaging.model.MessageResponse;
 @RestController
 public class MessageController {
     
-    @MessageMapping("/hello")
-    @SendTo("/topic/greetings")
-    public MessageResponse message(Message message) throws InterruptedException {
-        Thread.sleep(1000);
+    @MessageMapping("/chat.sendMessage")
+    @SendTo("/topic/javainuse")
+    public MessageResponse SendMessage(@Payload MessageResponse message) throws InterruptedException {
+        // Thread.sleep(1000);
         // Sanitise
-        return new MessageResponse("Hello" + message.getContent());
+        System.out.println("Sent");
+        return message;
+    }
+
+    @MessageMapping("/chat.newUser")
+    @SendTo("/topic/javainuse")
+    public MessageResponse newUser(@Payload MessageResponse message, SimpMessageHeaderAccessor headerAccessor) {
+        headerAccessor.getSessionAttributes().put("username", message.getSender());
+        System.out.println("JOINED");
+        return message;
     }
 }
