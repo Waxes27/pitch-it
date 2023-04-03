@@ -119,11 +119,11 @@ public class PitchInvestorUser implements UserDetails {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("PitchInvestorUser{");
-        sb.append("firstName='").append(firstName).append('\'');
-        sb.append(", lastName='").append(lastName).append('\'');
-        sb.append(", investorRole=").append(investorRole);
-        sb.append(", email='").append(email).append('\'');
+        final StringBuffer sb = new StringBuffer("{");
+        sb.append("firstName:'").append(firstName).append('\'');
+        sb.append(", lastName:'").append(lastName).append('\'');
+        sb.append(", investorRole:").append(investorRole);
+        sb.append(", email:'").append(email).append('\'');
         sb.append('}');
         return sb.toString();
     }
