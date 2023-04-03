@@ -9,6 +9,9 @@ import lombok.Setter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @AllArgsConstructor
 
@@ -57,8 +60,9 @@ public class PitchCrudService {
 
     }
 
-    public Pitch getPitchByUsername(String username){
-        System.out.println(pitchRepository.findByUsername(username));
-        return new Pitch();
+    public List<Optional<Pitch>> getAllPitchByUsername(String username){
+        List<Optional<Pitch>> pitches = pitchRepository.findByUsername(username);
+
+        return pitches;
     }
 }

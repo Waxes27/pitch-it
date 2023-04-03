@@ -10,6 +10,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+
 
 @RestController
 @RequestMapping(path = "/api/pitch")
@@ -34,8 +37,8 @@ public class PitchCrudController {
     }
     @GetMapping
     public ResponseEntity getUserPitch(){
-        service.getPitchByUsername("waxes27");
-        return new ResponseEntity("Error Getting Pitches", HttpStatus.INTERNAL_SERVER_ERROR);
+        List<Optional<Pitch>> pitches = service.getAllPitchByUsername("waxes27");
+        return new ResponseEntity(pitches, HttpStatus.OK);
     }
 
 
