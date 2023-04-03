@@ -31,7 +31,7 @@ public class PitchController {
     public ResponseEntity<Pitch> getPitchesByUserId(@RequestBody PitchDetailsRequest pitchDetailsRequest, @RequestParam String userId){
 
         return restTemplate.getForEntity(
-                "http://pitch-service:10001/api/pitch?userId="+userId,
+                "http://pitch-service:10001/api/pitch?username="+userId,
                 Pitch.class);
     }
 
