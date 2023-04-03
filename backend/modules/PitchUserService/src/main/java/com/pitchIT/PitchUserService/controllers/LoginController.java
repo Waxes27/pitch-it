@@ -84,7 +84,7 @@ public class LoginController {
         );
         investorUser = userService.registerInvestorUserByEmail(investorUser);
 
-
-        return new JSONObject(investorUser.toString());
+        System.out.println("LAST PRINT"+investorUser);
+        return new JSONObject(investorUser);
     }
 }

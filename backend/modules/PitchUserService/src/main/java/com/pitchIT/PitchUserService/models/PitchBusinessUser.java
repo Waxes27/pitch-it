@@ -4,6 +4,7 @@ import com.pitchIT.PitchUserService.enums.UserRoles;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.json.JSONObject;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -121,14 +122,13 @@ public class PitchBusinessUser implements UserDetails {
     
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("{");
-        sb.append("'id':'").append(id).append('\'');
-        sb.append(", 'businessName':'").append(businessName).append('\'');
-        sb.append(", 'representativeFirstName':'").append(representativeFirstName).append('\'');
-        sb.append(", 'representativeLastName':'").append(representativeLastName).append('\'');
-        sb.append(", 'businessRole':'").append(businessRole).append('\'');
-        sb.append('}');
-        return sb.toString();
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("id",this.id);
+        jsonObject.put("businessName",this.businessName);
+        jsonObject.put("representativeFirstName",this.representativeFirstName);
+        jsonObject.put("representativeLastName",this.representativeLastName);
+        jsonObject.put("businessRole",this.businessRole);
+        return jsonObject.toString();
     }
 
 }
