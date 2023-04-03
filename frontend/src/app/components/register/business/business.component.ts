@@ -59,24 +59,30 @@ export class BusinessComponent implements OnInit {
       // username: "babs",
       // confirmedPassword: this.registrationForm.get("confirmedPassword")?.value,
     };
+
+    let httpHeaders = new HttpHeaders({
+      "Content-Type": "application/json",
+    });
+
     let passowrdsMatch: boolean =
       this.registrationForm.get("password")?.value ===
       this.registrationForm.get("confirmedPassword")?.value;
     if (body && passowrdsMatch) {
-      this.http.post("http://localhost:8081/register/business", body).subscribe(
-        (data: object) => {
-          console.log(data);
-          
-          if (data) {
-            this.router.navigate(["preferences/business"]);
+      this.http
+        .post("http://localhost:8081/register/business", body)
+        .subscribe(
+          (data: object) => {
+            console.log(data);
+
+            if (data) {
+              this.router.navigate(["preferences/business"]);
+            }
+          },
+          (error: HttpErrorResponse) => {
+            this.error = error.error;
+            console.log(error);
           }
-        },
-        (error: HttpErrorResponse) => {
-          this.error = error.error;
-          console.log(error);
-          
-        }
-      );
+        );
     } else {
       this.error = "The passwords don't match";
     }
