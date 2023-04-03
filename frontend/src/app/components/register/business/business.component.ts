@@ -64,6 +64,12 @@ export class BusinessComponent implements OnInit {
       "Content-Type": "application/json",
     });
 
+    let options = {
+      headers: httpHeaders,
+      responseType: 'json',
+
+    }
+
     let passowrdsMatch: boolean =
       this.registrationForm.get("password")?.value ===
       this.registrationForm.get("confirmedPassword")?.value;
