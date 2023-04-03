@@ -49,34 +49,36 @@ export class BusinessComponent implements OnInit {
 
   onSubmit() {
     let body = {
+      businessName: this.registrationForm.get("name")?.value,
       representativeFirstName: this.registrationForm.get("name")?.value,
-      name: this.registrationForm.get("name")?.value,
       representativeLastName: this.registrationForm.get("surname")?.value,
+      businessRole: "CEO",
       email: this.registrationForm.get("email")?.value,
-      DOB: "03/05/2023",
-      username: "babs",
       password: this.registrationForm.get("password")?.value,
-      confirmedPassword: this.registrationForm.get("confirmedPassword")?.value,
-      representativeRole: "Business",
+      // DOB: "03/05/2023",
+      // username: "babs",
+      // confirmedPassword: this.registrationForm.get("confirmedPassword")?.value,
     };
     let passowrdsMatch: boolean =
       this.registrationForm.get("password")?.value ===
       this.registrationForm.get("confirmedPassword")?.value;
     if (body && passowrdsMatch) {
-      this.http
-        .post("http://localhost:8080/api/business/sign-up", body)
-        .subscribe(
-          (data: object) => {
-            if (data) {
-              this.router.navigate(["preferences/business"]);
-            }
-          },
-          (error: HttpErrorResponse) => {
-            this.error = error.error;
+      this.http.post("http://localhost:8081/register/business", body).subscribe(
+        (data: object) => {
+          console.log(data);
+          
+          if (data) {
+            this.router.navigate(["preferences/business"]);
           }
-        );
-    }else{
-      this.error = "The passwords don't match"
+        },
+        (error: HttpErrorResponse) => {
+          this.error = error.error;
+          console.log(error);
+          
+        }
+      );
+    } else {
+      this.error = "The passwords don't match";
     }
   }
 }
