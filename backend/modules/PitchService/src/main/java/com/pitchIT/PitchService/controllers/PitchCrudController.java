@@ -38,6 +38,8 @@ public class PitchCrudController {
     @GetMapping
     public ResponseEntity getUserPitch(){
 
+
+
         return new ResponseEntity("Error Getting Pitches", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 

@@ -3,6 +3,7 @@ package com.pitchIT.PitchUserService.controllers;
 
 import com.pitchIT.PitchUserService.models.Pitch;
 import com.pitchIT.PitchUserService.requests.PitchDetailsRequest;
+import com.pitchIT.PitchUserService.services.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,16 +15,26 @@ import org.springframework.web.client.RestTemplate;
 public class PitchController {
 
     private final RestTemplate restTemplate;
+    private final UserService userService;
 
 
     @PostMapping
-    public ResponseEntity<Pitch> createPitch(@RequestBody PitchDetailsRequest pitchDetailsRequest, @RequestParam String userId){
-        ResponseEntity<Pitch> pitch= restTemplate.postForEntity(
+    public ResponseEntity<Pitch> createPitchByUserId(@RequestBody PitchDetailsRequest pitchDetailsRequest, @RequestParam String userId){
+
+        return restTemplate.postForEntity(
                 "http://pitch-service:10001/api/pitch?userId="+userId,
                 pitchDetailsRequest,
                 Pitch.class);
-
-        return pitch;
     }
+
+    @GetMapping
+    public ResponseEntity<Pitch> getPitchesByUserId(@RequestBody PitchDetailsRequest pitchDetailsRequest, @RequestParam String userId){
+
+        return restTemplate.getForEntity(
+                "http://pitch-service:10001/api/pitch?userId="+userId,
+                Pitch.class);
+    }
+
+
     
 }
