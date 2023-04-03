@@ -8,7 +8,7 @@ import com.pitchIT.PitchUserService.requests.BusinessRegisterRequest;
 import com.pitchIT.PitchUserService.requests.InvestorRegisterRequest;
 import com.pitchIT.PitchUserService.security.PasswordEncoder;
 import com.pitchIT.PitchUserService.services.UserService;
-import net.minidev.json.JSONObject;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -72,7 +72,7 @@ public class LoginController {
     }
 
     @PostMapping(path = "/register/investor")
-    public String registerInvestor(@RequestBody InvestorRegisterRequest registerRequest){
+    public JSONObject registerInvestor(@RequestBody InvestorRegisterRequest registerRequest){
         System.out.println(registerRequest);
 
         PitchInvestorUser investorUser = new PitchInvestorUser(
@@ -82,9 +82,9 @@ public class LoginController {
                 registerRequest.email(),
                 passwordEncoder.bCryptPasswordEncoder().encode(registerRequest.password())
         );
-        userService.registerInvestorUserByEmail(investorUser);
+        investorUser = userService.registerInvestorUserByEmail(investorUser);
 
 
-        return investorUser.toString();
+        return new JSONObject(investorUser);
     }
 }

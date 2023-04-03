@@ -35,8 +35,8 @@ public class UserService implements UserDetailsService {
         return pitchBusinessUser.toString();
     }
 
-    public String registerInvestorUserByEmail(PitchInvestorUser investorUser) {
+    public PitchInvestorUser registerInvestorUserByEmail(PitchInvestorUser investorUser) {
         System.out.println(investorUserRepository.save(investorUser));
-        return investorUser.toString();
+        return investorUser;
     }
 }
