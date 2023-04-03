@@ -1,6 +1,7 @@
 package com.pitchIT.PitchUserService.controllers;
 
 
+import com.pitchIT.PitchUserService.models.Pitch;
 import com.pitchIT.PitchUserService.requests.PitchDetailsRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,7 @@ public class PitchController {
         restTemplate.postForEntity(
                 "http://pitch-service:10001/api/pitch?userId="+userId,
                 pitchDetailsRequest,
-                ResponseEntity.class);
+                Pitch.class);
 
         return "";
     }
