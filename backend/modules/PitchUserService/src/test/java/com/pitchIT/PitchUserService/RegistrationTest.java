@@ -49,7 +49,46 @@ public class RegistrationTest {
                 .asJson();
         assertNotNull(jsonResponse.getBody());
         System.out.println(jsonObjectResponse);
-//        assertEquals("BUSINESS",jsonObjectResponse.get("businessRole"));
+        assertEquals(true,jsonObjectResponse.get("accountNonLocked"));
+        assertEquals(200, jsonResponse.getStatus());
+    }
+
+    JSONObject investorJsonObject = new JSONObject();
+    {
+        jsonObject.put("firstName", "John");
+        jsonObject.put("lastName","Doe");
+        jsonObject.put("email","a@gmail.com");
+        jsonObject.put("password" ,"a");
+    }
+
+    @Test
+    public void investorRegistrationShouldContainRoleAndLogin() throws UnirestException {
+
+
+        HttpResponse<JsonNode> jsonResponse
+                = Unirest.post("http://localhost:8081/register/investor")
+                .header("accept", "application/json")
+                .header("content-type","application/json")
+                .body(investorJsonObject)
+                .asJson();
+
+        System.out.println(jsonResponse.getBody());
+
+        JSONObject jsonObjectResponse = jsonResponse.getBody().getObject();
+
+        assertNotNull(jsonResponse.getBody());
+//        assertEquals("INVESTOR",jsonObjectResponse.get("investorRole"));
+        assertEquals(200, jsonResponse.getStatus());
+
+        jsonResponse
+                = Unirest.post("http://localhost:8081/login")
+                .header("accept", "application/json")
+                .queryString("username","a@gmail.com")
+                .queryString("password","a")
+                .asJson();
+        assertNotNull(jsonResponse.getBody());
+        System.out.println(jsonObjectResponse);
+        assertEquals(true,jsonObjectResponse.get("accountNonLocked"));
         assertEquals(200, jsonResponse.getStatus());
     }
 
