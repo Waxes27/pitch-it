@@ -1,11 +1,16 @@
-<div class="main">
-  <div class="header">
-    <h1>The Team</h1>
-  </div>
-  <form [formGroup]="teamForm">
-    <div class="member-card">
-      <img src="/assets/john.png" alt="">
+<section>
+  <div class="card-container">
+    <div class="image-container">
+        <img src="/assets/john.png">
     </div>
+    <div class="form-container">
+          <form [formGroup]="teamForm" (ngSubmit)="onSubmit()">
+              <input formControlName="title" type="text" id="title" placeholder="Title">
+              <textarea formControlName="memberAbout" name="about" id="member-about" cols="20" rows="10" placeholder="About Member"></textarea>
+              <button type="submit">Continue</button>
+          </form>
+    </div>
+  </div>
 
-  </form>
-</div>
+  
+</section>

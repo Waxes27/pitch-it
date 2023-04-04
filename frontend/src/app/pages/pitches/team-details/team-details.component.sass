@@ -1,38 +1,49 @@
-.main
-    margin: 2%
-    width: 95%
-    background-color: blue
-    height: 50%
+section
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    
 
-    form
-        overflow: scroll
-        margin: auto
-        width: 100%
-        background-color: red
+    .card-container
+        padding: 10px
+        background-color: rgba(0, 0, 0, 0.5)
+        border-radius: 16px
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)
+        backdrop-filter: blur(11px)
+        -webkit-backdrop-filter: blur(11px)
+        border: 1px solid rgba(255, 255, 255, 0.25)
         display: flex
-        height: 90%
-        justify-content: space-between
-
-        mat-card
-
-            width:  30%
-            margin: 1% auto
-            border-radius: 40px
-            display: flex
-            justify-content: center
-            flex-direction: column
-            *
-                margin: auto
-    .header
-        display: flex
+        flex-direction: column
+        align-items: center
         justify-content: center
-        color: white
-
-
-.member-card
-    color: white
-    background: rgba( 255, 255, 255, 0.7 )
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )
-    backdrop-filter: blur( 16.5px )
-    -webkit-backdrop-filter: blur( 16.5px )
-    border-radius: 10px
+        width: 50%
+        .form-container
+            form
+                #title
+                    border-radius: 4px
+                    background: #C4C4C4
+                    border: solid 1px #C4C4C4
+                    margin: 20px 10px
+                #member-about
+                    border: solid 1px #C4C4C4
+                    border-radius: 4px
+                    background: #c4c4c4
+                    margin: 20px 10px
+                button
+                    background: #5b3fce
+                    padding: 12px
+                    border: solid 1px #5b3fce
+                    border-radius: 12px
+                    margin: 20px 10px
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                width: 100%
+        .image-container
+            img
+                width: 120px
+                height: 120px
+                border-radius: 100px
+                border: solid white 1px

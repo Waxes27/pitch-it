@@ -1,62 +1,44 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { FormDataService } from "src/app/services/FormDataService";
 
 @Component({
-  selector: 'app-team-details',
-  templateUrl: './team-details.component.html',
-  styleUrls: ['./team-details.component.sass']
+  selector: "app-team-details",
+  templateUrl: "./team-details.component.html",
+  styleUrls: ["./team-details.component.sass"],
 })
-
 export class TeamDetailsComponent implements OnInit {
-
-  
-
-  
-  members: Members[] = [
-    {
-      name: "John Doe",
-      role: "CEO",
-      about:" Lorem Ipsum?"
-    }
-  ];
-
-  selected : number = 3;
-  numbers = Array(this.selected).fill(this.selected).map((x,i)=>i);
-
-
   teamForm = new FormGroup({
-    name: new FormControl('',[<any>Validators.required]),
-    surname: new FormControl('', [<any>Validators.required]),
-    DOB: new FormControl('', [<any>Validators.required, Validators.pattern("")]),
-    username: new FormControl('', [<any>Validators.required, <any>Validators.minLength(6)]),
-    password: new FormControl('', [<any>Validators.required, <any>Validators.minLength(8)]),
-    role: new FormControl('')
+    title: new FormControl("", [<any>Validators.required]),
+    memberAbout: new FormControl("", [<any>Validators.required]),
   });
 
-  
+  constructor(
+    private formDataService: FormDataService,
+    private router: Router
+  ) {}
 
+  ngOnInit(): void {}
 
-  constructor() { 
+  onSubmit() {
+    console.log("Clicked");
     
+    let data = {
+      memberDetails: {
+        memberList: [
+          {
+            memberName: "John Doe",
+            memberTitle: this.teamForm.get("title")?.value,
+            memberAbout: this.teamForm.get("memberAbout")?.value,
+          },
+        ],
+      },
+    };
+
+    this.formDataService.updateData(data);
+    console.log(this.formDataService.currentData);
+    this.router.navigate(["pitch/new/document-details"]);
   }
-
-  ngOnInit(): void {
-  }
-
-  
-
-  changeSelected(){
-    console.log(this.selected)
-    
-    this.numbers = Array(this.selected).fill(this.selected).map((x,i)=>i)
-    console.log(this.numbers)
-    
-  }
-
-}
-
-interface Members {
-  name: string;
-  role: string;
-  about: string;
 }
