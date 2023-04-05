@@ -82,9 +82,9 @@ const Chat = (props) => {
     if (msg.trim() !== "") {
       const message = {
         senderId: currentUser.id,
-        recipientId: "Nceba",
+        recipientId: activeContact.id,
         senderName: currentUser.name,
-        recipientName: "Nceba",
+        recipientName: activeContact.name,
         content: msg,
         timestamp: new Date(),
       };
