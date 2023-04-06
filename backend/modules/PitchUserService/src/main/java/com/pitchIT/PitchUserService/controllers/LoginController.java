@@ -86,4 +86,9 @@ public class LoginController {
         investorUser = userService.registerInvestorUserByEmail(investorUser);
         return investorUser;
     }
+
+    @GetMapping
+    public void getUserByEmail(@PathVariable String email){
+
+    }
 }

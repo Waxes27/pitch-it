@@ -31,12 +31,12 @@ public class PitchController {
 
     @GetMapping
     public ResponseEntity<List> getPitchesByUserId(@RequestParam String username){
-
-
         return restTemplate.getForEntity(
                 "http://pitch-service:10001/api/pitch?username="+username,
                 List.class);
     }
+
+
 
 
     

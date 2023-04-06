@@ -39,4 +39,8 @@ public class UserService implements UserDetailsService {
         System.out.println(investorUserRepository.save(investorUser));
         return investorUser;
     }
+
+    public void getUser(String email){
+
+    }
 }
