@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-membership-components',
@@ -6,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./membership-components.component.sass']
 })
 export class InvestorMembershipComponentsComponent implements OnInit {
-onSubmit() {
-  console.log("Submitting and redirecting");
   
-}
+  constructor(private route: Router,@Inject(DOCUMENT) private document: Document) { }
 
-  constructor() { }
+  onSubmit() {
+    console.log("Submitting and redirecting");
+    this.document.location.href = "https://buy.stripe.com/bIYaIscSJa2t3047ss";
+  }
 
   ngOnInit(): void {
   }

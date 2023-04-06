@@ -32,6 +32,7 @@ import { EnquireComponent } from "./components/enquire/enquire.component";
 import { EnquireFormComponent } from "./components/enquire-form/enquire-form.component";
 import { SettingsComponent } from "./pages/settings/settings.component";
 import { BusinessProfileComponent } from "./pages/profile-page/business-profile/business-profile.component";
+import { ChatComponent } from "./pages/chat/chat.component";
 
 const routes: Routes = [
   { path: "", title: "Welcome", component: LandingPageComponent },
@@ -127,6 +128,12 @@ const routes: Routes = [
     path: "enquire/form",
     title: "Patient Dash",
     component: EnquireFormComponent,
+  },
+
+  {
+    path: "chat",
+    title: "Time to chat",
+    component: ChatComponent,
   },
 
   {

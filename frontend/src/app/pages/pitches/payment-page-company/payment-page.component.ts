@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { DOCUMENT } from "@angular/common";
+import { Component, Inject, OnInit } from "@angular/core";
 import { FormGroup, FormControl } from "@angular/forms";
 
 @Component({
@@ -14,8 +15,12 @@ name: string = "";
   expiry: string = "";
 
 
-  constructor() {}
+  constructor(@Inject(DOCUMENT) private document: Document) {}
 
   ngOnInit(): void {}
+
+  platinum(){
+    this.document.location.href = "https://buy.stripe.com/6oE8Ak2e55Md6cg9AB"
+  }
 
 }
