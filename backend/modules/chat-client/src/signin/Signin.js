@@ -13,7 +13,7 @@ import "./Signin.css";
 
 const Signin = (props) => {
   const [loading, setLoading] = useState(false);
-  const [facebookLoading, setFacebookLoading] = useState(false);
+  const [facebookLoading, setFacebookLoading] = useState(false)local
   const [test, setTest] = useState(localStorage.getItem("accessToken"));
 
   useEffect(() => {

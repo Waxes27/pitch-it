@@ -1,4 +1,4 @@
-FROM openjdk:10-jre-slim
+FROM amazoncorretto:17.0.6-alpine
 
 VOLUME /tmp
 
