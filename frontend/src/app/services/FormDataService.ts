@@ -19,47 +19,48 @@ export class FormDataService {
 
   createObjectFromEntries() {
     const data = this.formDataSet;
-  
+    console.log(data);
+    
+
     const companyDetails = {
-      name: data[0].name,
-      registrationNumber: data[0].regNumber,
-      country: data[0].country,
-      registeredCompanyName: data[0].registeredCompanyName,
-      sector: data[0].sector,
-      businessGrowthStage: data[0].businessGrowthStage,
+      name: data[0].companyDetails.name,
+      registrationNumber: data[0].companyDetails.regNumber,
+      country: data[0].companyDetails.country,
+      registeredCompanyName: data[0].companyDetails.registeredCompanyName,
+      sector: data[0].companyDetails.sector,
+      businessGrowthStage: data[0].companyDetails.businessGrowthStage,
       socials: {
-        website: data[0].website,
-        instagram: data[0].instagram,
-        twitter: data[0].twitter,
-        facebook: data[0].facebook,
-        linkedin: data[0].linkedin
-      }
+        website: data[0].companyDetails.website,
+        instagram: data[0].companyDetails.instagram,
+        twitter: data[0].companyDetails.twitter,
+        facebook: data[0].companyDetails.facebook,
+        linkedin: data[0].companyDetails.linkedin,
+      },
     };
-  
+
     const businessDetails = {
-      product: data[1].product,
-      problemSolved: data[1].problemSolved,
-      businessModel: data[1].businessModel,
-      reasonForRaising: data[1].reasonForRaising
+      product: data[1].businessDetails.product,
+      problemSolved: data[1].businessDetails.problemSolved,
+      businessModel: data[1].businessDetails.businessModel,
+      reasonForRaising: data[1].businessDetails.reasonForRaising,
     };
-  
+
     const marketDetails = {
-      marketResearch: data[2].marketResearch,
-      keyCompetitors: data[2].keyCompetitors
+      memberList: [
+        {
+          marketResearch: data[2].marketDetails.marketResearch,
+          keyCompetitors: data[2].marketDetails.keyCompetitors,
+        },
+      ],
     };
-  
-    const memberDetails = {
-      
-    };
-  
-    const documents = data[4];
-  
+
+    const documents = {};
+
     return {
       companyDetails,
       businessDetails,
       marketDetails,
-      memberDetails,
-      documents
+      documents,
     };
   }
 }

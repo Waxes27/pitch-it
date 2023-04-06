@@ -3,8 +3,44 @@ $primary-color: #6F4FF2
 section
     padding: 30px
     color: white
+    .about-container
+        margin: 30px 30px
+        padding: 20px
+        background: rgba(0, 0, 0, 0.7)
+        border-radius: 10px
+        text-align: left
+        .about-size-toggle
+            color: white
+            padding: 5px
+            background: $primary-color
+            border: solid 1px $primary-color
+            border-radius: 5px
+        h2
+            font-weight: 600
+    .collapsed-about
+        height: 100px
+        p
+            text-overflow: ellipsis
+            white-space: nowrap
+            overflow: hidden
+        
+    .invest-history-container
+        margin: 30px 30px
+        padding: 20px
+        background: rgba(0, 0, 0, 0.7)
+        border-radius: 10px
+        text-align: left
+        .investment-info-container
+            display: flex
+            align-items: center
+            justify-content: center
+            .investment-image-container
+                margin: 20px 20px
+                img
+                    height: 100px
+                    width: 100px
+                    
     .profile-header
-        width: 100%
         display: flex
         flex-direction: column
         border-top-left-radius: 10px
@@ -53,3 +89,6 @@ section
                     justify-content: center
                     .location-icon
                         color: $primary-color
+    
+    
+   

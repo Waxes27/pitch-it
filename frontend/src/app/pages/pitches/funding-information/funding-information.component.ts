@@ -24,10 +24,13 @@ export class FundingInformationComponent {
 
   onSubmit() {
     let finalRequest = this.formDataService.createObjectFromEntries();
+
     console.log(finalRequest);
     
-    // this.http.post("http://localhost:8081/api/pitch?userId=waxes27", finalRequest).subscribe((data) => {
-    //   console.log(data);
-    // });
+    
+    
+    this.http.post("http://localhost:8081/api/pitch?userId=waxes27", finalRequest).subscribe((data) => {
+      console.log(data);
+    });
   }
 }
