@@ -135,12 +135,6 @@ const routes: Routes = [
   },
 
   {
-    path: "chat",
-    title: "Time to chat",
-    component: ChatComponent,
-  },
-
-  {
     path: "membership/investor",
     title: "Patient Dash",
     component: InvestorMembershipComponentsComponent,
