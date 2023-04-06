@@ -60,7 +60,7 @@ import { BillingSettingComponent } from './components/billing-setting/billing-se
 import { SecuritySettingsComponent } from './components/security-settings/security-settings.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { BusinessProfileComponent } from './pages/profile-page/business-profile/business-profile.component';
-import { ChatComponent } from './pages/chat/chat.component';
+import { FundingInformationComponent } from './pages/pitches/funding-information/funding-information.component';
 
 @NgModule({
   declarations: [
@@ -102,7 +102,7 @@ import { ChatComponent } from './pages/chat/chat.component';
     SecuritySettingsComponent,
     ContactUsComponent,
     BusinessProfileComponent,
-    ChatComponent,
+    FundingInformationComponent
   ],
   imports: [
     CurrencyMaskModule,

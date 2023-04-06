@@ -1,0 +1,18 @@
+<section>
+    <div class="pitch-demo-container">
+        <div>Pitch Face Example</div>
+        <div><img src="/assets/" alt=""></div>
+    </div>
+    
+    <div class="funding-info-container">
+        <form [formGroup]="fundingForm" (ngSubmit)="onSubmit()">
+            <label for="raise-amount">Maximum Raise Amount</label>
+            <input formControlName="raiseAmount" type="number" name="raise-amount" id="raise-amount" class="input">
+            <label for="equity-offered">Equity Offered for Max Raise Amount</label>
+            <input type="number" name="equity-offered" id="equity-offered" class="input">
+            <label for="trailer">The Trailer</label>
+            <textarea class="input" formControlName="trailer" name="trailer" id="trailer" cols="20" rows="10"></textarea>
+            <button type="submit">Continue</button>
+        </form>
+    </div>
+</section>

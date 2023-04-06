@@ -32,7 +32,7 @@ import { EnquireComponent } from "./components/enquire/enquire.component";
 import { EnquireFormComponent } from "./components/enquire-form/enquire-form.component";
 import { SettingsComponent } from "./pages/settings/settings.component";
 import { BusinessProfileComponent } from "./pages/profile-page/business-profile/business-profile.component";
-import { ChatComponent } from "./pages/chat/chat.component";
+import { FundingInformationComponent } from "./pages/pitches/funding-information/funding-information.component";
 
 const routes: Routes = [
   { path: "", title: "Welcome", component: LandingPageComponent },
@@ -114,7 +114,11 @@ const routes: Routes = [
     title: "Patient Dash",
     component: DocumentDetailsComponent,
   },
-
+  {
+    path: "pitch/new/funding-information",
+    title: "Funding Information",
+    component: FundingInformationComponent,
+  },
   {
     path: "booking/new",
     title: "Patient Dash",
@@ -154,7 +158,7 @@ const routes: Routes = [
   },
 
   { path: "payment", title: "Patient Dash", component: PaymentPageComponent },
-  {path: "settings", title: "Settings", component: SettingsComponent}
+  { path: "settings", title: "Settings", component: SettingsComponent },
 ];
 
 @NgModule({
