@@ -87,8 +87,8 @@ public class LoginController {
         return investorUser;
     }
 
-    @GetMapping
-    public void getUserByEmail(@PathVariable String email){
-
+    @GetMapping("/user/{email}")
+    public Object getUserByEmail(@PathVariable String email){
+        return userService.getUser(email).get();
     }
 }

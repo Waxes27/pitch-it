@@ -40,7 +40,13 @@ public class UserService implements UserDetailsService {
         return investorUser;
     }
 
-    public void getUser(String email){
-
+    public Optional getUser(String email){
+        if (investorUserRepository.findByEmail(email).isPresent()){
+            return investorUserRepository.findByEmail(email);
+        }else if (businessUserRepository.findByEmail(email).isPresent()){
+            return businessUserRepository.findByEmail(email);
+        }else {
+            throw new UsernameNotFoundException("Email not a business or investor");
+        }
     }
 }
