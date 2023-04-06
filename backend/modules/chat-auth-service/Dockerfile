@@ -1,6 +1,5 @@
 FROM openjdk:10-jre-slim
 
-LABEL maintainer="amrkhaledccd@hotmail.com"
 VOLUME /tmp
 
 EXPOSE 8080
