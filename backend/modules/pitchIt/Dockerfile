@@ -1,5 +1,5 @@
-#FROM openjdk:17.0.2
-#VOLUME /tmp
-#ADD ./target/pitchIt-0.0.1-SNAPSHOT.jar app.jar
-#ENV JAVA_OPTS=""
-#ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
+FROM openjdk:17.0.2
+VOLUME /tmp
+ADD ./target/pitchIt-0.0.1-SNAPSHOT.jar app.jar
+ENV JAVA_OPTS=""
+ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
