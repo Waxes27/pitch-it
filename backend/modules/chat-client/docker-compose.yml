@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  chat_client:
+    image: modules/chat-client:0.0.1-SNAPSHOT
+    ports:
+      - 3000:3000
