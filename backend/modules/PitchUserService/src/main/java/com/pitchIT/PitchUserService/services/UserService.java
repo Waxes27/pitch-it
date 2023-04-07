@@ -25,8 +25,10 @@ public class UserService implements UserDetailsService {
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        System.out.println(businessUserRepository.findByEmail(email));
-        return businessUserRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("Business email not found"));
+        if (businessUserRepository.findByEmail(email).isPresent()){
+            return businessUserRepository.findByEmail(email).get();
+        }
+        else {return investorUserRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("Business email not found"));}
     }
 
 
