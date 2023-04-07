@@ -18,18 +18,18 @@ services:
 #    ports:
 #      - 8761:8761
 # ----------------------------------------------------------------------------------------------------------------------------------
-  users:
-    image: modules/pitchuserservice:0.0.1-SNAPSHOT
-    volumes:
-      - ./config-data:/var/config-data
-    environment:
-      - JAVA_OPTS=
-        -DEUREKA_SERVER=http://discovery:8761/eureka
-        -Dspring.cloud.config.server.native.searchLocations=/var/config-data
-    depends_on:
-      - postgres
-    ports:
-      - "8081:8081"
+#  users:
+#    image: modules/pitchuserservice:0.0.1-SNAPSHOT
+#    volumes:
+#      - ./config-data:/var/config-data
+#    environment:
+#      - JAVA_OPTS=
+#        -DEUREKA_SERVER=http://discovery:8761/eureka
+#        -Dspring.cloud.config.server.native.searchLocations=/var/config-data
+#    depends_on:
+#      - postgres
+#    ports:
+#      - "8081:8081"
 
 
 
@@ -43,7 +43,7 @@ services:
     volumes:
       - ./config-data:/var/config-data
     depends_on:
-      - users
+#      - users
       - postgres
     ports:
       - "10001:10001"
@@ -58,7 +58,7 @@ services:
   mongo:
     image: mongo:latest
     ports:
-      - 27017:27017
+      - "27017:27017"
 
   #   environment:
   #     - MONGO_INITDB_ROOT_USERNAME=admin
@@ -99,5 +99,8 @@ services:
     ports:
       - "8017:8082"
     environment:
+
       - "LANG=en_US.UTF-8"
       - "LANGUAGE=en_US.UTF-8"
+    depends_on:
+      - mongo

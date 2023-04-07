@@ -1,5 +1,5 @@
-const AUTH_SERVICE = "http://chat_auth_services:8017";
-const CHAT_SERVICE = "http://chat_messaging:8018";
+const AUTH_SERVICE = "http://localhost:8017";
+const CHAT_SERVICE = "http://localhost:8018";
 
 const request = (options) => {
   const headers = new Headers();
