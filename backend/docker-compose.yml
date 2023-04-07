@@ -33,7 +33,7 @@ services:
 
 
 
-# ---------------------------------------------------------------------------------------------------------------------------------------------
+# # ---------------------------------------------------------------------------------------------------------------------------------------------
 
   pitch-service:
     image: modules/pitchservice:0.0.1-SNAPSHOT
@@ -47,3 +47,54 @@ services:
       - postgres
     ports:
       - "10001:10001"
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------
+# CHAT APPLICATION
+# ----------------------------------------------------------------------------------------------------------------------------------------------
+
+# ======================
+# CHAT MESSAGING SERVICE
+# ======================
+  mongo:
+    image: mongo:latest
+    expose:
+      - 27017
+  #   environment:
+  #     - MONGO_INITDB_ROOT_USERNAME=admin
+  #     - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=chatService
+  #   volumes:
+  #     - ./mongo-data:/data/db
+  chat_messaging:
+    depends_on:
+      - mongo
+    image: modules/chat-messaging:0.0.1-SNAPSHOT
+    ports:
+      - "8018:8080"
+    environment:
+      - "LANG=en_US.UTF-8"
+      - "LANGUAGE=en_US.UTF-8"
+      - SPRING_DATA_MONGODB_HOST=mongo
+      - SPRING_DATA_MONGODB_PORT=27017
+      - SPRING_DATA_MONGODB_DATABASE=chatService
+      # - SPRING_DATA_MONGODB_USERNAME=admin
+      # - SPRING_DATA_MONGODB_PASSWORD=password
+
+# ======================
+# CHAT CLIENT
+# ======================
+  chat_client:
+    image: modules/chat-client:0.0.1-SNAPSHOT
+    ports:
+      - 3000:3000
+
+# ======================
+# CHAT AUTH SERVICE
+# ======================
+  chat_auth_services:
+    image: modules/chat-auth-service:0.0.1-SNAPSHOT
+    ports:
+      - "8017:8082"
+    environment:
+      - "LANG=en_US.UTF-8"
+      - "LANGUAGE=en_US.UTF-8"
