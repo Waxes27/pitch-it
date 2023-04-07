@@ -8,8 +8,8 @@ export class BusinessUserModel implements IUser{
     role: string
 
     constructor(data?: any) {
-        this.lastName = data.representativeFirstName;
-        this.firstName = data.representativeLastName;
+        this.lastName = data.representativeLastName;
+        this.firstName = data.representativeFirstName;
         this.role = data.role;
         this.location = "UK";
         this.about = data.about;
@@ -28,7 +28,7 @@ export class BusinessUserModel implements IUser{
     }
 
     getFirstName(): string {
-        return this.role;
+        return this.firstName;
     }
 
     getLastName(): string {

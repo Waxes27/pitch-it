@@ -30,7 +30,6 @@ export class BusinessProfileComponent implements OnInit {
         { withCredentials: true }
       )
       .subscribe((data: any):void => {
-        console.log(data)
         if(data.role.toLowerCase() === "investor"){
           this.user = new InvestorUserModel(data);
         }else{

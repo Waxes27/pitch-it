@@ -13,7 +13,7 @@ export class InvestorUserModel implements IUser{
       this.firstName = data.firstName;
       this.lastName = data.lastName;
       this.role = data.role;
-      this.location = data.location;
+      this.location = "UK";
       this.about = data.about;
     } else {
       this.firstName = "";
