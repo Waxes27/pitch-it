@@ -30,7 +30,7 @@ public class AuthEndpoint {
     @Autowired private UserService userService;
     @Autowired private FacebookService facebookService;
 
-    @CrossOrigin(origins = "*", allowCredentials = "true")
+    @CrossOrigin(origins = "*")
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
         System.out.println(loginRequest.getUsername());
@@ -45,7 +45,7 @@ public class AuthEndpoint {
         return ResponseEntity.ok(new JwtAuthenticationResponse(token));
     }
 
-    @CrossOrigin(origins = "*", allowCredentials = "true")
+    @CrossOrigin(origins = "*")
     @PostMapping(value = "/users", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> createUser(@Valid @RequestBody SignUpRequest payload) {
         log.info("creating user {}", payload.getUsername());
