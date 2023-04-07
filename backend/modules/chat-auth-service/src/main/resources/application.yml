@@ -11,7 +11,7 @@ spring:
   main:
     allow-circular-references:
       true
-  server:
+server:
   port: 8017
       
 security:

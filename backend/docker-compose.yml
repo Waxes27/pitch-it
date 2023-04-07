@@ -18,18 +18,18 @@ services:
 #    ports:
 #      - 8761:8761
 # ----------------------------------------------------------------------------------------------------------------------------------
-#  users:
-#    image: modules/pitchuserservice:0.0.1-SNAPSHOT
-#    volumes:
-#      - ./config-data:/var/config-data
-#    environment:
-#      - JAVA_OPTS=
-#        -DEUREKA_SERVER=http://discovery:8761/eureka
-#        -Dspring.cloud.config.server.native.searchLocations=/var/config-data
-#    depends_on:
-#      - postgres
-#    ports:
-#      - "8081:8081"
+  users:
+    image: modules/pitchuserservice:0.0.1-SNAPSHOT
+    volumes:
+      - ./config-data:/var/config-data
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://discovery:8761/eureka
+        -Dspring.cloud.config.server.native.searchLocations=/var/config-data
+    depends_on:
+      - postgres
+    ports:
+      - "8081:8081"
 
 
 
@@ -71,7 +71,7 @@ services:
       - mongo
     image: modules/chat-messaging:0.0.1-SNAPSHOT
     ports:
-      - "8018:8080"
+      - "8018:8018"
     environment:
       - "LANG=en_US.UTF-8"
       - "LANGUAGE=en_US.UTF-8"
@@ -97,7 +97,7 @@ services:
   chat_auth_services:
     image: modules/chat-auth-service:0.0.1-SNAPSHOT
     ports:
-      - "8017:8082"
+      - "8017:8017"
     environment:
 
       - "LANG=en_US.UTF-8"
