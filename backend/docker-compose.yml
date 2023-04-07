@@ -57,12 +57,13 @@ services:
 # ======================
   mongo:
     image: mongo:latest
-    expose:
-      - 27017
+    ports:
+      - 27017:27017
+
   #   environment:
   #     - MONGO_INITDB_ROOT_USERNAME=admin
   #     - MONGO_INITDB_ROOT_PASSWORD=password
-      - MONGO_INITDB_DATABASE=chatService
+#      - MONGO_INITDB_DATABASE=chatService
   #   volumes:
   #     - ./mongo-data:/data/db
   chat_messaging:
@@ -87,6 +88,8 @@ services:
     image: modules/chat-client:0.0.1-SNAPSHOT
     ports:
       - 3000:3000
+    depends_on:
+      - chat_messaging
 
 # ======================
 # CHAT AUTH SERVICE
