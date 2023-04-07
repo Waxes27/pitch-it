@@ -23,20 +23,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
         return new CorsFilter(source);
     }
 
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-    return new WebMvcConfigurer() {
-        @Override
-        public void addCorsMappings(CorsRegistry registry) {
-            registry.addMapping("/chat/**")
-                    .allowedOriginPatterns("http://localhost")
-                    .allowedMethods("GET", "POST")
-                    .allowCredentials(true);
-        }
-    };
-
-
-}
+//    @Bean
+//    public WebMvcConfigurer corsConfigurer() {
+//    return new WebMvcConfigurer() {
+//        @Override
+//        public void addCorsMappings(CorsRegistry registry) {
+//            registry.addMapping("/chat/**")
+//                    .allowedOriginPatterns("http://localhost")
+//                    .allowedMethods("GET", "POST")
+//                    .allowCredentials(true);
+//        }
+//    };
+//
+//}
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**").allowedMethods("*");

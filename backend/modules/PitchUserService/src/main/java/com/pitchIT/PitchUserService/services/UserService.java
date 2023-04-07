@@ -39,24 +39,28 @@ public class UserService implements UserDetailsService {
 
 
     public PitchBusinessUser registerBusinessUserByEmail(PitchBusinessUser pitchBusinessUser){
+        this.checkUser(pitchBusinessUser.getEmail());
+
         System.out.println(businessUserRepository.save(pitchBusinessUser));
         return pitchBusinessUser;
     }
 
     public PitchInvestorUser registerInvestorUserByEmail(PitchInvestorUser investorUser) {
+        this.checkUser(investorUser.getEmail());
+
         InvestmentHistory investmentHistory = new InvestmentHistory(
                 investorUser
         );
-        Map investments = new HashMap();
-
         investorUser.setInvestmentHistory(investmentHistory);
         investmentHistory.setPitchInvestorUser(investorUser);
-//        investments.setInvestmentHistory(investmentHistory);
-
-//        investmentsRepository.save(investments);
         investmentHistoryRepository.save(investmentHistory);
-//        investorUserRepository.save(investorUser);
         return investorUserRepository.save(investorUser);
+    }
+
+    private void checkUser(String email) {
+        if (investorUserRepository.findByEmail(email).isPresent() || businessUserRepository.findByEmail(email).isPresent()){
+            throw new IllegalStateException("User already Registered");
+        }
     }
 
     public Optional getUser(String email){
