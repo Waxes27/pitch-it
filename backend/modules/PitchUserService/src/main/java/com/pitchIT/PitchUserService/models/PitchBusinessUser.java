@@ -28,6 +28,7 @@ public class PitchBusinessUser implements UserDetails {
     private UserRoles role;
     private String email;
     private String password;
+    private String about;
 
     /**
      * Returns the authorities granted to the user. Cannot return <code>null</code>.
