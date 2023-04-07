@@ -24,6 +24,7 @@
     "@syncfusion/ej2-material-theme": "~20.4.48",
     "angular-credit-card": "^0.1.4",
     "ng2-currency-mask": "^13.0.3",
+    "ngx-cookie-service": "^15.0.0",
     "payment": "^2.4.6",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

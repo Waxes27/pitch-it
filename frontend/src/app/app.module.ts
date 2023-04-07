@@ -61,6 +61,7 @@ import { SecuritySettingsComponent } from './components/security-settings/securi
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { BusinessProfileComponent } from './pages/profile-page/business-profile/business-profile.component';
 import { FundingInformationComponent } from './pages/pitches/funding-information/funding-information.component';
+import { CookieService } from "ngx-cookie-service";
 
 @NgModule({
   declarations: [
@@ -127,10 +128,13 @@ import { FundingInformationComponent } from './pages/pitches/funding-information
     MatCardModule,
     MatDatepickerModule,
     MatExpansionModule,
-    MatSliderModule
+    MatSliderModule,
+    
     // TextBoxModule, NumericTextBoxModule, MaskedTextBoxModule, SliderModule, UploaderModule, ColorPickerModule, SignatureModule, RatingModule
   ],
-  providers: [],
+  providers: [
+    CookieService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

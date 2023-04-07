@@ -1,19 +1,19 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
-import { UserModel } from "../models/User";
+import { InvestorUserModel } from "../models/InvestorUser";
 
 @Injectable({
   providedIn: "root",
 })
 export class UserDataService {
-  private currentUser: UserModel = new UserModel();
-  private userData = new BehaviorSubject<UserModel>(this.currentUser);
+  private currentUser: InvestorUserModel = new InvestorUserModel();
+  private userData = new BehaviorSubject<InvestorUserModel>(this.currentUser);
   currentData = this.userData.asObservable();
 
 
   updateUser(data?: any){
-    this.currentUser = new UserModel(data);
+    this.currentUser = new InvestorUserModel(data);
     this.userData.next(this.currentUser)
   }
 }

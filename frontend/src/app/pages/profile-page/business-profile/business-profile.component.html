@@ -8,7 +8,7 @@
         </div>
         <div class="title-container">
           <span class="name">{{user.getFirstName()}} {{user.getLastName()}}</span><br />
-          <span class="title">{{user.getTitle()}}</span>
+          <span class="title">{{user.getRole()}}</span>
         </div>
       </div>
 
@@ -41,6 +41,7 @@
         id="about-info"
         cols="50"
         rows="10"
+        placeholder="Input you new about"
       ></textarea>
       <button type="submit">Done</button>
     </form>
@@ -76,7 +77,7 @@
     </div>
   </div>
 
-  <div class="invest-history-container">
+  <div class="invest-history-container" *ngIf="isInvestor">
     <h2>Investment History</h2>
     <div class="investment-info-container">
       <div class="investment-image-container">

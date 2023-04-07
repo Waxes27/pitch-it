@@ -1,8 +1,10 @@
-import { HttpClient } from "@angular/common/http";
-import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { UserModel } from "src/app/models/User";
-import { UserDataService } from "src/app/services/UserDataService";
+import {HttpClient} from "@angular/common/http";
+import {Component, OnInit} from "@angular/core";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {CookieService} from "ngx-cookie-service";
+import {InvestorUserModel} from "src/app/models/InvestorUser";
+import {IUser} from "../../../models/IUser";
+import {BusinessUserModel} from "../../../models/BusinessUserModel";
 
 @Component({
   selector: "app-business-profile",
@@ -12,16 +14,31 @@ import { UserDataService } from "src/app/services/UserDataService";
 export class BusinessProfileComponent implements OnInit {
   readMore: boolean = true;
   creatingAbout: boolean = false;
-  user: UserModel = new UserModel();
-  aboutForm = new FormGroup({
+  isInvestor: boolean = false;
+  user: IUser = new InvestorUserModel();
+  aboutForm: FormGroup = new FormGroup({
     about: new FormControl("", [<any>Validators.required]),
   });
-  constructor(private http: HttpClient, private userService: UserDataService) {}
+  constructor(private http: HttpClient, private cookies: CookieService) {}
+
+  
 
   ngOnInit(): void {
-    this.userService.currentData.subscribe((data) => {
-      this.user = data;
-    });
+    this.http
+      .get(
+        `http://102.221.36.216:8081/user/${this.cookies.get("userEmail")}`,
+        { withCredentials: true }
+      )
+      .subscribe((data: any):void => {
+        console.log(data)
+        if(data.role.toLowerCase() === "investor"){
+          this.user = new InvestorUserModel(data);
+        }else{
+          this.user = new BusinessUserModel(data);
+        }
+
+        this.isInvestor = this.user.role.toLowerCase() === "investor";
+      });
   }
 
   readMoreClick() {
@@ -44,7 +61,7 @@ export class BusinessProfileComponent implements OnInit {
       about: formData.about,
     };
     this.http
-      .post("http://localhost:8081/profile/new", body)
+      .post("http://102.221.36.216:8081/profile/new", body)
       .subscribe((data) => {
         console.log(data);
       });

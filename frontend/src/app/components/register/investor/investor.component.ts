@@ -43,7 +43,7 @@ export class InvestorComponent implements OnInit {
     };
 
     this.http
-      .post("http://localhost:8081/register/investor", body)
+      .post("http://102.221.36.216:8081/register/investor", body, {withCredentials: true})
       .subscribe((data) => {
         console.log(data);
         this.router.navigate(["membership/investor"])

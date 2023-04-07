@@ -59,7 +59,7 @@ export class BusinessComponent implements OnInit {
       this.registrationForm.get("confirmedPassword")?.value;
     if (body && passowrdsMatch) {
       this.http
-        .post("http://localhost:8081/register/business", body)
+        .post("http://102.221.36.216:8081/register/business", body, {withCredentials: true})
         .subscribe(
           (data: object) => {
             console.log(data);
