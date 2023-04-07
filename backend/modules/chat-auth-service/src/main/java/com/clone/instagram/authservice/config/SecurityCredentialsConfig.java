@@ -5,6 +5,7 @@ import com.clone.instagram.authservice.service.JwtTokenProvider;
 import com.clone.instagram.authservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
@@ -22,6 +23,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.Arrays;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -43,7 +45,7 @@ public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .cors().and()
+                .cors().disable()
                 .csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
@@ -53,7 +55,7 @@ public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/signin").permitAll()
                 .antMatchers(HttpMethod.POST, "/facebook/signin").permitAll()
-                .antMatchers(HttpMethod.POST, "/users").anonymous()
+                .antMatchers(HttpMethod.POST, "/users").permitAll()
                 .anyRequest().authenticated();
     }
 
@@ -90,5 +92,19 @@ public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter {
         config.addAllowedMethod("PATCH");
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
+    }
+    @Configuration
+    public class CorsConfig {
+
+        @Bean
+        public CorsFilter corsFilter() {
+            UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+            CorsConfiguration config = new CorsConfiguration();
+            config.setAllowedOrigins(Arrays.asList("**"));
+            config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
+            config.setAllowedHeaders(Arrays.asList("*"));
+            source.registerCorsConfiguration("/**", config);
+            return new CorsFilter(source);
+        }
     }
 }
