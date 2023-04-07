@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class InstaUserDetailsService implements UserDetailsService {
 
-    @Autowired
+//    @Autowired
     private UserService userService;
 
     @Override
