@@ -1,24 +1,9 @@
 version: '3.8'
 services:
-  mongo:
-    image: mongo:latest
-    ports:
-      - "27017:27017"
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=password
-    volumes:
-      - ./mongo-data:/data/db
-
   chat_auth_services:
     image: modules/chat-auth-service:0.0.1-SNAPSHOT
     ports:
       - "8081:8082"
-    depends_on:
-      - mongo
     environment:
-      - SPRING_DATA_MONGODB_HOST=mongo
-      - SPRING_DATA_MONGODB_PORT=27017
-      - SPRING_DATA_MONGODB_DATABASE=instaclone_auth
-      - SPRING_DATA_MONGODB_USERNAME=admin
-      - SPRING_DATA_MONGODB_PASSWORD=password
+      - "LANG=en_US.UTF-8"
+      - "LANGUAGE=en_US.UTF-8"

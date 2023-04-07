@@ -1,8 +1,8 @@
-FROM amazoncorretto:17.0.6-alpine
+FROM openjdk:17.0.2
 
 VOLUME /tmp
 
-EXPOSE 8080
+EXPOSE 8081
 
 ARG JAR_FILE=target/auth-service-0.0.1-SNAPSHOT.jar
 
