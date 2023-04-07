@@ -10,7 +10,7 @@ import { FormDataService } from 'src/app/services/FormDataService';
 })
 export class MarketDetailsComponent implements OnInit {
 
-  marketDetailsForm = new FormGroup({
+  memberDetailsForm = new FormGroup({
     marketResearch: new FormControl('',[<any>Validators.required]),
     advantages: new FormControl('', [<any>Validators.required]),
   });
@@ -22,7 +22,7 @@ export class MarketDetailsComponent implements OnInit {
 
   onSubmit() {
     let data = {
-      marketDetails: this.marketDetailsForm.value
+      marketDetails: this.memberDetailsForm.value
     }
 
     this.formDataService.updateData(data);

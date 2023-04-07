@@ -24,7 +24,7 @@ export class FundingInformationComponent {
 
   onSubmit() {
     let finalRequest = this.formDataService.createObjectFromEntries();
-
+    console.log(this.formDataService.currentData)
     console.log(finalRequest);
     
     

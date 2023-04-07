@@ -23,11 +23,11 @@ export class FormDataService {
 
     const companyDetails = {
       name: data[0].companyDetails.name,
-      registrationNumber: data[0].companyDetails.regNumber,
+      registrationNumber: data[0].companyDetails.registrationNumber,
       country: data[0].companyDetails.country,
-      registeredCompanyName: data[0].companyDetails.registeredCompanyName,
+      registeredCompanyName: data[0].companyDetails.companyName,
       sector: data[0].companyDetails.sector,
-      businessGrowthStage: data[0].companyDetails.businessGrowthStage,
+      businessGrowthStage: data[0].companyDetails.growthStage,
       socials: {
         website: data[0].companyDetails.website,
         instagram: data[0].companyDetails.instagram,
@@ -41,17 +41,17 @@ export class FormDataService {
       product: data[1].businessDetails.product,
       problemSolved: data[1].businessDetails.problemSolved,
       businessModel: data[1].businessDetails.businessModel,
-      reasonForRaising: data[1].businessDetails.reasonForRaising,
+      reasonForRaising: data[1].businessDetails.raising,
     };
 
     const marketDetails = {
-      memberList: [
-        {
-          marketResearch: data[2].marketDetails.marketResearch,
-          keyCompetitors: data[2].marketDetails.keyCompetitors,
-        },
-      ],
-    };
+      marketResearch: data[2].marketDetails.marketResearch,
+      keyCompetitors: data[2].marketDetails.advantages,
+    }
+
+    const memberDetails = {
+      memberList: data[3].memberDetails.memberList
+    }
 
     const documents = {};
 
@@ -59,6 +59,7 @@ export class FormDataService {
       companyDetails,
       businessDetails,
       marketDetails,
+      memberDetails,
       documents,
     };
   }
