@@ -21,6 +21,8 @@ export class BusinessProfileComponent implements OnInit {
     this.http
       .get<UserModel>("http://localhost:8081/user/a@gmail.com")
       .subscribe((data) => {
+        console.log(data);
+        
         this.user = data;
       });
   }

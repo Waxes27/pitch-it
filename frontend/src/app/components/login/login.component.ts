@@ -27,10 +27,13 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     let formData = {
       username: this.loginForm.get("username")?.value,
-      passwird: this.loginForm.get("password")?.value,
+      password: this.loginForm.get("password")?.value,
     };
+
+    console.log(formData);
+    
     this.http
-      .post("http://localhost:8080/api/business/sign-in", formData)
+      .post(`http://localhost:8081/login?username=${formData.username}.com&password=${formData.password}`, formData)
       .subscribe((data) => {
         console.log(data);
       });
