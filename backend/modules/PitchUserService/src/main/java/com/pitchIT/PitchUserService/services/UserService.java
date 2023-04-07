@@ -1,6 +1,7 @@
 package com.pitchIT.PitchUserService.services;
 
 
+import com.pitchIT.PitchUserService.models.InvestmentHistory;
 import com.pitchIT.PitchUserService.models.PitchBusinessUser;
 import com.pitchIT.PitchUserService.models.PitchInvestorUser;
 import com.pitchIT.PitchUserService.repositories.BusinessUserRepository;
@@ -38,7 +39,10 @@ public class UserService implements UserDetailsService {
     }
 
     public PitchInvestorUser registerInvestorUserByEmail(PitchInvestorUser investorUser) {
-        System.out.println(investorUserRepository.save(investorUser));
+        InvestmentHistory investmentHistory = new InvestmentHistory();
+        investmentHistory.setPitchInvestorUser(investorUser);
+        investorUser.setInvestmentHistory(investmentHistory);
+        investorUserRepository.save(investorUser);
         return investorUser;
     }
 
