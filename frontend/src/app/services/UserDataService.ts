@@ -1,3 +1,4 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { UserModel } from "../models/User";
@@ -6,12 +7,13 @@ import { UserModel } from "../models/User";
   providedIn: "root",
 })
 export class UserDataService {
-  private currentUser: UserModel = new UserModel;
+  private currentUser: UserModel = new UserModel();
   private userData = new BehaviorSubject<UserModel>(this.currentUser);
   currentData = this.userData.asObservable();
 
+
   updateUser(data?: any){
-    console.log(data);
     this.currentUser = new UserModel(data);
+    this.userData.next(this.currentUser)
   }
 }

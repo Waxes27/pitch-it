@@ -1,41 +1,45 @@
 export class UserModel {
-  private name;
+  private firstName;
+  private lastName;
   private title;
   private location;
   private about?;
   constructor(data?: any) {
     if (data) {
-      this.name = data.name;
+      this.firstName = data.firstName;
+      this.lastName = data.lastName;
       this.title = data.title;
       this.location = data.location;
       this.about = data.about;
     } else {
-      this.name = "";
+      this.firstName = "";
       this.title = "";
       this.location = "";
       this.about = "";
     }
   }
 
-  
   public setAbout(v?: string) {
     this.about = v;
   }
-  
 
-  getName(){
-    return this.name;
+  getFirstName() {
+    return this.firstName;
   }
 
-  getTitle(){
+  getLastName(){
+    return this.lastName;
+  }
+
+  getTitle() {
     return this.title;
   }
 
-  getLocation(){
+  getLocation() {
     return this.location;
   }
 
-  getAbout(){
+  getAbout() {
     return this.about;
   }
 }

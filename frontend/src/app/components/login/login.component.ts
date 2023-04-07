@@ -31,21 +31,19 @@ export class LoginComponent implements OnInit {
       username: this.loginForm.get("username")?.value,
       password: this.loginForm.get("password")?.value,
     };
-
-    console.log(formData);
     
     this.http
       .post(`http://localhost:8081/login?username=${formData.username}&password=${formData.password}`, formData)
       .subscribe((data: any) => {
         let userData = {
-          name: data.firstName,
+          firstName: data.firstName,
+          lastName: data.lastName,
           title: data.role,
           location: "UK",
-          about: data.about
+          about: ""
         }
         this.userService.updateUser(userData)
-        console.log(this.userService.currentData);
-        
+
         this.router.navigate(["/home"])
       });
   }

@@ -19,9 +19,9 @@ export class BusinessProfileComponent implements OnInit {
   constructor(private http: HttpClient, private userService: UserDataService) {}
 
   ngOnInit(): void {
-   this.userService.currentData.subscribe(data => {
-    this.user = data;
-   })
+    this.userService.currentData.subscribe((data) => {
+      this.user = data;
+    });
   }
 
   readMoreClick() {
@@ -39,5 +39,14 @@ export class BusinessProfileComponent implements OnInit {
     };
     this.user.setAbout(formData.about!);
     this.creatingAbout = !this.creatingAbout;
+
+    let body = {
+      about: formData.about,
+    };
+    this.http
+      .post("http://localhost:8081/profile/new", body)
+      .subscribe((data) => {
+        console.log(data);
+      });
   }
 }

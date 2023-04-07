@@ -13,7 +13,6 @@ export class FormDataService {
 
   updateData(data: any) {
     this.formDataSet.push(data);
-
     this.formData.next(this.formDataSet);
   }
 
