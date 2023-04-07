@@ -23,10 +23,6 @@ export class BusinessComponent implements OnInit {
   registrationForm = new FormGroup({
     name: new FormControl("", [<any>Validators.required]),
     surname: new FormControl("", [<any>Validators.required]),
-    DOB: new FormControl("", [
-      <any>Validators.required,
-      Validators.pattern(""),
-    ]),
     username: new FormControl("", [
       <any>Validators.required,
       <any>Validators.minLength(6),
@@ -44,7 +40,7 @@ export class BusinessComponent implements OnInit {
       <any>Validators.required,
       <any>Validators.minLength(8),
     ]),
-    role: new FormControl(""),
+    businessRole: new FormControl("", [<any>Validators.required]),
   });
 
   onSubmit() {
@@ -52,23 +48,11 @@ export class BusinessComponent implements OnInit {
       businessName: this.registrationForm.get("name")?.value,
       representativeFirstName: this.registrationForm.get("name")?.value,
       representativeLastName: this.registrationForm.get("surname")?.value,
-      businessRole: "CEO",
+      businessRole: this.registrationForm.get("businessRole")?.value,
       email: this.registrationForm.get("email")?.value,
       password: this.registrationForm.get("password")?.value,
-      // DOB: "03/05/2023",
-      // username: "babs",
-      // confirmedPassword: this.registrationForm.get("confirmedPassword")?.value,
     };
 
-    let httpHeaders = new HttpHeaders({
-      "Content-Type": "application/json",
-    });
-
-    let options = {
-      headers: httpHeaders,
-      responseType: 'json',
-
-    }
 
     let passowrdsMatch: boolean =
       this.registrationForm.get("password")?.value ===
