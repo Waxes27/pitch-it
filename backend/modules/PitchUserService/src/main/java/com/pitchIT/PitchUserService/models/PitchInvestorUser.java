@@ -1,6 +1,7 @@
 package com.pitchIT.PitchUserService.models;
 
 import com.pitchIT.PitchUserService.enums.UserRoles;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -30,6 +31,8 @@ public class PitchInvestorUser implements UserDetails {
     private String about;
 
 
+    @OneToOne(mappedBy = "pitchInvestorUser", cascade = CascadeType.ALL, orphanRemoval = true)
+    private InvestmentHistory investmentHistory;
 
     /**
      * Returns the authorities granted to the user. Cannot return <code>null</code>.
@@ -117,6 +120,7 @@ public class PitchInvestorUser implements UserDetails {
         this.role = investorRole;
         this.email = email;
         this.password = password;
+        this.investmentHistory = new InvestmentHistory();
     }
 
 
