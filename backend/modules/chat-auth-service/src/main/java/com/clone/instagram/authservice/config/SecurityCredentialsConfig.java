@@ -1,6 +1,7 @@
 package com.clone.instagram.authservice.config;
 
-
+import com.clone.instagram.authservice.config.JwtConfig;
+import com.clone.instagram.authservice.config.JwtTokenAuthenticationFilter;
 import com.clone.instagram.authservice.service.JwtTokenProvider;
 import com.clone.instagram.authservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ import java.util.Arrays;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter {
+public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter implements WebMvcConfigurer {
 
     @Autowired
     private UserDetailsService userDetailsService;
@@ -42,7 +43,6 @@ public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserService userService;
-
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -57,7 +57,7 @@ public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/signin").permitAll()
                 .antMatchers(HttpMethod.POST, "/facebook/signin").permitAll()
-                .antMatchers(HttpMethod.POST, "/users").permitAll()
+                .antMatchers(HttpMethod.POST, "/users").anonymous()
                 .anyRequest().authenticated();
     }
 
@@ -78,43 +78,19 @@ public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
-//    @Bean
-//    public CorsFilter corsFilter() {
-//        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//        final CorsConfiguration config = new CorsConfiguration();
-//        config.setAllowCredentials(true);
-//        config.addAllowedOrigin("*");
-//        config.addAllowedHeader("*");
-//        config.addAllowedMethod("OPTIONS");
-//        config.addAllowedMethod("HEAD");
-//        config.addAllowedMethod("GET");
-//        config.addAllowedMethod("PUT");
-//        config.addAllowedMethod("POST");
-//        config.addAllowedMethod("DELETE");
-//        config.addAllowedMethod("PATCH");
-//        source.registerCorsConfiguration("/**", config);
-//        return new CorsFilter(source);
-//    }
-    @Configuration
-    public class CorsConfig {
-
-        @Bean
-        public CorsFilter corsFilter() {
-            UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-            CorsConfiguration config = new CorsConfiguration();
-            config.setAllowedOrigins(Arrays.asList("*"));
-            config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
-            config.setAllowedHeaders(Arrays.asList("*"));
-            source.registerCorsConfiguration("/**", config);
-            return new CorsFilter(source);
-        }
+    @Bean
+    public CorsFilter corsFilter() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        CorsConfiguration config = new CorsConfiguration();
+        config.setAllowedOrigins(Arrays.asList("*"));
+        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
+        config.setAllowedHeaders(Arrays.asList("*"));
+        source.registerCorsConfiguration("/**", config);
+        return new CorsFilter(source);
     }
-    @Configuration
-    public class WebConfiguration implements WebMvcConfigurer {
 
-        @Override
-        public void addCorsMappings(CorsRegistry registry) {
-            registry.addMapping("/**").allowedMethods("*");
-        }
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**").allowedMethods("*");
     }
 }

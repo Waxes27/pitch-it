@@ -34,7 +34,7 @@ public class AuthEndpoint {
 //    @CrossOrigin
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
-        System.out.println(loginRequest.getUsername());
+        System.out.println(loginRequest);
         String token = userService.loginUser(loginRequest.getUsername(), loginRequest.getPassword());
         return ResponseEntity.ok(new JwtAuthenticationResponse(token));
     }

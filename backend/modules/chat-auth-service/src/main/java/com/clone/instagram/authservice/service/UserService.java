@@ -27,10 +27,10 @@ public class UserService {
 
 
     public String loginUser(String username, String password) {
+        System.out.println("AUTH starts");
        Authentication authentication = authenticationManager
                .authenticate(new UsernamePasswordAuthenticationToken(username, password));
-        System.out.println(authentication.getPrincipal());
-
+        System.out.println("AUTHENTICATION: "+authentication);
        return tokenProvider.generateToken(authentication);
     }
 

@@ -1,12 +1,15 @@
 spring:
   data:
     mongodb:
-      host: mongo
+#      host: mongo
       database: instaclone_auth
       port: 27017
     embedded:
       version: 3.2.22
-
+  jpa:
+    hibernate:
+      ddl-auto:
+        create-drop
 
   main:
     allow-circular-references:
