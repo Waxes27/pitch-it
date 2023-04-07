@@ -29,6 +29,7 @@ public class UserService {
     public String loginUser(String username, String password) {
        Authentication authentication = authenticationManager
                .authenticate(new UsernamePasswordAuthenticationToken(username, password));
+        System.out.println(authentication.getPrincipal());
 
        return tokenProvider.generateToken(authentication);
     }
