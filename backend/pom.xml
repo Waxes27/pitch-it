@@ -29,6 +29,7 @@
 <!--		<module>modules/pitchIt</module>-->
 		<module>modules/PitchUserService</module>
 		<module>modules/chat-messaging</module>
+		<module>modules/chat-auth-service</module>
 	</modules>
 
 	<dependencyManagement>
