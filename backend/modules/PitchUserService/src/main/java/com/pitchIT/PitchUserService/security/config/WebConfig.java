@@ -20,16 +20,17 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("*")
-                .allowedMethods("*");
+                .allowedOrigins("http://localhost:4200")
+                .allowedMethods("*")
+                .allowCredentials(true);
     }
 
     @Bean
     public FilterRegistrationBean<CorsFilter> simpleCorsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        // config.setAllowCredentials(true);
-        config.setAllowedOrigins(Collections.singletonList("*"));
+         config.setAllowCredentials(true);
+        config.setAllowedOriginPatterns(Collections.singletonList("http://localhost:4200"));
         config.setAllowedMethods(Collections.singletonList("*"));
         config.setAllowedHeaders(Collections.singletonList("*"));
         source.registerCorsConfiguration("/**", config);

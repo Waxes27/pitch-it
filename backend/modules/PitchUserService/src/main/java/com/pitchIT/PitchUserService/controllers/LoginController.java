@@ -5,21 +5,20 @@ import com.pitchIT.PitchUserService.enums.UserRoles;
 import com.pitchIT.PitchUserService.models.PitchBusinessUser;
 import com.pitchIT.PitchUserService.models.PitchInvestorUser;
 import com.pitchIT.PitchUserService.requests.BusinessRegisterRequest;
+import com.pitchIT.PitchUserService.requests.InvestmentHistoryRequest;
 import com.pitchIT.PitchUserService.requests.InvestorRegisterRequest;
 import com.pitchIT.PitchUserService.security.PasswordEncoder;
 import com.pitchIT.PitchUserService.services.UserService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 public class LoginController {
@@ -89,8 +88,26 @@ public class LoginController {
 
     @GetMapping("/user/{email}")
     public Object getUserByEmail(@PathVariable String email){
-        JSONObject jsonObject = new JSONObject(userService.getUser(email).get());
-
-        return jsonObject.toMap();
+        return userService.getUser(email).get();
     }
+
+    @PostMapping("/about/{email}")
+    public Object updateAbout(@PathVariable String email, @RequestBody Map about){
+        return userService.updateAbout(email,about.get("about").toString());
+    }
+
+    @PutMapping("/investment-history/{email}/")
+    public PitchInvestorUser postInvestmentHistory(@RequestBody InvestmentHistoryRequest investmentHistoryRequest, @PathVariable String email){
+        Map<String,String> investment = new HashMap<>();
+
+        investment.put("company",investmentHistoryRequest.company());
+        investment.put("link",investmentHistoryRequest.link());
+        investment.put("description",investmentHistoryRequest.description());
+        investment.put("fromYear", investmentHistoryRequest.fromYear());
+        investment.put("toYear",investmentHistoryRequest.toYear());
+
+
+        return userService.addToInvestmentHistoryByUser(email,investment);
+    }
+
 }

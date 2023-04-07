@@ -5,6 +5,7 @@ import com.pitchIT.PitchUserService.models.InvestmentHistory;
 import com.pitchIT.PitchUserService.models.PitchBusinessUser;
 import com.pitchIT.PitchUserService.models.PitchInvestorUser;
 import com.pitchIT.PitchUserService.repositories.BusinessUserRepository;
+import com.pitchIT.PitchUserService.repositories.InvestmentHistoryRepository;
 import com.pitchIT.PitchUserService.repositories.InvestorUserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,7 +14,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
+import java.util.function.Supplier;
 
 @Service
 @AllArgsConstructor
@@ -21,6 +25,7 @@ public class UserService implements UserDetailsService {
 
     BusinessUserRepository businessUserRepository;
     InvestorUserRepository investorUserRepository;
+    InvestmentHistoryRepository investmentHistoryRepository;
 
 
     @Override
@@ -39,11 +44,19 @@ public class UserService implements UserDetailsService {
     }
 
     public PitchInvestorUser registerInvestorUserByEmail(PitchInvestorUser investorUser) {
-        InvestmentHistory investmentHistory = new InvestmentHistory();
-        investmentHistory.setPitchInvestorUser(investorUser);
+        InvestmentHistory investmentHistory = new InvestmentHistory(
+                investorUser
+        );
+        Map investments = new HashMap();
+
         investorUser.setInvestmentHistory(investmentHistory);
-        investorUserRepository.save(investorUser);
-        return investorUser;
+        investmentHistory.setPitchInvestorUser(investorUser);
+//        investments.setInvestmentHistory(investmentHistory);
+
+//        investmentsRepository.save(investments);
+        investmentHistoryRepository.save(investmentHistory);
+//        investorUserRepository.save(investorUser);
+        return investorUserRepository.save(investorUser);
     }
 
     public Optional getUser(String email){
@@ -54,5 +67,21 @@ public class UserService implements UserDetailsService {
         }else {
             throw new UsernameNotFoundException("Email not a business or investor");
         }
+    }
+
+    public PitchInvestorUser addToInvestmentHistoryByUser(String email, Map<String,String> investment) {
+        PitchInvestorUser investorUser = investorUserRepository.findByEmail(email).get();
+        System.out.println("INVESTMENT HISTORY:   "+investorUser);
+        InvestmentHistory investmentHistory = investorUser.getInvestmentHistory();
+        investmentHistory.addToInvestmentHistory(investment);
+        investmentHistoryRepository.save(investmentHistory);
+        System.out.println("InvestorUser:   "+investorUser.getInvestmentHistory());
+        return investorUserRepository.save(investorUser);
+    }
+
+    public PitchInvestorUser updateAbout(String email,String about) {
+        PitchInvestorUser investorUser = investorUserRepository.findByEmail(email).get();
+        investorUser.setAbout(about);
+        return investorUserRepository.save(investorUser);
     }
 }

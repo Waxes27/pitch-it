@@ -1,5 +1,6 @@
 package com.pitchIT.PitchUserService.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pitchIT.PitchUserService.enums.UserRoles;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -31,8 +32,12 @@ public class PitchInvestorUser implements UserDetails {
     private String about;
 
 
-    @OneToOne(mappedBy = "pitchInvestorUser", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "investment_history_id")
     private InvestmentHistory investmentHistory;
+
+//    @JsonIgnore
+//    @OneToOne(mappedBy = "pitchInvestorUser", cascade = CascadeType.ALL, orphanRemoval = true)
 
     /**
      * Returns the authorities granted to the user. Cannot return <code>null</code>.
