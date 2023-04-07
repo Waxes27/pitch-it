@@ -24,7 +24,7 @@ public class PitchInvestorUser implements UserDetails {
     private Long id;
     private String firstName;
     private String lastName;
-    private UserRoles investorRole;
+    private UserRoles role;
     private String email;
     private String password;
 
@@ -38,7 +38,7 @@ public class PitchInvestorUser implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 
-        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(this.investorRole.name());
+        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(this.role.name());
         System.out.println(authority);
         return Collections.singleton(authority);
     }
@@ -113,7 +113,7 @@ public class PitchInvestorUser implements UserDetails {
     public PitchInvestorUser(String firstName, String lastName, UserRoles investorRole, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.investorRole = investorRole;
+        this.role = investorRole;
         this.email = email;
         this.password = password;
     }
@@ -124,7 +124,7 @@ public class PitchInvestorUser implements UserDetails {
         jsonObject.put("id",id);
         jsonObject.put("firstName",firstName);
         jsonObject.put("lastName",lastName);
-        jsonObject.put("investorRole",investorRole);
+        jsonObject.put("role",role);
         jsonObject.put("email",email);
         jsonObject.put("password",password);
         return jsonObject;

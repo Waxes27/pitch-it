@@ -25,7 +25,7 @@ public class PitchBusinessUser implements UserDetails {
     private String businessName;
     private String representativeFirstName;
     private String representativeLastName;
-    private UserRoles businessRole;
+    private UserRoles role;
     private String email;
     private String password;
 
@@ -37,7 +37,7 @@ public class PitchBusinessUser implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 
-        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(this.businessRole.name());
+        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(this.role.name());
         System.out.println(authority);
         return Collections.singleton(authority);
     }
@@ -115,7 +115,7 @@ public class PitchBusinessUser implements UserDetails {
         this.businessName = businessName;
         this.representativeFirstName = representativeFirstName;
         this.representativeLastName = representativeLastName;
-        this.businessRole = businessRole;
+        this.role = businessRole;
         this.email = email;
         this.password = password;
     }
@@ -127,7 +127,7 @@ public class PitchBusinessUser implements UserDetails {
         jsonObject.put("businessName",this.businessName);
         jsonObject.put("representativeFirstName",this.representativeFirstName);
         jsonObject.put("representativeLastName",this.representativeLastName);
-        jsonObject.put("businessRole",this.businessRole);
+        jsonObject.put("businessRole",this.role);
         return jsonObject.toString();
     }
 
