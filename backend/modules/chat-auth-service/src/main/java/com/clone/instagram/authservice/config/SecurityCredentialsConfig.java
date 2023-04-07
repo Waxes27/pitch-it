@@ -45,7 +45,7 @@ public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .cors().disable()
+                .cors().and()
                 .csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
@@ -100,7 +100,7 @@ public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter {
         public CorsFilter corsFilter() {
             UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
             CorsConfiguration config = new CorsConfiguration();
-            config.setAllowedOrigins(Arrays.asList("**"));
+            config.setAllowedOrigins(Arrays.asList("*"));
             config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
             config.setAllowedHeaders(Arrays.asList("*"));
             source.registerCorsConfiguration("/**", config);
