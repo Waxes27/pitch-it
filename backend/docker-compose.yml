@@ -1,52 +1,52 @@
 version: "3"
 services:
-  postgres:
-    image: postgres:10.5
-    restart: always
-    logging:
-      options:
-        max-size: 10m
-        max-file: "3"
-    ports:
-      - '5432:5432'
-    volumes:
-      - ./postgres-data:/var/lib/postgresql/data
-      - ./sql/create_tables.sh:/docker-entrypoint-initdb.d/create_tables.sh
-
-#  discovery:
-#    image: developer.okta.com/microservice-docker-discovery:0.0.1-SNAPSHOT
+#  postgres:
+#    image: postgres:10.5
+#    restart: always
+#    logging:
+#      options:
+#        max-size: 10m
+#        max-file: "3"
 #    ports:
-#      - 8761:8761
-# ----------------------------------------------------------------------------------------------------------------------------------
-  users:
-    image: modules/pitchuserservice:0.0.1-SNAPSHOT
-    volumes:
-      - ./config-data:/var/config-data
-    environment:
-      - JAVA_OPTS=
-        -DEUREKA_SERVER=http://discovery:8761/eureka
-        -Dspring.cloud.config.server.native.searchLocations=/var/config-data
-    depends_on:
-      - postgres
-    ports:
-      - "8081:8081"
-
-
-
-# # ---------------------------------------------------------------------------------------------------------------------------------------------
-
-  pitch-service:
-    image: modules/pitchservice:0.0.1-SNAPSHOT
+#      - '5432:5432'
+#    volumes:
+#      - ./postgres-data:/var/lib/postgresql/data
+#      - ./sql/create_tables.sh:/docker-entrypoint-initdb.d/create_tables.sh
+#
+##  discovery:
+##    image: developer.okta.com/microservice-docker-discovery:0.0.1-SNAPSHOT
+##    ports:
+##      - 8761:8761
+## ----------------------------------------------------------------------------------------------------------------------------------
+#  users:
+#    image: modules/pitchuserservice:0.0.1-SNAPSHOT
+#    volumes:
+#      - ./config-data:/var/config-data
 #    environment:
 #      - JAVA_OPTS=
 #        -DEUREKA_SERVER=http://discovery:8761/eureka
-    volumes:
-      - ./config-data:/var/config-data
-    depends_on:
-#      - users
-      - postgres
-    ports:
-      - "10001:10001"
+#        -Dspring.cloud.config.server.native.searchLocations=/var/config-data
+#    depends_on:
+#      - postgres
+#    ports:
+#      - "8081:8081"
+#
+#
+#
+## # ---------------------------------------------------------------------------------------------------------------------------------------------
+#
+#  pitch-service:
+#    image: modules/pitchservice:0.0.1-SNAPSHOT
+##    environment:
+##      - JAVA_OPTS=
+##        -DEUREKA_SERVER=http://discovery:8761/eureka
+#    volumes:
+#      - ./config-data:/var/config-data
+#    depends_on:
+##      - users
+#      - postgres
+#    ports:
+#      - "10001:10001"
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------
 # CHAT APPLICATION
