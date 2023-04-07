@@ -11,6 +11,7 @@ export class UserDataService {
   currentData = this.userData.asObservable();
 
   updateUser(data?: any){
+    console.log(data);
     this.currentUser = new UserModel(data);
   }
 }

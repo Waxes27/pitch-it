@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { AuthService } from "src/app/auth/auth.service";
+import { Router } from "@angular/router";
+import { UserDataService } from "src/app/services/UserDataService";
 
 @Component({
   selector: "app-login",
@@ -9,7 +11,7 @@ import { AuthService } from "src/app/auth/auth.service";
   styleUrls: ["./login.component.sass"],
 })
 export class LoginComponent implements OnInit {
-  constructor(private http: HttpClient, private auth: AuthService) {}
+  constructor(private http: HttpClient, private router: Router, private userService: UserDataService) {}
 
   ngOnInit(): void {}
 
@@ -33,9 +35,18 @@ export class LoginComponent implements OnInit {
     console.log(formData);
     
     this.http
-      .post(`http://localhost:8081/login?username=${formData.username}.com&password=${formData.password}`, formData)
-      .subscribe((data) => {
-        console.log(data);
+      .post(`http://localhost:8081/login?username=${formData.username}&password=${formData.password}`, formData)
+      .subscribe((data: any) => {
+        let userData = {
+          name: data.firstName,
+          title: data.role,
+          location: "UK",
+          about: data.about
+        }
+        this.userService.updateUser(userData)
+        console.log(this.userService.currentData);
+        
+        this.router.navigate(["/home"])
       });
   }
 }

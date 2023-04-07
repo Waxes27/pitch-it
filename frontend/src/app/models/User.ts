@@ -8,7 +8,7 @@ export class UserModel {
       this.name = data.name;
       this.title = data.title;
       this.location = data.location;
-      this.about = "";
+      this.about = data.about;
     } else {
       this.name = "";
       this.title = "";

@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { UserModel } from "src/app/models/User";
+import { UserDataService } from "src/app/services/UserDataService";
 
 @Component({
   selector: "app-business-profile",
@@ -15,16 +16,12 @@ export class BusinessProfileComponent implements OnInit {
   aboutForm = new FormGroup({
     about: new FormControl("", [<any>Validators.required]),
   });
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private userService: UserDataService) {}
 
   ngOnInit(): void {
-    this.http
-      .get<UserModel>("http://localhost:8081/user/a@gmail.com")
-      .subscribe((data) => {
-        console.log(data);
-        
-        this.user = data;
-      });
+   this.userService.currentData.subscribe(data => {
+    this.user = data;
+   })
   }
 
   readMoreClick() {
