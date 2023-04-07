@@ -3,18 +3,44 @@ $primary-color: #6F4FF2
 section
     padding: 30px
     color: white
+    .add-about-container
+        margin: 30px 30px
+        padding: 20px
+        background: rgba(0, 0, 0, 0.7)
+        border-radius: 10px
+        text-align: left
+        form
+            textarea
+                margin: 20px 0px
+            display: flex
+            flex-direction: column
+            align-items: start
+            button
+                color: white
+                padding: 5px
+                background: $primary-color
+                border: solid 1px $primary-color
+                border-radius: 5px
     .about-container
         margin: 30px 30px
         padding: 20px
         background: rgba(0, 0, 0, 0.7)
         border-radius: 10px
         text-align: left
-        .about-size-toggle
-            color: white
-            padding: 5px
-            background: $primary-color
-            border: solid 1px $primary-color
-            border-radius: 5px
+        .buttons-container
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: space-between
+            .create-about:hover
+                cursor: pointer
+               
+            .about-size-toggle
+                color: white
+                padding: 5px
+                background: $primary-color
+                border: solid 1px $primary-color
+                border-radius: 5px
         h2
             font-weight: 600
     .collapsed-about

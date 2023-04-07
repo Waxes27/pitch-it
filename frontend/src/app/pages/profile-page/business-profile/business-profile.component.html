@@ -32,33 +32,55 @@
     </div>
   </div>
 
-  <div class="about-container" [class.collapsed-about]="readMore">
+  <div *ngIf="creatingAbout" class="add-about-container">
+    <h2>About</h2>
+    <form [formGroup]="aboutForm" (ngSubmit)="onSubmit()">
+      <textarea
+        formControlName="about"
+        name="about-info"
+        id="about-info"
+        cols="50"
+        rows="10"
+      ></textarea>
+      <button type="submit">Done</button>
+    </form>
+  </div>
+
+  <div
+    *ngIf="!creatingAbout"
+    class="about-container"
+    [class.collapsed-about]="readMore"
+  >
     <h2>About</h2>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ratione
-      quas accusamus velit laboriosam explicabo quae rem. Mollitia, blanditiis
-      unde. Necessitatibus deserunt magnam, perspiciatis veritatis maxime earum
-      asperiores voluptatum? Animi! Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Id libero a quam. Eius aperiam, sit molestiae iure,
-      dicta labore nostrum assumenda odit a itaque ipsa quaerat eveniet dolor
-      natus quibusdam. Hic porro voluptatum aut architecto consequatur nisi
-      commodi praesentium tempora rem dolor, iste, recusandae illo corrupti
-      natus voluptatem adipisci alias quaerat quisquam nulla. Similique illum
-      nostrum explicabo perspiciatis sit veritatis. Consequatur, id veritatis?
-      Quas porro vitae ducimus optio similique architecto repellendus quod neque
-      delectus, vero nemo vel inventore ad quibusdam mollitia, ullam temporibus
-      sint dolorem magnam at? Fuga, omnis repellendus?
+      {{ user.getAbout() }}
     </p>
-    <button class="about-size-toggle" (click)="readMoreClick()">
-      Show More
-    </button>
+
+    <div class="buttons-container">
+      <button class="about-size-toggle" (click)="readMoreClick()">
+        Show More
+      </button>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        viewBox="0 0 24 24"
+        class="create-about"
+        (click)="createAbout()"
+      >
+        <path
+          fill="#6f4ff2"
+          d="m19.3 8.925l-4.25-4.2l1.4-1.4q.575-.575 1.413-.575t1.412.575l1.4 1.4q.575.575.6 1.388t-.55 1.387L19.3 8.925ZM17.85 10.4L7.25 21H3v-4.25l10.6-10.6l4.25 4.25Z"
+        />
+      </svg>
+    </div>
   </div>
 
   <div class="invest-history-container">
     <h2>Investment History</h2>
     <div class="investment-info-container">
       <div class="investment-image-container">
-        <img src="/assets/floral-2622313_1920.jpg">
+        <img src="/assets/floral-2622313_1920.jpg" />
       </div>
       <div class="investment-info">
         <h3>Investment Name</h3>
@@ -68,7 +90,7 @@
           consectetur esse dolores totam, aspernatur blanditiis, ullam
           consequuntur exercitationem nulla assumenda dignissimos!
         </p>
-        <span>2020 - present</span><br>
+        <span>2020 - present</span><br />
         <a href="#">Link to investment</a>
       </div>
     </div>

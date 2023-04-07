@@ -3,9 +3,11 @@ spring:
     mongodb:
       database: instaclone_auth
       port: 27017
+    embedded:
+      version: 3.2.22
 
 server:
-  port: 8082
+  port: 8081
       
 security:
   basic:
