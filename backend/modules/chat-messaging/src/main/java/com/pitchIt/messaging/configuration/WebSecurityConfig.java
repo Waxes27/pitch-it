@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.Arrays;
-@Configuration
+
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements WebMvcConfigurer{
 
     @Bean
