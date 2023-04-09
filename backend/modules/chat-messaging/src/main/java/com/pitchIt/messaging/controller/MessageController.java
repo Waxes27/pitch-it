@@ -16,7 +16,7 @@ import com.pitchIt.messaging.service.ChatMessageService;
 import com.pitchIt.messaging.service.ChatRoomService;
 
 @RestController
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class MessageController {
     
     @Autowired private SimpMessagingTemplate messagingTemplate;
