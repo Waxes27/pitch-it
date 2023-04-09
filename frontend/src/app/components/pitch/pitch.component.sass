@@ -1,0 +1,62 @@
+$primary-color: #6F4FF2
+$left-right-margin: 0px 30px
+section
+  width: 30%
+  height: min-content
+  background-color: rgba(0, 0, 0, 0.5)
+  color: white
+  border-radius: 10px
+  padding-bottom: 20px
+  .banner-container
+    padding: 10px
+    display: flex
+    flex-direction: row
+    align-items: start
+    justify-content: space-between
+    height: 100px
+    background-image: url("/assets/server-2160321_1920.jpg")
+    background-size: cover
+    background-position: center
+    border-top-left-radius: 10px
+    border-top-right-radius: 10px
+
+    .user-profile
+      height: 50px
+      width: 50px
+      border-radius: 100px
+
+  .pitch-details-container
+    .pitch-header
+      display: flex
+      flex-direction: row
+      justify-content: space-evenly
+      align-items: center
+      margin: 10px 0px
+      #pitch-logo
+        height: 70px
+        width: 70px
+        border-radius: 100px
+        border: solid 1px $primary-color
+        margin-top: -50px
+    .pitch-body
+      padding: 10px
+      text-align: center
+    .pitch-economics
+      width: 100%
+      display: flex
+      flex-direction: row
+      justify-content: space-evenly
+      .equity-container
+        margin: $left-right-margin
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        text-align: center
+      .target-container
+        margin: $left-right-margin
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        text-align: center
