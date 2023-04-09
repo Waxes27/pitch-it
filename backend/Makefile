@@ -1,5 +1,5 @@
 docker-build-run:
-	git pull --rebase
+#	git pull --rebase
 	mvn clean install package -DskipTests
 	chmod +x scripts/*
 	./scripts/docker_build.sh

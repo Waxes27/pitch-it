@@ -41,5 +41,10 @@ public class PitchCrudController {
         return new ResponseEntity(pitches, HttpStatus.OK);
     }
 
+    @GetMapping("/all")
+    public List<Pitch> getAll(){
+        return service.getAllPitches();
+    }
+
 
 }

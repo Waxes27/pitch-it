@@ -65,4 +65,8 @@ public class PitchCrudService {
 
         return pitches;
     }
+
+    public List<Pitch> getAllPitches() {
+        return pitchRepository.findAll();
+    }
 }
