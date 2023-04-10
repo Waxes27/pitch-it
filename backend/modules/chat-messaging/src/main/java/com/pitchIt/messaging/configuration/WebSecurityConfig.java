@@ -36,7 +36,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
         .authorizeRequests()
         .anyRequest()
         .permitAll();
-
     }
 
 //    @Bean
