@@ -95,8 +95,11 @@ services:
     ports:
       - "8017:8017"
     environment:
-
       - "LANG=en_US.UTF-8"
       - "LANGUAGE=en_US.UTF-8"
+      - SPRING_DATA_MONGODB_HOST=mongo
+      - SPRING_DATA_MONGODB_PORT=27017
+      - SPRING_DATA_MONGODB_DATABASE=authService
+
     depends_on:
       - mongo
