@@ -17,7 +17,6 @@ import com.pitchIt.messaging.service.ChatMessageService;
 import com.pitchIt.messaging.service.ChatRoomService;
 
 @RestController
-@CrossOrigin()
 public class MessageController {
     
     @Autowired private SimpMessagingTemplate messagingTemplate;
@@ -25,8 +24,8 @@ public class MessageController {
     @Autowired private ChatRoomService chatRoomService;
 
     @MessageMapping("/chat")
-    @CrossOrigin
     public void processMessage(@Payload ChatMessage chatMessage) {
+        System.out.println(chatMessage);
         System.out.println("Creating New Message");
         var chatId = chatRoomService
             .getChatId(chatMessage.getSenderId(), chatMessage.getRecipientId(), true);
