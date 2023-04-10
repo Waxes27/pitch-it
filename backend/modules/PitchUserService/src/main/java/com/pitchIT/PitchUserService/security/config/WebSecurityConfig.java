@@ -39,30 +39,30 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .cors().and()
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers(HttpMethod.GET, "/api/student/*").hasAnyAuthority(
-//                        UserRoles.HOD.name(),
-//                        UserRoles.TEACHER.name(),
-//                        UserRoles.ADMIN.name()
-                )
-                .antMatchers(HttpMethod.POST, "/register/*").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/pitch/**").permitAll()
-                .antMatchers(HttpMethod.POST, "/login").permitAll()
-                .antMatchers(HttpMethod.GET, "/user/**").permitAll()
-                .anyRequest()
-                .authenticated()
-                .and()
-//                .formLogin().and()
-                .logout()
-                .logoutUrl("/logout")
-                .deleteCookies("JSESSIONID")
-                .invalidateHttpSession(true)
-                .logoutSuccessUrl("/login?logout")
-                .permitAll()
-        ;
+//        http
+//                .cors().and()
+//                .csrf().disable()
+//                .authorizeRequests()
+//                .antMatchers(HttpMethod.GET, "/api/student/*").hasAnyAuthority(
+////                        UserRoles.HOD.name(),
+////                        UserRoles.TEACHER.name(),
+////                        UserRoles.ADMIN.name()
+//                )
+//                .antMatchers(HttpMethod.POST, "/register/*").permitAll()
+//                .antMatchers(HttpMethod.POST, "/api/pitch/**").permitAll()
+//                .antMatchers(HttpMethod.POST, "/login").permitAll()
+//                .antMatchers(HttpMethod.GET, "/user/**").permitAll()
+//                .anyRequest()
+//                .authenticated()
+//                .and()
+////                .formLogin().and()
+//                .logout()
+//                .logoutUrl("/logout")
+//                .deleteCookies("JSESSIONID")
+//                .invalidateHttpSession(true)
+//                .logoutSuccessUrl("/login?logout")
+//                .permitAll()
+//        ;
     }
 
     @Override
