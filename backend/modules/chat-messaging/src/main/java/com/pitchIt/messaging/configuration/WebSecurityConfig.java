@@ -18,15 +18,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
     @Bean
     public CorsFilter corsFilter() {
 
-        List<String> headers = new ArrayList<>();
-        headers.add("*");
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(Arrays.asList("*"));
+        config.setAllowedOrigins(Arrays.asList("http://102.221.36.216:3000"));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
         config.setAllowedHeaders(Arrays.asList("*"));
-        config.setAllowedHeaders(headers);
-        source.registerCorsConfiguration("/**", config);
+        source.registerCorsConfiguration("/*", config);
         return new CorsFilter(source);
     }
 
@@ -45,6 +42,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
 //}
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**").allowedMethods("*");
+        registry.addMapping("/*").allowedMethods("*");
     }
 }

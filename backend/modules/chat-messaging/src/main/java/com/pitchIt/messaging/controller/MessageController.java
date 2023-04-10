@@ -17,6 +17,7 @@ import com.pitchIt.messaging.service.ChatMessageService;
 import com.pitchIt.messaging.service.ChatRoomService;
 
 @RestController
+@CrossOrigin()
 public class MessageController {
     
     @Autowired private SimpMessagingTemplate messagingTemplate;
