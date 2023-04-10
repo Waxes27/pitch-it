@@ -64,6 +64,7 @@ import { FundingInformationComponent } from './pages/pitches/funding-information
 import { CookieService } from "ngx-cookie-service";
 import { PitchComponent } from './components/pitch/pitch.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import { SplashComponent } from './components/splash/splash.component';
 
 @NgModule({
   declarations: [
@@ -107,7 +108,8 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
     BusinessProfileComponent,
     FundingInformationComponent,
     PitchComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    SplashComponent
   ],
   imports: [
     CurrencyMaskModule,

@@ -1,7 +1,11 @@
-<!--<div class="dash-top">-->
-<!--  <img src="/assets/dash-top.svg" alt="">-->
-<!--</div>-->
-<div class="pitch-deck">
-
-  <app-pitch></app-pitch>
+<div class="dash-top">
+    <img src="/assets/dash-top.svg" alt="">
 </div>
+<section>
+
+    <div *ngFor="let pitch of pitches" class="pitch">
+        <app-pitch
+                [body]="pitch.businessDetails.problemSolved"
+                [title]="pitch.companyDetails.name"></app-pitch>
+    </div>
+</section>

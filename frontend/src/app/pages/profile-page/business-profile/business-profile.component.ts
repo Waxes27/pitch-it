@@ -3,7 +3,7 @@ import {Component, OnInit} from "@angular/core";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CookieService} from "ngx-cookie-service";
 import {InvestorUserModel} from "src/app/models/InvestorUser";
-import {IUser} from "../../../models/IUser";
+import {IUser} from "../../../interfaces/IUser";
 import {BusinessUserModel} from "../../../models/BusinessUserModel";
 
 @Component({

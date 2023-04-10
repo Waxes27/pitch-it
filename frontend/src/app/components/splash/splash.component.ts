@@ -1,17 +1,18 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {InvestorUserModel} from "../../../models/InvestorUser";
-import {BusinessUserModel} from "../../../models/BusinessUserModel";
+import {IUser} from "../../interfaces/IUser";
+import {InvestorUserModel} from "../../models/InvestorUser";
+import {Router} from "@angular/router";
 import {CookieService} from "ngx-cookie-service";
 import {HttpClient} from "@angular/common/http";
-import {IUser} from "../../../interfaces/IUser";
+import {BusinessUserModel} from "../../models/BusinessUserModel";
 
 @Component({
-    selector: 'app-investor-splash',
-    templateUrl: './investor-splash.component.html',
-    styleUrls: ['./investor-splash.component.sass']
+    selector: 'app-splash',
+    templateUrl: './splash.component.html',
+    styleUrls: ['./splash.component.sass']
 })
-export class InvestorSplashComponent implements OnInit {
+export class SplashComponent implements OnInit {
+
     user: IUser = new InvestorUserModel();
 
     constructor(private router: Router, private cookies: CookieService, private http: HttpClient) {

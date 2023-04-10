@@ -18,7 +18,7 @@ export class MainComponentComponent implements OnInit {
     "/register/business",
     "/preferences/business",
     "/membership",
-    "/splash/investor",
+    "/splash",
     "/register",
     "/membership/investor",
     "/payment",

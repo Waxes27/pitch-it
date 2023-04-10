@@ -33,6 +33,7 @@ import { EnquireFormComponent } from "./components/enquire-form/enquire-form.com
 import { SettingsComponent } from "./pages/settings/settings.component";
 import { BusinessProfileComponent } from "./pages/profile-page/business-profile/business-profile.component";
 import { FundingInformationComponent } from "./pages/pitches/funding-information/funding-information.component";
+import {SplashComponent} from "./components/splash/splash.component";
 
 const routes: Routes = [
   { path: "", title: "Welcome", component: LandingPageComponent },
@@ -146,9 +147,9 @@ const routes: Routes = [
   },
 
   {
-    path: "splash/investor",
+    path: "splash",
     title: "Patient Dash",
-    component: InvestorSplashComponent,
+    component: SplashComponent,
   },
 
   { path: "payment", title: "Patient Dash", component: PaymentPageComponent },

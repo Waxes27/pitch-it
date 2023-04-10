@@ -49,7 +49,7 @@ public class Pitch {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Pitch{");
+        final StringBuffer sb = new StringBuffer("PitchModel{");
         sb.append("passedQuestion=").append(passedQuestion);
         sb.append(", id=").append(id);
         sb.append(", username='").append(username).append('\'');
