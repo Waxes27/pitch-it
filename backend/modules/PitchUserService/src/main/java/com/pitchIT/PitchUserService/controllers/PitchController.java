@@ -37,9 +37,9 @@ public class PitchController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List> getAllPitches(@RequestParam String username){
+    public ResponseEntity<List> getAllPitches(){
         return restTemplate.getForEntity(
-                "http://pitch-service:10001/api/pitch/all"+username,
+                "http://pitch-service:10001/api/pitch/all",
                 List.class);
     }
 
