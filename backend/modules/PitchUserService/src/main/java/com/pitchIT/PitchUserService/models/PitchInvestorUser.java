@@ -31,6 +31,8 @@ public class PitchInvestorUser implements UserDetails {
     private String password;
     private String about;
 
+    private boolean paid = false;
+
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "investment_history_id")

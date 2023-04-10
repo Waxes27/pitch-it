@@ -88,4 +88,15 @@ public class UserService implements UserDetailsService {
         investorUser.setAbout(about);
         return investorUserRepository.save(investorUser);
     }
+
+    public void updatePaid(String email) {
+        if (businessUserRepository.findByEmail(email).isPresent()){
+            System.out.println(businessUserRepository.findByEmail(email).isPresent());
+            businessUserRepository.findByEmail(email).get().setPaid(true);
+        }else if(investorUserRepository.findByEmail(email).isPresent()){
+            System.out.println(investorUserRepository.findByEmail(email).isPresent());
+            investorUserRepository.findByEmail(email).get().setPaid(true);
+        }
+        else throw new UsernameNotFoundException("User not found");
+    }
 }

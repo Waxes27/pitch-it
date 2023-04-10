@@ -23,6 +23,7 @@ public class PitchBusinessUser implements UserDetails {
     @Column(name = "id", nullable = false)
     private Long id;
     private String businessName;
+    private boolean paid = false;
     private String representativeFirstName;
     private String representativeLastName;
     private UserRoles role;
