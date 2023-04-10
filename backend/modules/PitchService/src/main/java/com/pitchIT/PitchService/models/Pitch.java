@@ -19,6 +19,7 @@ public class Pitch {
     @Column(name = "id", nullable = false)
     private Long id;
     private String username;
+    private String equity;
 
     @OneToOne(mappedBy = "pitch", cascade = CascadeType.ALL, orphanRemoval = true)
     private CompanyDetails companyDetails;
