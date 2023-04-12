@@ -1,15 +1,16 @@
+$primary-color: #6F4FF2
 *
   background-color: transparent
-.menu
-    margin-right: 20px
 
 .nav-icon
-  height: 50px
-  width: 100%
-mat-toolbar
-  justify-content: space-evenly
+  height: 30px
+  width: 30px
+  border: none
+
+
 router-outlet
   height: 100%
+
 .news
   right: 0
   position: fixed
@@ -31,7 +32,11 @@ mat-drawer
     flex-direction: column
     justify-content: space-between
     padding-top: 10%
-    
+
+
+    .nav-icon:hover
+      cursor: pointer
+
 
     button
       padding-bottom: 25%
@@ -39,7 +44,7 @@ mat-drawer
 
 .top-nav
   background-color: transparent
-  
+
   color: white
   position: sticky
   top: 0
@@ -51,17 +56,22 @@ mat-drawer
   padding: 2%
   display: flex
   justify-content: space-between
-  // background-color: red
-  
+  .search-bar-container
+    .search-bar-form
+      .search-bar
+        color: white
+        padding: 10px
+        background: #1D1932
+        border: solid 1px transparent
+        border-radius: 10px
+      .search-bar:focus
+        outline: none
+
   div
     width: 20%
     display: flex
     align-items: center
-    // background-color: red
     justify-content: space-around
-    
-    // img
-    //   margin-left: auto
 
     button
       img
@@ -69,12 +79,13 @@ mat-drawer
 
 
 .mat-drawer-content
-    overflow-x: hidden
+  overflow-x: hidden
 
 .drawer
   transition: all 1s
   width: 20%
   background-color: rgb(19, 31, 161)
+
   &:hover
     width: 25%
 

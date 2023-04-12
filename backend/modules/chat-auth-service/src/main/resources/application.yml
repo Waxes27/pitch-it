@@ -1,8 +1,8 @@
 spring:
   data:
     mongodb:
-      host: mongo
-      database: instaclone_auth
+      # host: mongo
+      database: authService
       port: 27017
     embedded:
       version: 3.2.22

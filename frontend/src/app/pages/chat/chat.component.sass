@@ -1,0 +1,73 @@
+.main
+    // background-color: blue
+    height: 100%
+    display: flex
+    justify-content: center
+    
+    .parent 
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        grid-template-rows: repeat(5, 1fr)
+        grid-column-gap: 1%
+        grid-row-gap: 0px
+        width: 100%
+        height: 80%
+        margin: 0 auto
+        padding: 1%
+
+
+    .chatbox
+        grid-area: 1 / 2 / 6 / 6
+        width: 82%
+        background-color: #FFFFFF
+        border-radius: 40px
+        margin: 0 15%
+        display: flex
+        flex-direction: column
+        
+        .inner-chat
+            margin: 2% auto
+            height: 100%
+            width: 90%
+
+            .header
+                display: flex
+                justify-content: space-between
+                align-content: center
+                align-items: center
+                margin-bottom: 4%
+            .chat-body
+                .message 
+                    background-color: #E7E7E7
+                    border-radius: 20px
+                    width: auto
+                    max-width: 55%
+                    height: auto
+                    h3
+                        overflow: visible
+
+
+
+    .div2
+        grid-area: 1 / 1 / 6 / 2
+        display: flex
+        flex-direction: column
+        width: 150%
+        height: 100%
+        margin: 0 10% 
+        
+
+        .search-bar
+            background-color: red
+            display: flex
+            justify-content: center
+            padding: 5%
+            margin-bottom: 5%
+        .chat-list
+            background-color: red
+            display: flex
+            justify-content: center
+            padding: 5%
+            height: 90%
+
+        
