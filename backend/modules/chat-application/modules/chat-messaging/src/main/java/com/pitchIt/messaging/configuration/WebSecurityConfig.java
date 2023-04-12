@@ -33,7 +33,7 @@ public class WebSecurityConfig {
         @Override
         public void addCorsMappings(CorsRegistry registry) {
             registry.addMapping("/chat/**")
-                    .allowedOriginPatterns("http://localhost")
+                    .allowedOriginPatterns("http://pitchitltd.co.uk")
                     .allowedMethods("GET", "POST")
                     .allowCredentials(true);
         }

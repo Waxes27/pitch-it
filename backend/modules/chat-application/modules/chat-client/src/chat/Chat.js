@@ -42,7 +42,7 @@ const Chat = (props) => {
   const connect = () => {
     const Stomp = require("stompjs");
     var SockJS = require("sockjs-client");
-    SockJS = new SockJS("http://localhost:8018/ws", null, {
+    SockJS = new SockJS("http://pitchitltd.co.uk:8018/ws", null, {
       transportOptions: {
         xhr: {
           withCredentials: false,
