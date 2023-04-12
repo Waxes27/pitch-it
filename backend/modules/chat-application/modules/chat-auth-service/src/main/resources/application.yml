@@ -1,9 +1,9 @@
 spring:
   data:
     mongodb:
-      # host: mongo
-      database: authService
-      port: 27017
+      uri: mongodb://mongo:27017/authService
+      # database: authService
+      # port: 27017
     embedded:
       version: 3.2.22
   jpa:
@@ -16,6 +16,7 @@ spring:
       true
 server:
   port: 8017
+  address: 0.0.0.0
       
 security:
   basic:

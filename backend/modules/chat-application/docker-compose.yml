@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  chat:
+    image: modules/chat-application
+    container_name: pitchIt-chat
+    depends_on:
+      - mongodb
+    links:
+      - mongodb:mongo
+    ports:
+      - 3000:3000
+      - 8017:8017
+      - 8018:8018
+    volumes:
+      - /home/daemon60606/Spring/logs:/var/log
+  mongodb:
+    image: mongo:latest
+    expose:
+      - 27017
