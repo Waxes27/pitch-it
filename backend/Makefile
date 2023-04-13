@@ -1,10 +1,10 @@
 docker-build-run:
 	git pull --rebase
 	# mvn clean install package -DskipTests
-	# chmod +x scripts/*
+	chmod +x scripts/*
 	# ./scripts/docker_build.sh
-	# chmod -x scripts/*
-	bash modules/chat-application/build.sh
+	./scripts/build-chat.sh
+	chmod -x scripts/*
 	
 	
 
