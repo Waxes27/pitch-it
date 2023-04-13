@@ -4,10 +4,9 @@ docker-build-run:
 	# chmod +x scripts/*
 	# ./scripts/docker_build.sh
 	# chmod -x scripts/*
-	cd ./modules/chat-application/
-	pwd
-	docker build . -t modules/chat-application
-	docker-compose up
-	cd ../../
+	bash modules/chat-application/build.sh
+	
+	
+
 	docker-compose up --remove-orphans
 	#mvn test
