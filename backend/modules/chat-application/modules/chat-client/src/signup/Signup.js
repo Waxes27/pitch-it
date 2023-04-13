@@ -9,7 +9,7 @@ const Signup = (props) => {
 
   useEffect(() => {
     if (localStorage.getItem("accessToken") !== null) {
-      props.history.push("/");
+      props.history.push("/chat");
     }
   }, []);
 
