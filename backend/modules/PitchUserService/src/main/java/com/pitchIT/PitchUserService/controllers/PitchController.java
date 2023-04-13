@@ -45,10 +45,13 @@ public class PitchController {
     }
 
     @GetMapping("id")
-    public ResponseEntity<Object> getPitchById(@RequestParam String id){
+    public ResponseEntity<Pitch> getPitchById(@RequestParam String id){
+        System.out.println(restTemplate.getForEntity(
+                "http://pitch-service:10001/api/pitch/id?id="+id,
+                Pitch.class));
         return restTemplate.getForEntity(
                 "http://pitch-service:10001/api/pitch/id?id="+id,
-                Object.class);
+                Pitch.class);
     }
 
 
