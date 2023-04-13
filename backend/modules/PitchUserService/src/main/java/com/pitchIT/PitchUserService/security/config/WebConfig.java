@@ -22,7 +22,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:4200","http://102.221.36.216")
+                .allowedOrigins("http://localhost:4200","http://pitchitltd.co.uk")
                 .allowedMethods("*")
                 .allowCredentials(true);
     }
@@ -32,7 +32,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
          config.setAllowCredentials(true);
-        config.setAllowedOriginPatterns(List.of("http://102.221.36.216","http://localhost:4200"));
+        config.setAllowedOriginPatterns(List.of("http://pitchitltd.co.uk","http://localhost:4200"));
         config.setAllowedMethods(Collections.singletonList("*"));
         config.setAllowedHeaders(Collections.singletonList("*"));
         source.registerCorsConfiguration("/**", config);

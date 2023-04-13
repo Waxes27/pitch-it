@@ -11,5 +11,5 @@ docker-build-run:
 	xterm -e ssh -R 8017:127.0.0.1:8017 root@pitchitltd.co.uk &
 	xterm -e ssh -R 8018:127.0.0.1:8018 root@pitchitltd.co.uk &
 	xterm -e ssh -R 8081:127.0.0.1:8081 root@pitchitltd.co.uk &
-	# xterm -e ssh -R 10001:127.0.0.1:10001 root@pitchitltd.co.uk &
+	xterm -e ssh -R 80:127.0.0.1:80 root@pitchitltd.co.uk &
 	#mvn test
