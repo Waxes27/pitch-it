@@ -70,9 +70,7 @@ public class PitchCrudService {
         return pitchRepository.findAll();
     }
 
-    public Pitch getPitchByID(Long id) {
-        System.out.println(pitchRepository.getById(id));
-        System.out.println(pitchRepository.getReferenceById(id));
-        return pitchRepository.getById(id);
+    public Optional<Pitch> getPitchByID(Long id) {
+        return pitchRepository.findById(id);
     }
 }
