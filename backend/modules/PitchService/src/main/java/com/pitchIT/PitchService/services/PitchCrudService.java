@@ -69,4 +69,8 @@ public class PitchCrudService {
     public List<Pitch> getAllPitches() {
         return pitchRepository.findAll();
     }
+
+    public Pitch getPitchByID(Long id) {
+        return pitchRepository.getReferenceById(id);
+    }
 }
