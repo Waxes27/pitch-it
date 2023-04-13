@@ -71,6 +71,6 @@ public class PitchCrudService {
     }
 
     public Pitch getPitchByID(Long id) {
-        return pitchRepository.getReferenceById(id);
+        return pitchRepository.getById(id);
     }
 }
