@@ -27,9 +27,16 @@ public class BusinessDetails {
     private String businessModel;
     private String reasonForRaising;
 
-
-
-
-
-
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("{");
+        sb.append("id:").append(id);
+//        sb.append(", pitch:").append(pitch);
+        sb.append(", product:'").append(product).append('\'');
+        sb.append(", problemSolved:'").append(problemSolved).append('\'');
+        sb.append(", businessModel:'").append(businessModel).append('\'');
+        sb.append(", reasonForRaising:'").append(reasonForRaising).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

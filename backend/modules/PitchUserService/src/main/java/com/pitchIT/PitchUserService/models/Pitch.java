@@ -48,15 +48,15 @@ public class Pitch {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("PitchModel{");
-        sb.append("passedQuestion=").append(passedQuestion);
-        sb.append(", id=").append(id);
-        sb.append(", username='").append(username).append('\'');
-        sb.append(", companyDetails=").append(companyDetails);
-        sb.append(", businessDetails=").append(businessDetails);
-        sb.append(", marketDetails=").append(marketDetails);
-        sb.append(", documents=").append(documents);
-        sb.append(", memberDetails=").append(memberDetails);
+        final StringBuffer sb = new StringBuffer("{");
+        sb.append("passedQuestion:").append(passedQuestion);
+        sb.append(", id:").append(id);
+        sb.append(", username:'").append(username).append('\'');
+        sb.append(", companyDetails:").append(companyDetails);
+        sb.append(", businessDetails:").append(businessDetails);
+        sb.append(", marketDetails:").append(marketDetails);
+        sb.append(", documents:").append(documents);
+        sb.append(", memberDetails:").append(memberDetails);
         sb.append('}');
         return sb.toString();
     }
