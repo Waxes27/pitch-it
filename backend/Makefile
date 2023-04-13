@@ -1,6 +1,6 @@
 docker-build-run:
 	git pull --rebase
-	# mvn clean install package -DskipTests
+	mvn clean install package -DskipTests
 	chmod +x scripts/*
 	./scripts/docker_build.sh
 	./scripts/build-chat.sh
