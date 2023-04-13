@@ -5,6 +5,7 @@ docker-build-run:
 	# ./scripts/docker_build.sh
 	# chmod -x scripts/*
 	cd modules/chat-application
+	pwd
 	docker build . -t modules/chat-application
 	docker-compose up
 	cd ../../
