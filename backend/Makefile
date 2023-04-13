@@ -4,7 +4,7 @@ docker-build-run:
 	# chmod +x scripts/*
 	# ./scripts/docker_build.sh
 	# chmod -x scripts/*
-	ls ./modules/chat-application
+	cd ./modules/chat-application/
 	pwd
 	docker build . -t modules/chat-application
 	docker-compose up
