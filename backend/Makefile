@@ -5,7 +5,8 @@ docker-build-run:
 	# ./scripts/docker_build.sh
 	./scripts/build-chat.sh
 	chmod -x scripts/*
-	
+	docker-compose -f .modules/chat-application/docker-compose.yml up
+
 	
 
 	# docker-compose up --remove-orphans
