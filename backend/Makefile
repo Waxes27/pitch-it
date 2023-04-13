@@ -8,5 +8,5 @@ docker-build-run:
 	
 	
 
-	docker-compose up --remove-orphans
+	# docker-compose up --remove-orphans
 	#mvn test
