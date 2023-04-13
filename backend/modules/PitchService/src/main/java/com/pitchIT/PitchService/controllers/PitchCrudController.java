@@ -35,7 +35,7 @@ public class PitchCrudController {
 
         return new ResponseEntity(pitch, HttpStatus.CREATED);
     }
-    @GetMapping("/user")
+    @GetMapping()
     public ResponseEntity getUserPitches(@RequestParam String username){
         List<Optional<Pitch>> pitches = service.getAllPitchByUsername(username);
         return new ResponseEntity(pitches, HttpStatus.OK);
@@ -46,7 +46,7 @@ public class PitchCrudController {
         return service.getAllPitches();
     }
 
-    @GetMapping
+    @GetMapping("/id")
     public Pitch getPitchByID(@RequestParam("id") Long id){
         return service.getPitchByID(id);
     }
