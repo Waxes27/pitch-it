@@ -1,4 +1,4 @@
-for f in modules/*; do
+for f in modules/P*; do
   file_name=`echo "$f" | tr '[:upper:]' '[:lower:]'`
   project_name=`echo $file_name | sed "s/modules\///"`
   echo ---------------------------------------------------------------------------------
