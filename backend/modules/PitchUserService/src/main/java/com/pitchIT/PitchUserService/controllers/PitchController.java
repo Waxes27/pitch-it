@@ -43,6 +43,13 @@ public class PitchController {
                 List.class);
     }
 
+    @GetMapping("id")
+    public ResponseEntity<Pitch> getPitchById(@RequestParam String id){
+        return restTemplate.getForEntity(
+                "http://pitch-service:10001/api/pitch/id?id="+id,
+                Pitch.class);
+    }
+
 
 
 
