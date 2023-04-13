@@ -47,7 +47,7 @@ public class PitchCrudController {
     }
 
     @GetMapping("/id")
-    public Pitch getPitchByID(@RequestParam("id") Long id){
-        return service.getPitchByID(id);
+    public ResponseEntity getPitchByID(@RequestParam("id") Long id){
+        return new ResponseEntity(service.getPitchByID(id), HttpStatus.CONTINUE);
     }
 }
