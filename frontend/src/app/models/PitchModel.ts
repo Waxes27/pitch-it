@@ -4,21 +4,32 @@ import {MarketDetailsModel} from "./MarketDetailsModel";
 import {MemberDetails} from "./MemberDetails";
 
 export class PitchModel {
-    private _companyDetails: CompanyDetailsModel;
-    private _businessDetails: BusinessDetailsModel;
-    private _marketDetails: MarketDetailsModel;
-    private _memberDetails: MemberDetails;
+    private _id?: number;
+    private _companyDetails?: CompanyDetailsModel;
+    private _businessDetails?: BusinessDetailsModel;
+    private _marketDetails?: MarketDetailsModel;
+    private _memberDetails?: MemberDetails;
 
 
-    constructor(companyDetails: CompanyDetailsModel, businessDetails: BusinessDetailsModel, marketDetails: MarketDetailsModel, memberDetails: MemberDetails) {
+    constructor(id?: number, companyDetails?: CompanyDetailsModel, businessDetails?: BusinessDetailsModel, marketDetails?: MarketDetailsModel, memberDetails?: MemberDetails) {
         this._companyDetails = companyDetails;
         this._businessDetails = businessDetails;
         this._marketDetails = marketDetails;
         this._memberDetails = memberDetails;
+        this._id = id;
+    }
+
+
+    get id(): number {
+        return <number>this._id;
+    }
+
+    set id(value: number) {
+        this._id = value;
     }
 
     get companyDetails(): CompanyDetailsModel {
-        return this._companyDetails;
+        return <CompanyDetailsModel>this._companyDetails;
     }
 
     set companyDetails(value: CompanyDetailsModel) {
@@ -26,7 +37,7 @@ export class PitchModel {
     }
 
     get businessDetails(): BusinessDetailsModel {
-        return this._businessDetails;
+        return <BusinessDetailsModel>this._businessDetails;
     }
 
     set businessDetails(value: BusinessDetailsModel) {
@@ -34,7 +45,7 @@ export class PitchModel {
     }
 
     get marketDetails(): MarketDetailsModel {
-        return this._marketDetails;
+        return <MarketDetailsModel>this._marketDetails;
     }
 
     set marketDetails(value: MarketDetailsModel) {
@@ -42,7 +53,7 @@ export class PitchModel {
     }
 
     get memberDetails(): MemberDetails {
-        return this._memberDetails;
+        return <MemberDetails>this._memberDetails;
     }
 
     set memberDetails(value: MemberDetails) {

@@ -5,7 +5,9 @@
 
     <div *ngFor="let pitch of pitches" class="pitch">
         <app-pitch
+                (click)="goToPitchPage(pitch.id)"
                 [body]="pitch.businessDetails.problemSolved"
-                [title]="pitch.companyDetails.name"></app-pitch>
+                [title]="pitch.companyDetails.name"
+                [id]="pitch.id"></app-pitch>
     </div>
 </section>
