@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6f5a4f2-65f2-48dd-99fe-4e088dcf7b45" name="Changes" comment="Creating a pitch page">
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/pitch-page/pitch-page.component.sass" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/pitch-page/pitch-page.component.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/pitch-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/pitch-2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/landing-page/landing-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/landing-page/landing-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/landing-page/landing-page.component.sass" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/landing-page/landing-page.component.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +109,8 @@
       <workItem from="1681126522986" duration="5503000" />
       <workItem from="1681141956354" duration="305000" />
       <workItem from="1681237293044" duration="2111000" />
-      <workItem from="1681404675157" duration="5433000" />
+      <workItem from="1681404675157" duration="5759000" />
+      <workItem from="1681561163000" duration="2850000" />
     </task>
     <task id="LOCAL-00001" summary="finished with profiles">
       <created>1680902071622</created>
@@ -156,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681410027363</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Creating a pitch page">
+      <created>1681410439277</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681410439277</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
