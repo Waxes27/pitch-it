@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/profile")
+
 public class ProfileController_CST {
 
     @Autowired
@@ -20,7 +20,7 @@ public class ProfileController_CST {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/")
+    @PostMapping("/profile")
     public Object postInvestmentHistory(@RequestBody ProfileRequest profileRequest, @RequestParam("email") String email){
         return userService.editUserProfile(profileRequest, email);
     }
