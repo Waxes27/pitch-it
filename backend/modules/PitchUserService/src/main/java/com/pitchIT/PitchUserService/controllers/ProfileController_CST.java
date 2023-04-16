@@ -13,7 +13,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/profile")
-public class ProfileController {
+public class ProfileController_CST {
 
     @Autowired
     private AuthenticationManager authenticationManager;
