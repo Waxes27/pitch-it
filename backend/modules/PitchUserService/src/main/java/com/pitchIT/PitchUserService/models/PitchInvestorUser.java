@@ -28,6 +28,7 @@ public class PitchInvestorUser implements UserDetails {
     private String lastName;
     private UserRoles role;
     private String email;
+    private String pictureUrl;
     private String password;
     private String about;
 
