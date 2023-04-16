@@ -7,6 +7,7 @@ import com.pitchIT.PitchUserService.models.PitchInvestorUser;
 import com.pitchIT.PitchUserService.repositories.BusinessUserRepository;
 import com.pitchIT.PitchUserService.repositories.InvestmentHistoryRepository;
 import com.pitchIT.PitchUserService.repositories.InvestorUserRepository;
+import com.pitchIT.PitchUserService.requests.ProfileRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -98,5 +99,29 @@ public class UserService implements UserDetailsService {
             investorUserRepository.findByEmail(email).get().setPaid(true);
         }
         else throw new UsernameNotFoundException("User not found");
+    }
+
+
+    public Object editUserProfile(ProfileRequest profileRequest, String email) {
+        if (investorUserRepository.findByEmail(email).isPresent()){
+            PitchInvestorUser pitchInvestorUser = investorUserRepository.findByEmail(email).get();
+            if (!profileRequest.pictureUrl().isBlank()){
+                pitchInvestorUser.setPictureUrl(profileRequest.pictureUrl());
+            }
+            if (!profileRequest.about().isBlank()){
+                pitchInvestorUser.setAbout(profileRequest.about());
+            }
+            return pitchInvestorUser;
+        }else {
+            PitchBusinessUser pitchBusinessUser = businessUserRepository.findByEmail(email).get();
+            if (!profileRequest.pictureUrl().isBlank()){
+                pitchBusinessUser.setPictureUrl(profileRequest.pictureUrl());
+            }
+            if (!profileRequest.about().isBlank()){
+                pitchBusinessUser.setAbout(profileRequest.about());
+            }
+            return pitchBusinessUser;
+        }
+
     }
 }

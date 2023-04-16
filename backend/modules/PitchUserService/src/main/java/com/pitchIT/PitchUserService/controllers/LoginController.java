@@ -96,7 +96,7 @@ public class LoginController {
         return userService.updateAbout(email,about.get("about").toString());
     }
 
-    @PutMapping("/investment-history/{email}/")
+    @PostMapping("/{email}/")
     public PitchInvestorUser postInvestmentHistory(@RequestBody InvestmentHistoryRequest investmentHistoryRequest, @PathVariable String email){
         Map<String,String> investment = new HashMap<>();
 
@@ -109,5 +109,7 @@ public class LoginController {
 
         return userService.addToInvestmentHistoryByUser(email,investment);
     }
+
+
 
 }

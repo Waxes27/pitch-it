@@ -26,6 +26,7 @@ public class PitchBusinessUser implements UserDetails {
     private boolean paid = false;
     private String representativeFirstName;
     private String representativeLastName;
+    private String pictureUrl = "/assets/user-profile.png";
     private UserRoles role;
     private String email;
     private String password;
