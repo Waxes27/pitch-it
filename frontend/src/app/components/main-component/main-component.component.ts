@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
+import {IUser} from "../../interfaces/IUser";
+import {InvestorUserModel} from "../../models/InvestorUser";
+import {CookieService} from "ngx-cookie-service";
+import {BusinessUserModel} from "../../models/BusinessUserModel";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: "app-main-component",
@@ -8,7 +13,8 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ["./main-component.component.sass"],
 })
 export class MainComponentComponent implements OnInit {
-  constructor(public auth: AuthService, private router: Router) {}
+  user: IUser = new InvestorUserModel();
+  constructor(public auth: AuthService, private router: Router, private cookies: CookieService, private http: HttpClient) {}
   routesList = [
     "/",
     "/questionaire",
@@ -38,5 +44,18 @@ export class MainComponentComponent implements OnInit {
     return false;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.http
+        .get(
+            `http://102.221.36.216:8081/user/${this.cookies.get("userEmail")}`,
+            {withCredentials: true}
+        )
+        .subscribe((data: any): void => {
+          if (data.role.toLowerCase() === "investor") {
+            this.user = new InvestorUserModel(data);
+          } else {
+            this.user = new BusinessUserModel(data);
+          }
+        });
+  }
 }

@@ -7,6 +7,7 @@ export class BusinessUserModel implements IUser {
     location: string;
     about?: string;
     role: string
+    pictureUrl: string = "/assets/user-profile.png"
 
     constructor(data?: any) {
         this.id = data.id
@@ -15,6 +16,7 @@ export class BusinessUserModel implements IUser {
         this.role = data.role;
         this.location = "UK";
         this.about = data.about;
+        this.pictureUrl = data.pictureUrl
     }
 
     setPicture(pictureUrl: string): void {
@@ -47,6 +49,14 @@ export class BusinessUserModel implements IUser {
 
     getLocation(): string {
         return this.location;
+    }
+
+    getPictureUrl(): string {
+        return this.pictureUrl;
+    }
+
+    setPictureUrl(url: string): void {
+        this.pictureUrl = url
     }
 
 

@@ -4,6 +4,7 @@ export interface IUser {
     lastName: string;
     role: string;
     about?: string;
+    pictureUrl: string;
 
 
     getFirstName(): string
@@ -19,5 +20,9 @@ export interface IUser {
     setAbout(about: string): void
 
     getId(): number | null;
+
+    getPictureUrl(): string
+
+    setPictureUrl(url: string): void
 
 }

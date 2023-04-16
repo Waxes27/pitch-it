@@ -8,6 +8,7 @@ export class InvestorUserModel implements IUser {
     role;
     location;
     about?;
+    pictureUrl: string = "/assets/user-profile.png"
 
     constructor(data?: any) {
         if (data) {
@@ -17,6 +18,7 @@ export class InvestorUserModel implements IUser {
             this.role = data.role;
             this.location = "UK";
             this.about = data.about;
+            this.pictureUrl = data.pictureUrl
         } else {
             this.id = 0;
             this.firstName = "";
@@ -55,4 +57,14 @@ export class InvestorUserModel implements IUser {
     getId(): number | null {
         return this.id
     }
+
+    getPictureUrl(): string {
+        return this.pictureUrl;
+    }
+
+    setPictureUrl(url: string): void {
+        this.pictureUrl = url
+    }
+
+
 }

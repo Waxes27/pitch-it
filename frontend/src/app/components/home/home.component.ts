@@ -6,6 +6,10 @@ import {MarketDetailsModel} from "../../models/MarketDetailsModel";
 import {MemberDetails} from "../../models/MemberDetails";
 import {PitchModel} from "../../models/PitchModel";
 import {Router} from "@angular/router";
+import {IUser} from "../../interfaces/IUser";
+import {InvestorUserModel} from "../../models/InvestorUser";
+import {BusinessUserModel} from "../../models/BusinessUserModel";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
     selector: 'app-home',
@@ -15,7 +19,8 @@ import {Router} from "@angular/router";
 export class HomeComponent implements OnInit {
     pitches: PitchModel[] = [];
 
-    constructor(private http: HttpClient, private router: Router) {
+
+    constructor(private http: HttpClient, private router: Router, private cookies: CookieService) {
     }
 
     public goToPitchPage(id: number): void {
@@ -23,6 +28,7 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
+
         this.http.get("http://102.221.36.216:8081/api/pitch/all", {withCredentials: true}).subscribe((receivedPitches: any) => {
 
             for (let i: number = 0; i < receivedPitches.length; i++) {

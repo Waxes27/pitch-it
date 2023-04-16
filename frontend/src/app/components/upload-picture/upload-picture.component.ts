@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AngularFireStorage} from "@angular/fire/compat/storage";
 import {finalize} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
     selector: 'app-upload-picture',
@@ -11,7 +13,7 @@ export class UploadPictureComponent implements OnInit {
     selectedFile: File | null = null;
     @Input() userId: number | null = null;
 
-    constructor(private storage: AngularFireStorage) {
+    constructor(private storage: AngularFireStorage, private http: HttpClient, private cookies: CookieService) {
     }
 
     ngOnInit(): void {
@@ -31,6 +33,7 @@ export class UploadPictureComponent implements OnInit {
         // Upload the file to Firebase Storage and get the upload task
         const uploadTask = fileRef.put(this.selectedFile);
 
+
         uploadTask.percentageChanges().subscribe(progress => {
             console.log(`Upload is ${progress}% done`);
         });
@@ -42,5 +45,16 @@ export class UploadPictureComponent implements OnInit {
                 });
             })
         ).subscribe();
+
+        fileRef.getDownloadURL().subscribe(url => {
+            let newUrl = url
+            let body = {
+                "pictureUrl": newUrl
+            }
+
+            this.http.post(`http://pitchitltd.co.uk:8081/profile?email=${this.cookies.get('userEmail')}`, {withCredentials: true}).subscribe(data => {
+                console.log(data)
+            })
+        })
     }
 }

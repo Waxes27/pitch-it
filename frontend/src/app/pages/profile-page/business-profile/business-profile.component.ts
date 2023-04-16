@@ -37,8 +37,6 @@ export class BusinessProfileComponent implements OnInit {
                 } else {
                     this.user = new BusinessUserModel(data);
                 }
-
-                this.isInvestor = this.user.role.toLowerCase() === "investor";
             });
     }
 
