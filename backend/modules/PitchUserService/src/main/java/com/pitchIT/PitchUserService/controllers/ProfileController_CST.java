@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-
+@RequestMapping("/profile")
 public class ProfileController_CST {
 
     @Autowired
