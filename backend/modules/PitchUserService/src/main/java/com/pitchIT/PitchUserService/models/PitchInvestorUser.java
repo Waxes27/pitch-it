@@ -28,7 +28,7 @@ public class PitchInvestorUser implements UserDetails {
     private String lastName;
     private UserRoles role;
     private String email;
-    private String pictureUrl;
+    private String pictureUrl = "/assets/user-profile.png";
     private String password;
     private String about;
 
