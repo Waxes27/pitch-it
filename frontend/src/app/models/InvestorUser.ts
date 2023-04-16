@@ -1,51 +1,58 @@
 import {IUser} from "../interfaces/IUser";
 
-export class InvestorUserModel implements IUser{
+export class InvestorUserModel implements IUser {
 
+    id: number | null;
+    firstName;
+    lastName;
+    role;
+    location;
+    about?;
 
-  firstName;
-  lastName;
-   role;
-   location;
-   about?;
-  constructor(data?: any) {
-    if (data) {
-      this.firstName = data.firstName;
-      this.lastName = data.lastName;
-      this.role = data.role;
-      this.location = "UK";
-      this.about = data.about;
-    } else {
-      this.firstName = "";
-      this.lastName = "";
-      this.role = "";
-      this.location = "";
-      this.about = "";
+    constructor(data?: any) {
+        if (data) {
+            this.id = data.id;
+            this.firstName = data.firstName;
+            this.lastName = data.lastName;
+            this.role = data.role;
+            this.location = "UK";
+            this.about = data.about;
+        } else {
+            this.id = 0;
+            this.firstName = "";
+            this.lastName = "";
+            this.role = "";
+            this.location = "";
+            this.about = "";
+        }
     }
-  }
 
 
-  public setAbout(aboutText?: string) {
-    this.about = aboutText;
-  }
+    public setAbout(aboutText?: string) {
+        this.about = aboutText;
+    }
 
-  getFirstName(): string {
-    return this.firstName;
-  }
+    getFirstName(): string {
+        return this.firstName;
+    }
 
-  getLastName(): string{
-    return this.lastName;
-  }
+    getLastName(): string {
+        return this.lastName;
+    }
 
-  getRole(): string {
-    return this.role;
-  }
+    getRole(): string {
+        return this.role;
+    }
 
-  getLocation(): string {
-    return this.location;
-  }
+    getLocation(): string {
+        return this.location;
+    }
 
-  getAbout(): string {
-    return this.about;
-  }
+    getAbout(): string {
+        return this.about;
+    }
+
+    getId(): number | null {
+        return this.id
+    }
 }

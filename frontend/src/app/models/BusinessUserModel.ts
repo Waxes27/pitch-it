@@ -1,18 +1,28 @@
 import {IUser} from "../interfaces/IUser";
 
-export class BusinessUserModel implements IUser{
-    firstName:string
+export class BusinessUserModel implements IUser {
+    id: number | null;
+    firstName: string;
     lastName: string;
     location: string;
     about?: string;
     role: string
 
     constructor(data?: any) {
+        this.id = data.id
         this.lastName = data.representativeLastName;
         this.firstName = data.representativeFirstName;
         this.role = data.role;
         this.location = "UK";
         this.about = data.about;
+    }
+
+    setPicture(pictureUrl: string): void {
+        throw new Error("Method not implemented.");
+    }
+
+    getId(): number | null {
+        return this.id
     }
 
     getRole(): string {

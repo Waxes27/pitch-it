@@ -1,148 +1,164 @@
-import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { BrowserModule } from "@angular/platform-browser";
-import { NgCreditCardModule } from "angular-credit-card";
-import { MatStepperModule } from "@angular/material/stepper";
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MatInputModule } from "@angular/material/input";
-import { MatSelectModule } from "@angular/material/select";
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatIconModule } from "@angular/material/icon";
-import { MatSidenavModule } from "@angular/material/sidenav";
-import { MatCardModule } from "@angular/material/card";
-import { MatDatepickerModule } from "@angular/material/datepicker";
-import { MatButtonModule } from "@angular/material/button";
-import { HttpClientModule } from "@angular/common/http";
-import { MatNativeDateModule } from "@angular/material/core";
-import { LoginComponent } from "./components/login/login.component";
-import { MatExpansionModule } from "@angular/material/expansion";
-import { MainComponentComponent } from "./components/main-component/main-component.component";
-import { HeaderComponentComponent } from "./components/header-component/header-component.component";
-import { HomeComponent } from "./components/home/home.component";
-import { InvestorDashboardComponent } from "./components/dashboard/investor-dashboard/investor-dashboard.component";
-import { InvestorComponent } from "./components/register/investor/investor.component";
-import { QuestionaireComponentComponent } from "./components/questionaire-component/questionaire-component.component";
-import { BusinessComponent } from "./components/register/business/business.component";
-import { InvestorPreferencesComponentComponent } from "./components/preferences/investor-preferences-component/investor-preferences-component.component";
-import { BusinessPreferencesComponentComponent } from "./components/preferences/business-preferences-component/business-preferences-component.component";
-import { MatTooltipModule } from "@angular/material/tooltip";
-import { MatSlideToggleModule } from "@angular/material/slide-toggle";
-import { MatGridListModule } from "@angular/material/grid-list";
-import { DetailsPageComponent } from "./components/details-page/details-page.component";
-import { PitchesComponent } from "./pages/pitches/pitches.component";
-import { CompanyDetailsComponent } from "./pages/pitches/company-details/company-details.component";
-import { PitchQuestionnaireComponent } from "./pages/pitches/pitch-questionnaire/pitch-questionnaire.component";
-import { MatSliderModule } from "@angular/material/slider";
+import {NgModule} from "@angular/core";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {BrowserModule} from "@angular/platform-browser";
+import {NgCreditCardModule} from "angular-credit-card";
+import {MatStepperModule} from "@angular/material/stepper";
+import {AppRoutingModule} from "./app-routing.module";
+import {AppComponent} from "./app.component";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatCardModule} from "@angular/material/card";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatButtonModule} from "@angular/material/button";
+import {HttpClientModule} from "@angular/common/http";
+import {MatNativeDateModule} from "@angular/material/core";
+import {LoginComponent} from "./components/login/login.component";
+import {MatExpansionModule} from "@angular/material/expansion";
+import {MainComponentComponent} from "./components/main-component/main-component.component";
+import {HeaderComponentComponent} from "./components/header-component/header-component.component";
+import {HomeComponent} from "./components/home/home.component";
+import {InvestorDashboardComponent} from "./components/dashboard/investor-dashboard/investor-dashboard.component";
+import {InvestorComponent} from "./components/register/investor/investor.component";
+import {QuestionaireComponentComponent} from "./components/questionaire-component/questionaire-component.component";
+import {BusinessComponent} from "./components/register/business/business.component";
+import {
+    InvestorPreferencesComponentComponent
+} from "./components/preferences/investor-preferences-component/investor-preferences-component.component";
+import {
+    BusinessPreferencesComponentComponent
+} from "./components/preferences/business-preferences-component/business-preferences-component.component";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {DetailsPageComponent} from "./components/details-page/details-page.component";
+import {PitchesComponent} from "./pages/pitches/pitches.component";
+import {CompanyDetailsComponent} from "./pages/pitches/company-details/company-details.component";
+import {PitchQuestionnaireComponent} from "./pages/pitches/pitch-questionnaire/pitch-questionnaire.component";
+import {MatSliderModule} from "@angular/material/slider";
 // import { TextBoxModule, NumericTextBoxModule, MaskedTextBoxModule, SliderModule, UploaderModule, ColorPickerModule, SignatureModule, RatingModule } from '@syncfusion/ej2-angular-inputs';
-import { MarketDetailsComponent } from "./pages/pitches/market-details/market-details.component";
-import { BusinessDetailsComponent } from "./pages/pitches/business-details/business-details.component";
-import { TeamDetailsComponent } from './pages/pitches/team-details/team-details.component';
-import { LandingPageComponent } from './pages/landing-page/landing-page.component';
-import { InvestorMembershipComponentsComponent } from "./components/membership-components/investor/membership-components.component";
-import { CompanyMembershipComponentsComponent } from "./components/membership-components/company/membership-components.component";
-import { DocumentDetailsComponent } from './pages/pitches/document-details/document-details.component';
-import { PaymentPageComponent } from './pages/pitches/payment-page-company/payment-page.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { InvestorSplashComponent } from './pages/splash-pages/investor-splash/investor-splash.component';
-import { AppointmentBookingComponent } from './components/appointment-booking/appointment-booking.component';
-import { InvestComponent } from './components/invest/invest.component';
-import { CurrencyMaskModule } from "ng2-currency-mask";
-import { EnquireComponent } from './components/enquire/enquire.component';
-import { EnquireFormComponent } from './components/enquire-form/enquire-form.component';
-import { MembershipCardComponent } from './components/membership-components/membership-card/membership-card.component';
-import { SettingsComponent } from './pages/settings/settings.component';
-import { SettingsNavComponent } from './components/settings-nav/settings-nav.component';
-import { AccountInfoSettingComponent } from './components/account-info-setting/account-info-setting.component';
-import { NotificationsSettingComponent } from './components/notifications-setting/notifications-setting.component';
-import { BillingSettingComponent } from './components/billing-setting/billing-setting.component';
-import { SecuritySettingsComponent } from './components/security-settings/security-settings.component';
-import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { BusinessProfileComponent } from './pages/profile-page/business-profile/business-profile.component';
-import { FundingInformationComponent } from './pages/pitches/funding-information/funding-information.component';
-import { CookieService } from "ngx-cookie-service";
-import { PitchComponent } from './components/pitch/pitch.component';
-import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
-import { SplashComponent } from './components/splash/splash.component';
-import { PitchPageComponent } from './pages/pitch-page/pitch-page.component';
+import {MarketDetailsComponent} from "./pages/pitches/market-details/market-details.component";
+import {BusinessDetailsComponent} from "./pages/pitches/business-details/business-details.component";
+import {TeamDetailsComponent} from './pages/pitches/team-details/team-details.component';
+import {LandingPageComponent} from './pages/landing-page/landing-page.component';
+import {
+    InvestorMembershipComponentsComponent
+} from "./components/membership-components/investor/membership-components.component";
+import {
+    CompanyMembershipComponentsComponent
+} from "./components/membership-components/company/membership-components.component";
+import {DocumentDetailsComponent} from './pages/pitches/document-details/document-details.component';
+import {PaymentPageComponent} from './pages/pitches/payment-page-company/payment-page.component';
+import {RegisterComponent} from './pages/register/register.component';
+import {InvestorSplashComponent} from './pages/splash-pages/investor-splash/investor-splash.component';
+import {AppointmentBookingComponent} from './components/appointment-booking/appointment-booking.component';
+import {InvestComponent} from './components/invest/invest.component';
+import {CurrencyMaskModule} from "ng2-currency-mask";
+import {EnquireComponent} from './components/enquire/enquire.component';
+import {EnquireFormComponent} from './components/enquire-form/enquire-form.component';
+import {MembershipCardComponent} from './components/membership-components/membership-card/membership-card.component';
+import {SettingsComponent} from './pages/settings/settings.component';
+import {SettingsNavComponent} from './components/settings-nav/settings-nav.component';
+import {AccountInfoSettingComponent} from './components/account-info-setting/account-info-setting.component';
+import {NotificationsSettingComponent} from './components/notifications-setting/notifications-setting.component';
+import {BillingSettingComponent} from './components/billing-setting/billing-setting.component';
+import {SecuritySettingsComponent} from './components/security-settings/security-settings.component';
+import {ContactUsComponent} from './components/contact-us/contact-us.component';
+import {BusinessProfileComponent} from './pages/profile-page/business-profile/business-profile.component';
+import {FundingInformationComponent} from './pages/pitches/funding-information/funding-information.component';
+import {CookieService} from "ngx-cookie-service";
+import {PitchComponent} from './components/pitch/pitch.component';
+import {ProgressBarComponent} from './components/progress-bar/progress-bar.component';
+import {SplashComponent} from './components/splash/splash.component';
+import {PitchPageComponent} from './pages/pitch-page/pitch-page.component';
+import {UploadPictureComponent} from './components/upload-picture/upload-picture.component';
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import {environment} from "../environments/environment";
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    MainComponentComponent,
-    HeaderComponentComponent,
-    HomeComponent,
-    InvestorDashboardComponent,
-    InvestorComponent,
-    QuestionaireComponentComponent,
-    BusinessComponent,
-    InvestorPreferencesComponentComponent,
-    BusinessPreferencesComponentComponent,
-    DetailsPageComponent,
-    PitchesComponent,
-    CompanyDetailsComponent,
-    PitchQuestionnaireComponent,
-    MarketDetailsComponent,
-    BusinessDetailsComponent,
-    TeamDetailsComponent,
-    LandingPageComponent,
-    InvestorMembershipComponentsComponent,
-    CompanyMembershipComponentsComponent,
-    DocumentDetailsComponent,
-    PaymentPageComponent,
-    RegisterComponent,
-    InvestorSplashComponent,
-    AppointmentBookingComponent,
-    InvestComponent,
-    EnquireComponent,
-    EnquireFormComponent,
-    MembershipCardComponent,
-    SettingsComponent,
-    SettingsNavComponent,
-    AccountInfoSettingComponent,
-    NotificationsSettingComponent,
-    BillingSettingComponent,
-    SecuritySettingsComponent,
-    ContactUsComponent,
-    BusinessProfileComponent,
-    FundingInformationComponent,
-    PitchComponent,
-    ProgressBarComponent,
-    SplashComponent,
-    PitchPageComponent
-  ],
-  imports: [
-    CurrencyMaskModule,
-    MatStepperModule,
-    NgCreditCardModule,
-    MatGridListModule,
-    MatSlideToggleModule,
-    MatTooltipModule,
-    MatNativeDateModule,
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatSelectModule,
-    MatButtonModule,
-    HttpClientModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatCardModule,
-    MatDatepickerModule,
-    MatExpansionModule,
-    MatSliderModule,
-    
-    // TextBoxModule, NumericTextBoxModule, MaskedTextBoxModule, SliderModule, UploaderModule, ColorPickerModule, SignatureModule, RatingModule
-  ],
-  providers: [
-    CookieService
-  ],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        MainComponentComponent,
+        HeaderComponentComponent,
+        HomeComponent,
+        InvestorDashboardComponent,
+        InvestorComponent,
+        QuestionaireComponentComponent,
+        BusinessComponent,
+        InvestorPreferencesComponentComponent,
+        BusinessPreferencesComponentComponent,
+        DetailsPageComponent,
+        PitchesComponent,
+        CompanyDetailsComponent,
+        PitchQuestionnaireComponent,
+        MarketDetailsComponent,
+        BusinessDetailsComponent,
+        TeamDetailsComponent,
+        LandingPageComponent,
+        InvestorMembershipComponentsComponent,
+        CompanyMembershipComponentsComponent,
+        DocumentDetailsComponent,
+        PaymentPageComponent,
+        RegisterComponent,
+        InvestorSplashComponent,
+        AppointmentBookingComponent,
+        InvestComponent,
+        EnquireComponent,
+        EnquireFormComponent,
+        MembershipCardComponent,
+        SettingsComponent,
+        SettingsNavComponent,
+        AccountInfoSettingComponent,
+        NotificationsSettingComponent,
+        BillingSettingComponent,
+        SecuritySettingsComponent,
+        ContactUsComponent,
+        BusinessProfileComponent,
+        FundingInformationComponent,
+        PitchComponent,
+        ProgressBarComponent,
+        SplashComponent,
+        PitchPageComponent,
+        UploadPictureComponent
+    ],
+    imports: [
+        CurrencyMaskModule,
+        MatStepperModule,
+        NgCreditCardModule,
+        MatGridListModule,
+        MatSlideToggleModule,
+        MatTooltipModule,
+        MatNativeDateModule,
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatSelectModule,
+        MatButtonModule,
+        HttpClientModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatSidenavModule,
+        MatCardModule,
+        MatDatepickerModule,
+        MatExpansionModule,
+        MatSliderModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireStorageModule
+        // TextBoxModule, NumericTextBoxModule, MaskedTextBoxModule, SliderModule, UploaderModule, ColorPickerModule, SignatureModule, RatingModule
+    ],
+    providers: [
+        CookieService
+    ],
+    bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}

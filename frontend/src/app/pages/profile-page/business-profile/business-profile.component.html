@@ -1,99 +1,101 @@
 <section>
-  <div class="profile-header">
-    <div class="profile-banner-container"></div>
-    <div class="profile-details-container">
-      <div class="picture-and-title">
-        <div class="profile-pic">
-          <img src="/assets/john.png" />
-        </div>
-        <div class="title-container">
-          <span class="name">{{user.getFirstName()}} {{user.getLastName()}}</span><br />
-          <span class="title">{{user.getRole()}}</span>
-        </div>
-      </div>
+    <div class="profile-header">
+        <div class="profile-banner-container"></div>
+        <div class="profile-details-container">
+            <div class="picture-and-title">
+                <div class="profile-pic">
+                    <img src="/assets/user-profile.png"/>
+                    <app-upload-picture [userId]="user.getId()"></app-upload-picture>
 
-      <div class="location-container">
-        <div class="location">
-          <svg
-            class="location-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              d="M12 12q.825 0 1.413-.588T14 10q0-.825-.588-1.413T12 8q-.825 0-1.413.588T10 10q0 .825.588 1.413T12 12Zm0 10q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2q3.175 0 5.588 2.225T20 10.2q0 2.5-1.988 5.438T12 22Z"
-            />
-          </svg>
-          <span>{{user.getLocation()}}</span>
+                </div>
+                <div class="title-container">
+                    <span class="name">{{user.getFirstName()}} {{user.getLastName()}}</span><br/>
+                    <span class="title">{{user.getRole()}}</span>
+                </div>
+            </div>
+
+            <div class="location-container">
+                <div class="location">
+                    <svg
+                            class="location-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                    >
+                        <path
+                                fill="currentColor"
+                                d="M12 12q.825 0 1.413-.588T14 10q0-.825-.588-1.413T12 8q-.825 0-1.413.588T10 10q0 .825.588 1.413T12 12Zm0 10q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2q3.175 0 5.588 2.225T20 10.2q0 2.5-1.988 5.438T12 22Z"
+                        />
+                    </svg>
+                    <span>{{user.getLocation()}}</span>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <div *ngIf="creatingAbout" class="add-about-container">
-    <h2>About</h2>
-    <form [formGroup]="aboutForm" (ngSubmit)="onSubmit()">
+    <div *ngIf="creatingAbout" class="add-about-container">
+        <h2>About</h2>
+        <form [formGroup]="aboutForm" (ngSubmit)="onSubmit()">
       <textarea
-        formControlName="about"
-        name="about-info"
-        id="about-info"
-        cols="50"
-        rows="10"
-        placeholder="Input you new about"
+              formControlName="about"
+              name="about-info"
+              id="about-info"
+              cols="50"
+              rows="10"
+              placeholder="Input you new about"
       ></textarea>
-      <button type="submit">Done</button>
-    </form>
-  </div>
-
-  <div
-    *ngIf="!creatingAbout"
-    class="about-container"
-    [class.collapsed-about]="readMore"
-  >
-    <h2>About</h2>
-    <p>
-      {{ user.getAbout() }}
-    </p>
-
-    <div class="buttons-container">
-      <button class="about-size-toggle" (click)="readMoreClick()">
-        Show More
-      </button>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="30"
-        viewBox="0 0 24 24"
-        class="create-about"
-        (click)="createAbout()"
-      >
-        <path
-          fill="#6f4ff2"
-          d="m19.3 8.925l-4.25-4.2l1.4-1.4q.575-.575 1.413-.575t1.412.575l1.4 1.4q.575.575.6 1.388t-.55 1.387L19.3 8.925ZM17.85 10.4L7.25 21H3v-4.25l10.6-10.6l4.25 4.25Z"
-        />
-      </svg>
+            <button type="submit">Done</button>
+        </form>
     </div>
-  </div>
 
-  <div class="invest-history-container" *ngIf="isInvestor">
-    <h2>Investment History</h2>
-    <div class="investment-info-container">
-      <div class="investment-image-container">
-        <img src="/assets/floral-2622313_1920.jpg" />
-      </div>
-      <div class="investment-info">
-        <h3>Investment Name</h3>
+    <div
+            *ngIf="!creatingAbout"
+            class="about-container"
+            [class.collapsed-about]="readMore"
+    >
+        <h2>About</h2>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur
-          nihil magni omnis numquam iusto atque. Aperiam maxime animi
-          consectetur esse dolores totam, aspernatur blanditiis, ullam
-          consequuntur exercitationem nulla assumenda dignissimos!
+            {{ user.getAbout() }}
         </p>
-        <span>2020 - present</span><br />
-        <a href="#">Link to investment</a>
-      </div>
+
+        <div class="buttons-container">
+            <button class="about-size-toggle" (click)="readMoreClick()">
+                Show More
+            </button>
+            <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    class="create-about"
+                    (click)="createAbout()"
+            >
+                <path
+                        fill="#6f4ff2"
+                        d="m19.3 8.925l-4.25-4.2l1.4-1.4q.575-.575 1.413-.575t1.412.575l1.4 1.4q.575.575.6 1.388t-.55 1.387L19.3 8.925ZM17.85 10.4L7.25 21H3v-4.25l10.6-10.6l4.25 4.25Z"
+                />
+            </svg>
+        </div>
     </div>
-  </div>
+
+    <div class="invest-history-container" *ngIf="isInvestor">
+        <h2>Investment History</h2>
+        <div class="investment-info-container">
+            <div class="investment-image-container">
+                <img src="/assets/floral-2622313_1920.jpg"/>
+            </div>
+            <div class="investment-info">
+                <h3>Investment Name</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur
+                    nihil magni omnis numquam iusto atque. Aperiam maxime animi
+                    consectetur esse dolores totam, aspernatur blanditiis, ullam
+                    consequuntur exercitationem nulla assumenda dignissimos!
+                </p>
+                <span>2020 - present</span><br/>
+                <a href="#">Link to investment</a>
+            </div>
+        </div>
+    </div>
 </section>

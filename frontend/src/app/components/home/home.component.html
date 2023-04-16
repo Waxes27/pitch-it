@@ -1,13 +1,15 @@
 <div class="dash-top">
     <img src="/assets/dash-top.svg" alt="">
 </div>
-<section>
-
-    <div *ngFor="let pitch of pitches" class="pitch">
-        <app-pitch
-                (click)="goToPitchPage(pitch.id)"
-                [body]="pitch.businessDetails.problemSolved"
-                [title]="pitch.companyDetails.name"
-                [id]="pitch.id"></app-pitch>
+<section >
+    <div  class="pitches-container">
+        <div *ngFor="let pitch of pitches">
+            <app-pitch
+                    (click)="goToPitchPage(pitch.id)"
+                    [body]="pitch.businessDetails.problemSolved"
+                    [title]="pitch.companyDetails.name"
+                    [id]="pitch.id"></app-pitch>
+        </div>
     </div>
+
 </section>
