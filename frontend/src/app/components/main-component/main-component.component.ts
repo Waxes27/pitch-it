@@ -15,6 +15,11 @@ import {HttpClient} from "@angular/common/http";
 export class MainComponentComponent implements OnInit {
   user: IUser = new InvestorUserModel();
   constructor(public auth: AuthService, private router: Router, private cookies: CookieService, private http: HttpClient) {}
+goToChat() {
+  window.location.href = 'http://pitchitltd.co.uk:3000/login';
+}
+
+  // constructor(public auth: AuthService, private router: Router) {}
   routesList = [
     "/",
     "/questionaire",
