@@ -34,6 +34,8 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Expose ports
 EXPOSE 8080 3000
+EXPOSE 8017 8017
+EXPOSE 8018 8018
 
 # Start supervisord
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
