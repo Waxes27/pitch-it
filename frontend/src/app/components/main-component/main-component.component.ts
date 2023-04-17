@@ -19,6 +19,7 @@ goToChat() {
   window.location.href = 'http://pitchitltd.co.uk:3000/login';
 }
 
+
   // constructor(public auth: AuthService, private router: Router) {}
   routesList = [
     "/",
