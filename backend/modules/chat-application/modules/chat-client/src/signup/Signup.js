@@ -8,6 +8,7 @@ const Signup = (props) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    console.log(localStorage.getItem("accessToken"));
     if (localStorage.getItem("accessToken") !== null) {
       props.history.push("/chat");
     }
