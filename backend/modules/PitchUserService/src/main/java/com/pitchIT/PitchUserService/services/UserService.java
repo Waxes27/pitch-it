@@ -113,6 +113,7 @@ public class UserService implements UserDetailsService {
             if (profileRequest.about() != null){
                 pitchInvestorUser.setAbout(profileRequest.about());
             }
+            investorUserRepository.save(pitchInvestorUser);
             return pitchInvestorUser;
         }else {
             PitchBusinessUser pitchBusinessUser = businessUserRepository.findByEmail(email).get();
