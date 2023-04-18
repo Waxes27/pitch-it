@@ -123,6 +123,7 @@ public class UserService implements UserDetailsService {
             if (profileRequest.about() != null){
                 pitchBusinessUser.setAbout(profileRequest.about());
             }
+            businessUserRepository.save(pitchBusinessUser);
             return pitchBusinessUser;
         }
 
