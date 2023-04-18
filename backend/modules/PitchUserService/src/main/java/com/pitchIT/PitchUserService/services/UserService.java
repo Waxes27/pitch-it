@@ -105,19 +105,19 @@ public class UserService implements UserDetailsService {
     public Object editUserProfile(ProfileRequest profileRequest, String email) {
         if (investorUserRepository.findByEmail(email).isPresent()){
             PitchInvestorUser pitchInvestorUser = investorUserRepository.findByEmail(email).get();
-            if (!profileRequest.pictureUrl().isBlank()){
+            if (profileRequest.pictureUrl() != null){
                 pitchInvestorUser.setPictureUrl(profileRequest.pictureUrl());
             }
-            if (!profileRequest.about().isBlank()){
+            if (profileRequest.about() != null){
                 pitchInvestorUser.setAbout(profileRequest.about());
             }
             return pitchInvestorUser;
         }else {
             PitchBusinessUser pitchBusinessUser = businessUserRepository.findByEmail(email).get();
-            if (!profileRequest.pictureUrl().isBlank()){
+            if (profileRequest.pictureUrl() != null){
                 pitchBusinessUser.setPictureUrl(profileRequest.pictureUrl());
             }
-            if (!profileRequest.about().isBlank()){
+            if (profileRequest.about() != null){
                 pitchBusinessUser.setAbout(profileRequest.about());
             }
             return pitchBusinessUser;

@@ -52,7 +52,12 @@ export class UploadPictureComponent implements OnInit {
                 "pictureUrl": newUrl
             }
 
-            this.http.post(`http://pitchitltd.co.uk:8081/profile?email=${this.cookies.get('userEmail')}`, {withCredentials: true}).subscribe(data => {
+            this.http.post(`http://pitchitltd.co.uk:8081/profile?email=${this.cookies.get('userEmail')}`, 
+            {
+                withCredentials: true,
+                "pictureUrl" : newUrl,
+            }
+            ).subscribe(data => {
                 console.log(data)
             })
         })
