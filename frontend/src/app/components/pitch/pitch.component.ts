@@ -19,5 +19,4 @@ export class PitchComponent implements OnInit {
     }
 
 
-
 }

@@ -40,7 +40,6 @@ export class BusinessProfileComponent implements OnInit {
                 }
             });
             console.log(this.user);
-            
     }
 
     readMoreClick() {

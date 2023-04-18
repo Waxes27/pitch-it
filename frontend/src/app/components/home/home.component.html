@@ -1,8 +1,19 @@
-<div class="dash-top">
-    <img src="/assets/dash-top.svg" alt="">
-</div>
-<section >
-    <div  class="pitches-container">
+<section>
+    <div class="update-container">
+        <div class="main-header">
+            <h3>All of the updates from UK start ups</h3>
+        </div>
+        <div class="sub-header">
+            <span>PitchIT weekly included in your membership</span>
+        </div>
+        <div class="button-container">
+            <button>Coming Soon</button>
+        </div>
+    </div>
+    <div class="dividing-text">
+        <h1>For You</h1>
+    </div>
+    <div class="pitches-container">
         <div *ngFor="let pitch of pitches">
             <app-pitch
                     (click)="goToPitchPage(pitch.id)"

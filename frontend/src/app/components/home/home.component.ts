@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
 
     ngOnInit(): void {
 
-        this.http.get("http://102.221.36.216:8081/api/pitch/all", {withCredentials: true}).subscribe((receivedPitches: any) => {
+        this.http.get("http://pitchitltd.co.uk:8081/api/pitch/all", {withCredentials: true}).subscribe((receivedPitches: any) => {
 
             for (let i: number = 0; i < receivedPitches.length; i++) {
                 let pitchData = receivedPitches[i];
@@ -41,6 +41,8 @@ export class HomeComponent implements OnInit {
                 this.pitches.push(pitch);
             }
         })
+
+        console.log(this.pitches)
     }
 
 }

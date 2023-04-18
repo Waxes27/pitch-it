@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="creator-profile">
-                    <img src="/assets/john.png">
+                    <img src="{{user.getPictureUrl()}}">
                 </div>
 
                 <div class="view-profile">
@@ -109,5 +109,17 @@
         <p>{{pitch.businessDetails.product}}</p>
         <h2>The Problem Solved</h2>
         <p>{{pitch.businessDetails.problemSolved}}</p>
+    </div>
+    <div class="pitch-body">
+        <h2>Business Model</h2>
+        <p>{{pitch.businessDetails.businessModel}}</p>
+        <h2>Exit Strategy</h2>
+        <p>{{pitch.businessDetails.reasonForRaising}}</p>
+    </div>
+    <div class="pitch-body">
+        <h2>Market Research</h2>
+        <p>{{pitch.marketDetails.marketResearch}}</p>
+        <h2>The Problem Solved</h2>
+        <p>{{pitch.marketDetails.keyCompetitors}}</p>
     </div>
 </section>
