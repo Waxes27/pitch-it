@@ -20,3 +20,10 @@ port:
 	xterm -e ssh -R 8018:127.0.0.1:8018 root@pitchitltd.co.uk &
 	xterm -e ssh -R 8081:127.0.0.1:8081 root@pitchitltd.co.uk &
 	xterm -e ssh -R 80:127.0.0.1:80 root@pitchitltd.co.uk &
+
+kill: 
+	lsof -ti tcp:80 | xargs kill
+	lsof -ti tcp:8081 | xargs kill
+	lsof -ti tcp:8017 | xargs kill
+	lsof -ti tcp:8018 | xargs kill
+	lsof -ti tcp:3000 | xargs kill

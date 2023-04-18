@@ -20,7 +20,7 @@ public class ProfileController_CST {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/profile")
+    @PostMapping
     public Object postInvestmentHistory(@RequestBody ProfileRequest profileRequest, @RequestParam("email") String email){
         return userService.editUserProfile(profileRequest, email);
     }
