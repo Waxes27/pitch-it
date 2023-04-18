@@ -4,7 +4,7 @@
         <div class="profile-details-container">
             <div class="picture-and-title">
                 <div class="profile-pic">
-                    <img src="/assets/user-profile.png"/>
+                    <img [src]=this.user.getPictureUrl/>
                     <app-upload-picture [userId]="user.getId()"></app-upload-picture>
 
                 </div>

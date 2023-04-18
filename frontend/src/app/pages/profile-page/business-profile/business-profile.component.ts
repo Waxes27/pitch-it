@@ -13,6 +13,7 @@ import {AngularFireStorage} from "@angular/fire/compat/storage";
     styleUrls: ["./business-profile.component.sass"],
 })
 export class BusinessProfileComponent implements OnInit {
+
     readMore: boolean = true;
     creatingAbout: boolean = false;
     isInvestor: boolean = false;
@@ -38,6 +39,8 @@ export class BusinessProfileComponent implements OnInit {
                     this.user = new BusinessUserModel(data);
                 }
             });
+            console.log(this.user);
+            
     }
 
     readMoreClick() {
@@ -62,8 +65,10 @@ export class BusinessProfileComponent implements OnInit {
         this.http
             .post("http://102.221.36.216:8081/profile/new", body)
             .subscribe((data) => {
-                console.log(data);
+                
             });
     }
+
+
 
 }

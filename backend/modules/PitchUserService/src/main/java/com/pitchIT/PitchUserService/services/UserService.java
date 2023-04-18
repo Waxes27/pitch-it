@@ -41,6 +41,7 @@ public class UserService implements UserDetailsService {
 
     public PitchBusinessUser registerBusinessUserByEmail(PitchBusinessUser pitchBusinessUser){
         this.checkUser(pitchBusinessUser.getEmail());
+        pitchBusinessUser.setPictureUrl("/assets/user-profile.png");
 
         System.out.println(businessUserRepository.save(pitchBusinessUser));
         return pitchBusinessUser;
@@ -48,6 +49,7 @@ public class UserService implements UserDetailsService {
 
     public PitchInvestorUser registerInvestorUserByEmail(PitchInvestorUser investorUser) {
         this.checkUser(investorUser.getEmail());
+        investorUser.setPictureUrl("/assets/user-profile.png");
 
         InvestmentHistory investmentHistory = new InvestmentHistory(
                 investorUser
