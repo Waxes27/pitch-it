@@ -46,7 +46,7 @@ services:
   frontend:
     image: pitchit/frontend:latest
     depends_on:
-      #      - users
+      - users
       - postgres
     ports:
       - "80:80"

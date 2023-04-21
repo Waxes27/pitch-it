@@ -7,6 +7,7 @@ docker-build-run:
 	chmod -x scripts/*
 	docker build modules/chat-application/
 	docker build modules/chat-application/ -t modules/chat-application
+	docker build ../frontend/ -t pitchit/frontend
 	docker-compose -f modules/chat-application/docker-compose.yml up -d
 	docker-compose up --remove-orphans -d
 	#mvn test
