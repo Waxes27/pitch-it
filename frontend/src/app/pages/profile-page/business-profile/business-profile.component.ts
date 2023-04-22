@@ -5,7 +5,6 @@ import {CookieService} from "ngx-cookie-service";
 import {InvestorUserModel} from "src/app/models/InvestorUser";
 import {IUser} from "../../../interfaces/IUser";
 import {BusinessUserModel} from "../../../models/BusinessUserModel";
-import {AngularFireStorage} from "@angular/fire/compat/storage";
 
 @Component({
     selector: "app-business-profile",
@@ -39,7 +38,7 @@ export class BusinessProfileComponent implements OnInit {
                     this.user = new BusinessUserModel(data);
                 }
             });
-            console.log(this.user);
+        console.log(this.user);
     }
 
     readMoreClick() {
@@ -58,16 +57,16 @@ export class BusinessProfileComponent implements OnInit {
         this.user.setAbout(formData.about!);
         this.creatingAbout = !this.creatingAbout;
 
-        let body = {
+        let body: { pictureUrl: string; about: any; withCredentials: boolean } = {
             about: formData.about,
+            pictureUrl: this.user.getPictureUrl(),
+            withCredentials: true
         };
+
         this.http
-            .post("http://102.221.36.216:8081/profile/new", body)
+            .post(`http://pitchitltd.co.uk:8081/profile?email=${this.cookies.get("userEmail")}`, body)
             .subscribe((data) => {
-                
+                console.log(data)
             });
     }
-
-
-
 }

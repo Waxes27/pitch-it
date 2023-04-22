@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6f5a4f2-65f2-48dd-99fe-4e088dcf7b45" name="Changes" comment="Creating a pitch page">
+    <list default="true" id="b6f5a4f2-65f2-48dd-99fe-4e088dcf7b45" name="Changes" comment="Adding default-banner.jpg">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/home/home.component.sass" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/home/home.component.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/pitch/pitch.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/pitch/pitch.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/pitch/pitch.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/pitch/pitch.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/pitch-page/pitch-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/pitch-page/pitch-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/pitch-page/pitch-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/pitch-page/pitch-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/profile-page/business-profile/business-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/profile-page/business-profile/business-profile.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +111,7 @@
       <workItem from="1681662281642" duration="2651000" />
       <workItem from="1681839598877" duration="888000" />
       <workItem from="1681840596270" duration="5796000" />
+      <workItem from="1682092900178" duration="692000" />
     </task>
     <task id="LOCAL-00001" summary="finished with profiles">
       <created>1680902071622</created>
@@ -176,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681410439277</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Adding default-banner.jpg">
+      <created>1682093440402</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1682093440402</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +192,7 @@
     <MESSAGE value="fixing the ui" />
     <MESSAGE value="adding touch ups" />
     <MESSAGE value="Creating a pitch page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating a pitch page" />
+    <MESSAGE value="Adding default-banner.jpg" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding default-banner.jpg" />
   </component>
 </project>

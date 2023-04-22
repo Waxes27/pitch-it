@@ -1,6 +1,6 @@
 <section>
     <form>
-        <input type="file" name="profile-pic" id="profile-pic" (change)="onFileSelected($event)">
+        <input type="file" name="profile-pic" id="profile-pic" (change)="onFileSelected($event)" accept=".image/png">
         <button type="submit" (click)="uploadFile()">Upload</button>
     </form>
 </section>
