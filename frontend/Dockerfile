@@ -1,7 +1,7 @@
 # Stage 1
 FROM node:14.15.4 as node
 WORKDIR /app
-COPY ../frontend/ .
+COPY . .
 RUN npm install
 RUN npm install -g @angular/cli@13
 RUN ng build --configuration production
