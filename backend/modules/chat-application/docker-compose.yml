@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   chat:
+    restart: always
     image: modules/chat-application
     container_name: pitchIt-chat
     depends_on:
@@ -14,6 +15,7 @@ services:
     volumes:
       - /home/daemon60606/Spring/logs:/var/log
   mongodb:
+    restart: always
     image: mongo:4.4.6
     expose:
       - 27017
