@@ -1,4 +1,5 @@
 docker-build-run:
+	git commit -am "Commit from Makefile"
 	git pull --rebase
 	mvn clean install package -DskipTests
 	chmod +x scripts/*
@@ -8,6 +9,7 @@ docker-build-run:
 	docker build modules/chat-application/
 	docker build modules/chat-application/ -t modules/chat-application
 	cd ../frontend/
+	pwd
 	docker build . -t pitchit/frontend
 	cd ../backend/
 	docker-compose -f modules/chat-application/docker-compose.yml up -d
