@@ -9,6 +9,6 @@ RUN ng build --configuration production
 # Stage 2
 FROM nginx:alpine
 COPY --from=node /app/dist/global-medical /usr/share/nginx/html
-COPY default.conf /etc/nginx/conf.d/
+# COPY default.conf /etc/nginx/conf.d/
 
 # docker build -t pitchit/angular-app .

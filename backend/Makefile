@@ -10,7 +10,6 @@ docker-build-run:
 	docker build ../frontend/ -t pitchit/frontend
 	docker-compose -f modules/chat-application/docker-compose.yml up -d
 	docker-compose up --remove-orphans -d
-	#mvn test
 
 port:
 	xterm -e ssh -R 3000:127.0.0.1:3000 root@pitchitltd.co.uk &
