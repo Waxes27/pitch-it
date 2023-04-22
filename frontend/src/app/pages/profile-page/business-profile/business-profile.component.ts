@@ -51,7 +51,7 @@ export class BusinessProfileComponent implements OnInit {
     }
 
     onSubmit() {
-        let formData = {
+        let formData: { about: any } = {
             about: this.aboutForm.get("about")?.value,
         };
         this.user.setAbout(formData.about!);
