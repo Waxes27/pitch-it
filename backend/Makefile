@@ -1,5 +1,5 @@
 docker-build-run:
-	git commit -am "Commit from Makefile"
+	#git commit -am "Commit from Makefile"
 	git pull --rebase
 	mvn clean install package -DskipTests
 	chmod +x scripts/*
