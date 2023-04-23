@@ -8,8 +8,8 @@ docker-build-run:
 	chmod -x scripts/*
 	docker build modules/chat-application/
 	docker build modules/chat-application/ -t modules/chat-application
-	docker build . -t pitchit/frontend
-	cd ../backend/
+	#docker build . -t pitchit/frontend
+	#cd ../backend/
 	docker-compose -f modules/chat-application/docker-compose.yml up -d
 	docker-compose up --remove-orphans -d
 
