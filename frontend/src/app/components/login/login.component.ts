@@ -6,54 +6,60 @@ import {UserDataService} from "src/app/services/UserDataService";
 import {CookieService} from "ngx-cookie-service";
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.sass"],
+    selector: "app-login",
+    templateUrl: "./login.component.html",
+    styleUrls: ["./login.component.sass"],
 })
 export class LoginComponent implements OnInit {
-  constructor(
-    private http: HttpClient,
-    private router: Router,
-    private userService: UserDataService,
-    private cookies: CookieService
-  ) {}
+    error: string = ""
 
-  ngOnInit(): void {}
+    constructor(
+        private http: HttpClient,
+        private router: Router,
+        private userService: UserDataService,
+        private cookies: CookieService
+    ) {
+    }
 
-  loginForm = new FormGroup({
-    username: new FormControl("", [
-      <any>Validators.required,
-      <any>Validators.minLength(6),
-    ]),
-    password: new FormControl("", [
-      <any>Validators.required,
-      <any>Validators.minLength(8),
-    ]),
-  });
+    ngOnInit(): void {
+    }
 
-  onSubmit() {
-    let formData = {
-      username: this.loginForm.get("username")?.value,
-      password: this.loginForm.get("password")?.value,
-    };
+    loginForm = new FormGroup({
+        username: new FormControl("", [
+            <any>Validators.required,
+            <any>Validators.minLength(6),
+        ]),
+        password: new FormControl("", [
+            <any>Validators.required,
+            <any>Validators.minLength(8),
+        ]),
+    });
 
-    this.http
-      .post(
-        `http://102.221.36.216:8081/login?username=${formData.username}&password=${formData.password}`,
-        formData,
-        { withCredentials: true }
-      )
-      .subscribe((data: any) => {
-        let userData = {
-          firstName: data.representativeFirstName,
-          lastName: data.representativeLastName,
-          title: data.role,
-          location: "UK",
-          about: "",
+    onSubmit() {
+        let formData = {
+            username: this.loginForm.get("username")?.value,
+            password: this.loginForm.get("password")?.value,
         };
-        this.cookies.set("userEmail", data.email);
-        this.userService.updateUser(userData);
-        this.router.navigate(["/home"]);
-      });
-  }
+
+        this.http
+            .post(
+                `http://pitchitltd.co.uk:8081/login?username=${formData.username}&password=${formData.password}`,
+                formData,
+                {withCredentials: true}
+            )
+            .subscribe((data: any) => {
+                let userData = {
+                    firstName: data.representativeFirstName,
+                    lastName: data.representativeLastName,
+                    title: data.role,
+                    location: "UK",
+                    about: data.about,
+                };
+                this.cookies.set("userEmail", data.email);
+                this.userService.updateUser(userData);
+                this.router.navigate(["/home"]);
+            }, (error) => {
+                this.error = error.error.text
+            });
+    }
 }

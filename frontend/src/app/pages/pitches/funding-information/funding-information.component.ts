@@ -29,7 +29,7 @@ export class FundingInformationComponent {
     
     
     
-    this.http.post("http://102.221.36.216:8081/api/pitch?userId=waxes27", finalRequest).subscribe((data) => {
+    this.http.post("http://pitchitltd.co.uk:8081/api/pitch?userId=waxes27", finalRequest).subscribe((data) => {
       console.log(data);
     });
   }
