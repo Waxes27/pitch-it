@@ -14,6 +14,7 @@ import javax.persistence.*;
 @Builder
 public class Pitch {
     private boolean passedQuestion;
+    private String logoUrl;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,8 +38,8 @@ public class Pitch {
     @OneToOne(mappedBy = "pitch", cascade = CascadeType.ALL, orphanRemoval = true)
     private MemberDetails memberDetails;
 
-    @Transient
-    private String logoUrl;
+
+
 
 //    public Pitch(String username, CompanyDetails companyDetails, BusinessDetails businessDetails, MarketDetails marketDetails, Documents documents, MemberDetails memberDetails) {
 //        this.passedQuestion = true;
