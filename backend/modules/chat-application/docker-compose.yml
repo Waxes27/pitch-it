@@ -14,8 +14,8 @@ services:
       - 8018:8018
     volumes:
       - /home/daemon60606/Spring/logs:/var/log
-  mongodb:
-    restart: always
-    image: mongo:4.4.6
-    expose:
-      - 27017
+#  mongodb:
+#    restart: always
+#    image: mongo:4.4.6
+#    expose:
+#      - 27017

@@ -27,6 +27,7 @@
 	<modules>
 		<module>modules/PitchService</module>
 		<module>modules/PitchUserService</module>
+<!--		<module>modules/PitchChatMessaging</module>-->
 	</modules>
 
 	<dependencyManagement>
