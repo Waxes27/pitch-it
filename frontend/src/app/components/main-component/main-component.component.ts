@@ -53,7 +53,7 @@ goToChat() {
   ngOnInit(): void {
     this.http
         .get(
-            `http://102.221.36.216:8081/user/${this.cookies.get("userEmail")}`,
+            `http://pitchitltd.co.uk:8081/user/${this.cookies.get("userEmail")}`,
             {withCredentials: true}
         )
         .subscribe((data: any): void => {

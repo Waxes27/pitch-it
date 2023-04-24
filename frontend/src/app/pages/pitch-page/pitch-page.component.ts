@@ -10,6 +10,8 @@ import {IUser} from "../../interfaces/IUser";
 import {InvestorUserModel} from "../../models/InvestorUser";
 import {CookieService} from "ngx-cookie-service";
 import {BusinessUserModel} from "../../models/BusinessUserModel";
+import {finalize} from "rxjs";
+import {AngularFireStorage} from "@angular/fire/compat/storage";
 
 @Component({
     selector: 'app-pitch-page',
@@ -20,10 +22,55 @@ export class PitchPageComponent implements OnInit {
     private pitchId?: number;
     pitch: PitchModel = new PitchModel();
     user: IUser = new InvestorUserModel();
+    selectedFile: File | null = null;
 
 
-    constructor(private route: ActivatedRoute, private router: Router, private cookies: CookieService, private http: HttpClient) {
+    constructor(private route: ActivatedRoute, private router: Router, private cookies: CookieService, private http: HttpClient, private storage: AngularFireStorage) {
 
+    }
+
+    onFileSelected(event: any) {
+        this.selectedFile = event.target.files[0];
+        console.log(this.selectedFile?.name)
+    }
+
+    uploadFile() {
+        const filePath = `pitches/logos/${this.pitch.id}.png`;
+
+        // Create a reference to the file path in Firebase Storage
+        const fileRef = this.storage.ref(filePath);
+
+        // Upload the file to Firebase Storage and get the upload task
+        const uploadTask = fileRef.put(this.selectedFile);
+
+
+        uploadTask.percentageChanges().subscribe(progress => {
+            console.log(`Upload is ${progress}% done`);
+        });
+
+        uploadTask.snapshotChanges().pipe(
+            finalize(() => {
+                fileRef.getDownloadURL().subscribe(url => {
+                    console.log('File uploaded to:', url);
+                });
+            })
+        ).subscribe();
+
+        fileRef.getDownloadURL().subscribe(url => {
+            let newUrl = url
+            let body = {
+                "pictureUrl": newUrl
+            }
+
+            this.http.post(`http://pitchitltd.co.uk:8081/profile?email=${this.cookies.get('userEmail')}`,
+                {
+                    withCredentials: true,
+                    "pictureUrl": newUrl,
+                }
+            ).subscribe(data => {
+                console.log(data)
+            })
+        })
     }
 
     ngOnInit(): void {
@@ -31,7 +78,7 @@ export class PitchPageComponent implements OnInit {
 
         this.http
             .get(
-                `http://102.221.36.216:8081/user/${this.cookies.get("userEmail")}`,
+                `http://pitchitltd.co.uk:8081/user/${this.cookies.get("userEmail")}`,
                 {withCredentials: true}
             )
             .subscribe((data: any): void => {

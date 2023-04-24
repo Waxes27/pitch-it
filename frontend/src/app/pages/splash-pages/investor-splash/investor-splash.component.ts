@@ -20,7 +20,7 @@ export class InvestorSplashComponent implements OnInit {
     async ngOnInit(): Promise<void> {
         this.http
             .get(
-                `http://102.221.36.216:8081/user/${this.cookies.get("userEmail")}`,
+                `http://pitchitltd.co.uk:8081/user/${this.cookies.get("userEmail")}`,
                 {withCredentials: true}
             )
             .subscribe((data: any): void => {
