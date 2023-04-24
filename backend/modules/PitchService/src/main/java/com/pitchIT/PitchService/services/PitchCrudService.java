@@ -47,7 +47,7 @@ public class PitchCrudService {
         documentsRepository.save(documents);
         marketDetailsRepository.save(marketDetails);
         memberDetailsRepository.save(memberDetails);
-        pitch.setLogoUrl("/assets/pitchIt-logo.png");
+//        pitch.setLogoUrl("/assets/pitchIt-logo.png");
         pitch.setUsername(username);
         pitch.setCompanyDetails(companyDetails);
         pitch.setBusinessDetails(businessDetails);
