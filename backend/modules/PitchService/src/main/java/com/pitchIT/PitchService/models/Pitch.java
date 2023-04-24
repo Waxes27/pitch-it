@@ -37,7 +37,8 @@ public class Pitch {
     @OneToOne(mappedBy = "pitch", cascade = CascadeType.ALL, orphanRemoval = true)
     private MemberDetails memberDetails;
 
-    public String logoUrl;
+    @Transient
+    private String logoUrl;
 
 //    public Pitch(String username, CompanyDetails companyDetails, BusinessDetails businessDetails, MarketDetails marketDetails, Documents documents, MemberDetails memberDetails) {
 //        this.passedQuestion = true;
