@@ -13,14 +13,14 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 public class Pitch {
-    private boolean passedQuestion;
-    private String logoUrl;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
     private String username;
+    private String logoUrl;
+    private boolean passedQuestion;
 
     @OneToOne(mappedBy = "pitch", cascade = CascadeType.ALL, orphanRemoval = true)
     private CompanyDetails companyDetails;
@@ -37,8 +37,6 @@ public class Pitch {
 
     @OneToOne(mappedBy = "pitch", cascade = CascadeType.ALL, orphanRemoval = true)
     private MemberDetails memberDetails;
-
-
 
 
 //    public Pitch(String username, CompanyDetails companyDetails, BusinessDetails businessDetails, MarketDetails marketDetails, Documents documents, MemberDetails memberDetails) {
