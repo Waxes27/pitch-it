@@ -53,7 +53,7 @@ public class Pitch {
     public Pitch(boolean passedQuestion, String username, CompanyDetails companyDetails, BusinessDetails businessDetails, MarketDetails marketDetails, Documents documents, MemberDetails memberDetails) {
         this.passedQuestion = passedQuestion;
         this.username = username;
-//        this.logoUrl = "/assets/pitchIt-logo.png";
+        this.logoUrl = "/assets/pitchIt-logo.png";
         this.companyDetails = companyDetails;
         this.businessDetails = businessDetails;
         this.marketDetails = marketDetails;
