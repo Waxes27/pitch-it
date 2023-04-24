@@ -17,7 +17,7 @@ RUN mkdir -p /usr/app/chat-auth-service && \
 
 # Copy the applications to the container
 COPY /modules/chat-auth-service/target/auth-service-0.0.1-SNAPSHOT.jar /usr/app/chat-auth-service/auth-service-0.0.1-SNAPSHOT.jar
-COPY /modules/PitchChatMessaging/target/messaging-0.0.1-SNAPSHOT.jar /usr/app/chat-messaging/messaging-0.0.1-SNAPSHOT.jar
+COPY /modules/chat-messaging/target/messaging-0.0.1-SNAPSHOT.jar /usr/app/chat-messaging/messaging-0.0.1-SNAPSHOT.jar
 COPY /modules/chat-client /usr/app/chat-client
 
 WORKDIR /usr/app/chat-client
