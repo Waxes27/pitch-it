@@ -20,8 +20,6 @@ public class Pitch {
     @Column(name = "id", nullable = false)
     private Long id;
     private String username;
-//    @Column(name = "logo_url")
-//    private String logoUrl;
 
     @OneToOne(mappedBy = "pitch", cascade = CascadeType.ALL, orphanRemoval = true)
     private CompanyDetails companyDetails;
@@ -39,8 +37,6 @@ public class Pitch {
     @OneToOne(mappedBy = "pitch", cascade = CascadeType.ALL, orphanRemoval = true)
     private MemberDetails memberDetails;
 
-    @Getter(AccessLevel.NONE)
-    @Setter(AccessLevel.NONE)
     @Column(name = "logo_url")
     private String logoUrl;
 
