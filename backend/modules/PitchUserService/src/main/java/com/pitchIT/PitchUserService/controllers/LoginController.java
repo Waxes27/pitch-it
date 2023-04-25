@@ -120,7 +120,7 @@ public class LoginController {
 
         ResponseEntity<ChatAuthResponse> response = restTemplate.postForEntity(
                 "http://pitchitltd.co.uk:8017/users",
-                ,
+                map.toString(),
                 ChatAuthResponse.class
         );
 
