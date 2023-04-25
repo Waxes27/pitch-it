@@ -2,7 +2,9 @@ version: '3.8'
 services:
   chat:
     networks:
-      - backend_default
+      proxynet:
+
+
     restart: always
     image: modules/chat-application
     container_name: pitchIt-chat
@@ -23,3 +25,6 @@ services:
     expose:
       - 27017
 
+networks:
+  proxynet:
+    name: application-proxy
