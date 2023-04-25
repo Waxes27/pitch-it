@@ -50,16 +50,16 @@ public class LoginController {
             System.out.println(authentication.isAuthenticated());
             SecurityContextHolder.getContext().setAuthentication(authentication);
 
-            HashMap<String, String> map = new HashMap<>();
-            map.put("username",username);
-            map.put("password",password);
-
-            ResponseEntity<Map> response = restTemplate.postForEntity(
-                    "http://pitchitltd.co.uk:8017/signin",
-                    map,
-                    Map.class
-            );
-            System.out.println(response);
+//            HashMap<String, String> map = new HashMap<>();
+//            map.put("username",username);
+//            map.put("password",password);
+//
+//            ResponseEntity<Map> response = restTemplate.postForEntity(
+//                    "http://pitchitltd.co.uk:8017/signin",
+//                    map,
+//                    Map.class
+//            );
+//            System.out.println(response);
 
             return authentication.getPrincipal();
 
