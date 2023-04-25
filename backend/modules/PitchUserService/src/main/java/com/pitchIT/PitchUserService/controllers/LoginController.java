@@ -113,12 +113,17 @@ public class LoginController {
         HashMap<String, String> map = new HashMap<>();
         map.put("username",registerRequest.email());
         map.put("password",registerRequest.password());
+        map.put("name",registerRequest.firstName());
+        map.put("email",registerRequest.email());
+        map.put("profilePicUrl","profilePicLinkHere");
 
         ResponseEntity<ChatAuthResponse> response = restTemplate.postForEntity(
                 "http://pitchitltd.co.uk:8017/users",
                 map,
                 ChatAuthResponse.class
         );
+
+        System.out.println(response);
 
         return investorUser;
     }
