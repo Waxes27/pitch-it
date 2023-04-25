@@ -111,10 +111,10 @@ public class LoginController {
         investorUser = userService.registerInvestorUserByEmail(investorUser);
 
         HashMap<String, String> map = new HashMap<>();
-        map.put("username",registerRequest.email());
-        map.put("password",registerRequest.password());
         map.put("name",registerRequest.firstName());
+        map.put("username", registerRequest.email());
         map.put("email",registerRequest.email());
+        map.put("password",registerRequest.password());
         map.put("profilePicUrl","profilePicLinkHere");
 
         ResponseEntity<ChatAuthResponse> response = restTemplate.postForEntity(

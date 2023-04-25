@@ -49,7 +49,7 @@ public class User {
     private String id;
 
     @NotBlank
-    @Size(max = 15)
+    @Size(max = 40)
     private String username;
 
     @NotBlank
