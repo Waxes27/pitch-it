@@ -54,10 +54,10 @@ public class LoginController {
             map.put("username",username);
             map.put("password",password);
 
-            ResponseEntity<ChatAuthResponse> response = restTemplate.postForEntity(
+            ResponseEntity<Map> response = restTemplate.postForEntity(
                     "http://pitchitltd.co.uk:8017/signin",
                     map,
-                    ChatAuthResponse.class
+                    Map.class
             );
             System.out.println(response);
 
@@ -86,10 +86,10 @@ public class LoginController {
         map.put("username",registerRequest.email());
         map.put("password",registerRequest.password());
 
-        ResponseEntity<ChatAuthResponse> response = restTemplate.postForEntity(
+        ResponseEntity<Map> response = restTemplate.postForEntity(
                 "http://pitchitltd.co.uk:8017/users",
                 map,
-                ChatAuthResponse.class
+                Map.class
         );
         System.out.println(response);
         System.out.println(response);
