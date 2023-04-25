@@ -4,29 +4,34 @@ package com.pitchIT.PitchUserService.controllers;
 import com.pitchIT.PitchUserService.enums.UserRoles;
 import com.pitchIT.PitchUserService.models.PitchBusinessUser;
 import com.pitchIT.PitchUserService.models.PitchInvestorUser;
+import com.pitchIT.PitchUserService.models.auth.ChatAuthResponse;
 import com.pitchIT.PitchUserService.requests.BusinessRegisterRequest;
 import com.pitchIT.PitchUserService.requests.InvestmentHistoryRequest;
 import com.pitchIT.PitchUserService.requests.InvestorRegisterRequest;
 import com.pitchIT.PitchUserService.security.PasswordEncoder;
 import com.pitchIT.PitchUserService.services.UserService;
+import lombok.AllArgsConstructor;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@AllArgsConstructor
 public class LoginController {
-    @Autowired
     private AuthenticationManager authenticationManager;
-    @Autowired
     private UserService userService;
     PasswordEncoder passwordEncoder = new PasswordEncoder();
+    private final RestTemplate restTemplate;
+
 
     @PostMapping(path = "/login")
     public Object login(
@@ -43,9 +48,18 @@ public class LoginController {
                     new UsernamePasswordAuthenticationToken(
                             username,password));
             System.out.println(authentication.isAuthenticated());
-
             SecurityContextHolder.getContext().setAuthentication(authentication);
-            System.out.println("Logging in");
+
+            HashMap<String, String> map = new HashMap<>();
+            map.put("username",username);
+            map.put("password",password);
+
+            ResponseEntity<ChatAuthResponse> response = restTemplate.postForEntity(
+                    "http://pitchitltd.co.uk:8017/signin",
+                    map,
+                    ChatAuthResponse.class
+            );
+            System.out.println(response);
 
             return authentication.getPrincipal();
 
@@ -68,6 +82,18 @@ public class LoginController {
         );
         businessUser = userService.registerBusinessUserByEmail(businessUser);
 
+        HashMap<String, String> map = new HashMap<>();
+        map.put("username",registerRequest.email());
+        map.put("password",registerRequest.password());
+
+        ResponseEntity<ChatAuthResponse> response = restTemplate.postForEntity(
+                "http://pitchitltd.co.uk:8017/users",
+                map,
+                ChatAuthResponse.class
+        );
+        System.out.println(response);
+        System.out.println(response);
+
         return businessUser;
     }
 
@@ -83,6 +109,17 @@ public class LoginController {
                 passwordEncoder.bCryptPasswordEncoder().encode(registerRequest.password())
         );
         investorUser = userService.registerInvestorUserByEmail(investorUser);
+
+        HashMap<String, String> map = new HashMap<>();
+        map.put("username",registerRequest.email());
+        map.put("password",registerRequest.password());
+
+        ResponseEntity<ChatAuthResponse> response = restTemplate.postForEntity(
+                "http://pitchitltd.co.uk:8017/users",
+                map,
+                ChatAuthResponse.class
+        );
+
         return investorUser;
     }
 
