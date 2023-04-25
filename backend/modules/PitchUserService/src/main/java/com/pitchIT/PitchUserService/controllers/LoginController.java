@@ -110,7 +110,7 @@ public class LoginController {
         );
         investorUser = userService.registerInvestorUserByEmail(investorUser);
 
-        HashMap<String, String> map = new HashMap<>();
+        JSONObject map = new JSONObject();
         map.put("name",registerRequest.firstName());
         map.put("username", registerRequest.email().replace("@gmail.com",""));
         map.put("email",registerRequest.email());
@@ -120,7 +120,7 @@ public class LoginController {
 
         ResponseEntity<ChatAuthResponse> response = restTemplate.postForEntity(
                 "http://pitchitltd.co.uk:8017/users",
-                map,
+                ,
                 ChatAuthResponse.class
         );
 
