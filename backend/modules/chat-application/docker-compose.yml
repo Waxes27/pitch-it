@@ -1,6 +1,8 @@
 version: '3.8'
 services:
   chat:
+    networks:
+      - backend_default
     restart: always
     image: modules/chat-application
     container_name: pitchIt-chat
@@ -20,3 +22,4 @@ services:
     image: mongo:4.4.6
     expose:
       - 27017
+
