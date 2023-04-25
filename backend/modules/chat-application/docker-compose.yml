@@ -4,7 +4,6 @@ services:
     networks:
       proxynet:
 
-
     restart: always
     image: modules/chat-application
     container_name: pitchIt-chat

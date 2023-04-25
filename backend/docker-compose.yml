@@ -12,6 +12,9 @@ services:
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
       - ./sql/create_tables.sh:/docker-entrypoint-initdb.d/create_tables.sh
+    networks:
+      - my-proxy-net
+
 
   users:
     image: modules/pitchuserservice:0.0.1-SNAPSHOT
@@ -46,8 +49,11 @@ services:
       - postgres
     ports:
       - "10001:10001"
+    networks:
+      - my-proxy-net
 
-#  pitch-messaging:
+
+  #  pitch-messaging:
 #    image: modules/pitchmessaging:0.0.1-SNAPSHOT
 #    #    environment:
 #    #      - JAVA_OPTS=
@@ -74,6 +80,9 @@ services:
     image: mongo:4.4.6
     expose:
       - 27017
+    networks:
+      - my-proxy-net
+
 
 networks:
   my-proxy-net:
