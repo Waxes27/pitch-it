@@ -57,15 +57,10 @@ export class PitchPageComponent implements OnInit {
         ).subscribe();
 
         fileRef.getDownloadURL().subscribe(url => {
-            let newUrl = url
-            let body = {
-                "pictureUrl": newUrl
-            }
-
-            this.http.post(`http://pitchitltd.co.uk:8081/profile?email=${this.cookies.get('userEmail')}`,
+            this.http.post(`http://pitchitltd.co.uk:8081/pitch?id=${this.pitchId}`,
                 {
                     withCredentials: true,
-                    "pictureUrl": newUrl,
+                    "pictureUrl": url,
                 }
             ).subscribe(data => {
                 console.log(data)
@@ -95,8 +90,7 @@ export class PitchPageComponent implements OnInit {
             let businessDetails: BusinessDetailsModel = new BusinessDetailsModel(pitchData.businessDetails);
             let marketDetails: MarketDetailsModel = new MarketDetailsModel(pitchData.marketDetails);
             let memberDetails: MemberDetails = new MemberDetails(pitchData.memberDetails);
-            let pitch: PitchModel = new PitchModel(pitchData.id, companyDetails, businessDetails, marketDetails, memberDetails);
-            this.pitch = pitch
+            this.pitch = new PitchModel(pitchData.id, pitchData.logoUrl, companyDetails, businessDetails, marketDetails, memberDetails)
         })
     }
 

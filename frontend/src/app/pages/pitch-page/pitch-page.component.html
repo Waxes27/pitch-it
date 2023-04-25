@@ -17,11 +17,11 @@
 
             <div class="pitch-profile-image-container">
                 <div class="pitch-logo">
-                    <img src="/assets/floral-2622313_1920.jpg">
+                    <img src="{{pitch.logoUrl}}">
                 </div>
                 <div class="change-logo-container">
                     <form>
-                        <input type="file" name="profile-pic" id="profile-pic" (change)="onFileSelected($event)" accept=".image/png">
+                        <input type="file" name="profile-pic" id="profile-pic" (change)="onFileSelected($event)">
                         <button type="submit" (click)="uploadFile()">Upload</button>
                     </form>
                 </div>

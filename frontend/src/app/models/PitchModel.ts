@@ -5,20 +5,30 @@ import {MemberDetails} from "./MemberDetails";
 
 export class PitchModel {
     private _id?: number;
+    private _logoUrl?: string;
     private _companyDetails?: CompanyDetailsModel;
     private _businessDetails?: BusinessDetailsModel;
     private _marketDetails?: MarketDetailsModel;
     private _memberDetails?: MemberDetails;
 
 
-    constructor(id?: number, companyDetails?: CompanyDetailsModel, businessDetails?: BusinessDetailsModel, marketDetails?: MarketDetailsModel, memberDetails?: MemberDetails) {
+    constructor(id?: number, logoUrl?:string , companyDetails?: CompanyDetailsModel, businessDetails?: BusinessDetailsModel, marketDetails?: MarketDetailsModel, memberDetails?: MemberDetails) {
         this._companyDetails = companyDetails;
         this._businessDetails = businessDetails;
         this._marketDetails = marketDetails;
         this._memberDetails = memberDetails;
         this._id = id;
+        this._logoUrl = logoUrl
     }
 
+
+    get logoUrl(): string {
+        return <string>this._logoUrl;
+    }
+
+    set logoUrl(value: string) {
+        this._logoUrl = value;
+    }
 
     get id(): number {
         return <number>this._id;

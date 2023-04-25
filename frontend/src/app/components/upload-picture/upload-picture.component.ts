@@ -27,10 +27,8 @@ export class UploadPictureComponent implements OnInit {
     uploadFile() {
         const filePath = `user/profile-pics/${this.userId}.png`;
 
-        // Create a reference to the file path in Firebase Storage
         const fileRef = this.storage.ref(filePath);
 
-        // Upload the file to Firebase Storage and get the upload task
         const uploadTask = fileRef.put(this.selectedFile);
 
 
@@ -47,15 +45,10 @@ export class UploadPictureComponent implements OnInit {
         ).subscribe();
 
         fileRef.getDownloadURL().subscribe(url => {
-            let newUrl = url
-            let body = {
-                "pictureUrl": newUrl
-            }
-
-            this.http.post(`http://pitchitltd.co.uk:8081/profile?email=${this.cookies.get('userEmail')}`, 
+            this.http.post(`http://pitchitltd.co.uk:8081/profile?email=${this.cookies.get('userEmail')}`,
             {
                 withCredentials: true,
-                "pictureUrl" : newUrl,
+                "logoUrl" : url,
             }
             ).subscribe(data => {
                 console.log(data)

@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
                 let businessDetails: BusinessDetailsModel = new BusinessDetailsModel(pitchData.businessDetails);
                 let marketDetails: MarketDetailsModel = new MarketDetailsModel(pitchData.marketDetails);
                 let memberDetails: MemberDetails = new MemberDetails(pitchData.memberDetails);
-                let pitch: PitchModel = new PitchModel(pitchData.id, companyDetails, businessDetails, marketDetails, memberDetails);
+                let pitch: PitchModel = new PitchModel(pitchData.id, pitchData.logoUrl, companyDetails, businessDetails, marketDetails, memberDetails);
                 this.pitches.push(pitch);
             }
         })
