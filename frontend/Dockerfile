@@ -7,6 +7,6 @@ COPY . .
 # Stage 2
 FROM nginx:alpine
 COPY --from=node /app/dist/pitchit-frontend /usr/share/nginx/html
-# COPY default.conf /etc/nginx/conf.d/
+COPY default.conf /etc/nginx/conf.d/
 
 # docker build -t pitchit/angular-app .
