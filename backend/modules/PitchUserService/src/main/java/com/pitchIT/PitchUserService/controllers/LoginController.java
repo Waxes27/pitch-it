@@ -123,7 +123,7 @@ public class LoginController {
                 ChatAuthResponse.class
         );
 
-        System.out.println(response);
+        System.out.println(response.getBody());
 
         return investorUser;
     }
