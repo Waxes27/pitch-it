@@ -116,6 +116,7 @@ public class LoginController {
         map.put("email",registerRequest.email());
         map.put("password",registerRequest.password());
         map.put("profilePicUrl","profilePicLinkHere");
+        System.out.println(map);
 
         ResponseEntity<ChatAuthResponse> response = restTemplate.postForEntity(
                 "http://pitchitltd.co.uk:8017/users",
