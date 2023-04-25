@@ -112,7 +112,7 @@ public class LoginController {
 
         HashMap<String, String> map = new HashMap<>();
         map.put("name",registerRequest.firstName());
-        map.put("username", registerRequest.email().replace("@","."));
+        map.put("username", registerRequest.email().replace("@gmail.com",""));
         map.put("email",registerRequest.email());
         map.put("password",registerRequest.password());
         map.put("profilePicUrl","profilePicLinkHere");
