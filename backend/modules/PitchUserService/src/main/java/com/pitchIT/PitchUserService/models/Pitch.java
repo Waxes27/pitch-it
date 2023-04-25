@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Builder
 public class Pitch {
     private boolean passedQuestion;
+    private String logoUrl;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,6 +45,7 @@ public class Pitch {
         this.documents = documents;
         this.memberDetails = memberDetails;
         this.username = username;
+        this.logoUrl = "/assets/";
     }
 
     @Override
