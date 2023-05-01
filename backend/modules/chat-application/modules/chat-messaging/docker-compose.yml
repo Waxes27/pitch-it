@@ -1,6 +1,6 @@
 version: '3.8'
 services: 
-  mongodb:
+  mongo:
     image: mongo:latest
     environment:
       MONGO_INITDB_ROOT_USERNAME: root

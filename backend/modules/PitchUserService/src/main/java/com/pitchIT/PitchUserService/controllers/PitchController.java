@@ -19,8 +19,7 @@ public class PitchController {
 
     private final RestTemplate restTemplate;
     private final UserService userService;
-
-
+    
     @PostMapping
     public ResponseEntity<Pitch> createPitchByUserId(@RequestBody PitchDetailsRequest pitchDetailsRequest, @RequestParam String userId){
 
