@@ -84,7 +84,7 @@ services:
       - my-proxy-net
 
   chat_auth_services:
-    image: modules/chat-auth-service:0.0.1-SNAPSHOT
+    image: modules/auth-service:0.0.1-SNAPSHOT
     ports:
       - "8081:8082"
     environment:
