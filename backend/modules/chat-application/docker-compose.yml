@@ -8,9 +8,9 @@ services:
     image: modules/chat-application
     container_name: pitchIt-chat
     depends_on:
-      - mongodb
+      - mongo
     links:
-      - mongodb:mongo
+      - mongo:mongo
     ports:
       - 3000:3000
       - 8017:8017
