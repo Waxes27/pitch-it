@@ -9,6 +9,8 @@ services:
       - 27017:27017
     volumes:
       - mongodb_data_container:/data/db
+    networks:
+      - my-proxy-net
 
 volumes:
   mongodb_data_container:

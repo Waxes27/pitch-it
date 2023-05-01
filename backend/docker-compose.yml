@@ -20,12 +20,13 @@ services:
     image: modules/pitchuserservice:0.0.1-SNAPSHOT
     volumes:
       - ./config-data:/var/config-data
-    environment:
-      - JAVA_OPTS=
-        -DEUREKA_SERVER=http://discovery:8761/eureka
-        -Dspring.cloud.config.server.native.searchLocations=/var/config-data
+#    environment:
+#      - JAVA_OPTS=
+#        -DEUREKA_SERVER=http://discovery:8761/eureka
+#        -Dspring.cloud.config.server.native.searchLocations=/var/config-data
     depends_on:
       - postgres
+      - pitch-service
     ports:
       - "8081:8081"
 #    networks:
@@ -83,13 +84,7 @@ services:
     networks:
       - my-proxy-net
 
-  chat_auth_services:
-    image: modules/auth-service:0.0.1-SNAPSHOT
-    ports:
-      - "8082:8082"
-    environment:
-      - "LANG=en_US.UTF-8"
-      - "LANGUAGE=en_US.UTF-8"
+
 
 
 networks:

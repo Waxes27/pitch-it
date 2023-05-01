@@ -1,12 +1,15 @@
 version: '3.8'
 services:
   chat_auth_services:
-    image: modules/chat-auth-service:0.0.1-SNAPSHOT
+    image: modules/auth-service:0.0.1-SNAPSHOT
     ports:
       - "8081:8082"
     environment:
       - "LANG=en_US.UTF-8"
       - "LANGUAGE=en_US.UTF-8"
+    networks:
+      - my-proxy-net
+
   mongo:
     restart: always
     image: mongo:4.4.6
