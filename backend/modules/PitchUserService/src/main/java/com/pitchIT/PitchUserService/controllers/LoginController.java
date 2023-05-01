@@ -118,10 +118,10 @@ public class LoginController {
         map.put("profilePicUrl","profilePicLinkHere");
         System.out.println(map);
 
-        ResponseEntity<ChatAuthResponse> response = restTemplate.postForEntity(
+        ResponseEntity<Map> response = restTemplate.postForEntity(
                 "http://pitchIt-chat:8017/users",
                 map,
-                ChatAuthResponse.class
+                Map.class
         );
 
         System.out.println(response.getBody());
