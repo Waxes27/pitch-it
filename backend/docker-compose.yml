@@ -75,7 +75,7 @@ services:
     ports:
       - "80:80"
 
-  mongodb:
+  mongo:
     restart: always
     image: mongo:4.4.6
     expose:
