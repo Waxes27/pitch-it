@@ -85,7 +85,10 @@ services:
 #      - my-proxy-net
 
 
-
+networks:
+  default:
+    external:
+      name: mynetwork
 
 #networks:
 #  my-proxy-net:
