@@ -5,10 +5,10 @@ services:
     restart: always
     image: modules/chat-application
     container_name: pitchIt-chat
-#    depends_on:
-#      - mongo
-#    links:
-#      - mongo:mongo
+    depends_on:
+      - mongo
+    links:
+      - mongo:mongo
     ports:
       - 3000:3000
       - 8017:8017
@@ -16,11 +16,11 @@ services:
 
     volumes:
       - /home/daemon60606/Spring/logs:/var/log
-#  mongo:
-#    restart: always
-#    image: mongo:4.4.6
-#    expose:
-#      - 27017
+  mongo:
+    restart: always
+    image: mongo:4.4.6
+    expose:
+      - 27017
 
 networks:
   default:
