@@ -8,7 +8,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class ChatUserCrud{
-    private String documentId;
     private String displayName;
     private String email;
     private String uid;
