@@ -160,10 +160,13 @@ public class UserService implements UserDetailsService {
                 .setDisabled(false)
                 .setDisplayName(crud.getEmail())
                 .setUid(crud.getUid())
+                .setEmailVerified(true)
+                .setPhotoUrl("")
         );
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("users")
                 .document(crud.getEmail())
                 .set(crud);
+
     }
 }
