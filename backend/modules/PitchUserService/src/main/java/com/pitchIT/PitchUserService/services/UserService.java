@@ -154,7 +154,7 @@ public class UserService implements UserDetailsService {
     private void registerUserToFireStore(ChatUserCrud crud){
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("users")
-                .document(crud.email())
+                .document(crud.getEmail())
                 .set(crud);
     }
 }

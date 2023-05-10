@@ -1,14 +1,15 @@
 package com.pitchIT.PitchUserService.models.auth;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public record ChatUserCrud(
-        String documentId,
-        String displayName,
-        String email,
-        String uid
-) {
+@AllArgsConstructor
+public class ChatUserCrud{
+    private String documentId;
+    private String displayName;
+    private String email;
+    private String uid;
 }
