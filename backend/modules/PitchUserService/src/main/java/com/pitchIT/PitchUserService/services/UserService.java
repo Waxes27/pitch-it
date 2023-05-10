@@ -23,10 +23,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import java.util.function.Supplier;
 
 @Service
 @AllArgsConstructor
@@ -47,7 +45,7 @@ public class UserService implements UserDetailsService {
     }
 
 
-    public PitchBusinessUser registerBusinessUserByEmail(PitchBusinessUser pitchBusinessUser) throws FirebaseAuthException {
+    public PitchBusinessUser registerBusinessUserByEmail(PitchBusinessUser pitchBusinessUser, String password) throws FirebaseAuthException {
         this.checkUser(pitchBusinessUser.getEmail());
         pitchBusinessUser.setPictureUrl("/assets/user-profile.png");
 
@@ -59,11 +57,11 @@ public class UserService implements UserDetailsService {
                 businessUser.getId().toString()
 
         );
-        this.registerUserToFireStore(crud, businessUser.getPassword());
+        this.registerUserToFireStore(crud, password);
         return pitchBusinessUser;
     }
 
-    public PitchInvestorUser registerInvestorUserByEmail(PitchInvestorUser investorUser) throws FirebaseAuthException {
+    public PitchInvestorUser registerInvestorUserByEmail(PitchInvestorUser investorUser, String password) throws FirebaseAuthException {
         this.checkUser(investorUser.getEmail());
         investorUser.setPictureUrl("/assets/user-profile.png");
 
@@ -81,7 +79,7 @@ public class UserService implements UserDetailsService {
                 investorUserFromDb.getId().toString()
 
         );
-        this.registerUserToFireStore(crud,investorUser.getPassword());
+        this.registerUserToFireStore(crud,password);
         return investorUser;
     }
 

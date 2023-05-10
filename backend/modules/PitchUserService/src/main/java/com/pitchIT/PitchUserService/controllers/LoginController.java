@@ -68,7 +68,7 @@ public class LoginController {
                 registerRequest.email(),
                 passwordEncoder.bCryptPasswordEncoder().encode(registerRequest.password())
         );
-        businessUser = userService.registerBusinessUserByEmail(businessUser);
+        businessUser = userService.registerBusinessUserByEmail(businessUser,registerRequest.password());
 
 
 
@@ -86,7 +86,7 @@ public class LoginController {
                 registerRequest.email(),
                 passwordEncoder.bCryptPasswordEncoder().encode(registerRequest.password())
         );
-        investorUser = userService.registerInvestorUserByEmail(investorUser);
+        investorUser = userService.registerInvestorUserByEmail(investorUser,registerRequest.password());
 
         JSONObject map = new JSONObject();
         map.put("name",registerRequest.firstName());
