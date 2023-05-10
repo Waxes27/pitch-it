@@ -159,6 +159,8 @@ public class UserService implements UserDetailsService {
         auth.createUser(new UserRecord.CreateRequest()
                 .setEmail(crud.getEmail())
                 .setPassword(password)
+                .setDisabled(false)
+                .setDisplayName(crud.getEmail())
         );
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("users")
