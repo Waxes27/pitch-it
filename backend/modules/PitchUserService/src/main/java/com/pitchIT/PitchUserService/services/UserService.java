@@ -154,7 +154,7 @@ public class UserService implements UserDetailsService {
 
     private void registerUserToFireStore(ChatUserCrud crud,String password) throws FirebaseAuthException {
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        auth.createUser(new UserRecord.CreateRequest()
+        FirebaseAuth.getInstance().createUser(new UserRecord.CreateRequest()
                 .setEmail(crud.getEmail())
                 .setPassword(password)
                 .setDisabled(false)
@@ -163,6 +163,7 @@ public class UserService implements UserDetailsService {
                 .setEmailVerified(true)
                 .setPhotoUrl("")
         );
+
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("users")
                 .document(crud.getEmail())
