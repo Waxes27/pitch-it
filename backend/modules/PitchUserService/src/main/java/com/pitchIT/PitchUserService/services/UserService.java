@@ -160,7 +160,7 @@ public class UserService implements UserDetailsService {
                 .setDisabled(false)
                 .setDisplayName(crud.getEmail())
 //                .setUid(crud.getUid())
-                .setEmailVerified(true)
+                .setEmailVerified(false)
         );
 
         Firestore dbFirestore = FirestoreClient.getFirestore();
