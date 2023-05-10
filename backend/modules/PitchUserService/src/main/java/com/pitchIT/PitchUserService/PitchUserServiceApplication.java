@@ -29,7 +29,7 @@ public class PitchUserServiceApplication {
 		FirebaseApp.initializeApp(options);
 //		System.out.println("Init done");
 
-//		SpringApplication.run(PitchUserServiceApplication.class, args);
+		SpringApplication.run(PitchUserServiceApplication.class, args);
 	}
 
 }
