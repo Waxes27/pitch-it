@@ -161,7 +161,6 @@ public class UserService implements UserDetailsService {
                 .setDisplayName(crud.getEmail())
                 .setUid(crud.getUid())
                 .setEmailVerified(true)
-                .setPhotoUrl("")
         );
 
         Firestore dbFirestore = FirestoreClient.getFirestore();
