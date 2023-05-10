@@ -1,6 +1,7 @@
 package com.pitchIT.PitchUserService.controllers;
 
 //import org.json.JSONObject;
+import com.google.firebase.auth.FirebaseAuthException;
 import com.pitchIT.PitchUserService.enums.UserRoles;
 import com.pitchIT.PitchUserService.models.PitchBusinessUser;
 import com.pitchIT.PitchUserService.models.PitchInvestorUser;
@@ -58,7 +59,7 @@ public class LoginController {
     }
 
     @PostMapping(path = "/register/business")
-    public PitchBusinessUser registerBusiness(@RequestBody BusinessRegisterRequest registerRequest){
+    public PitchBusinessUser registerBusiness(@RequestBody BusinessRegisterRequest registerRequest) throws FirebaseAuthException {
         PitchBusinessUser businessUser = new PitchBusinessUser(
                 registerRequest.businessName(),
                 registerRequest.representativeFirstName(),
@@ -75,7 +76,7 @@ public class LoginController {
     }
 
     @PostMapping(path = "/register/investor")
-    public PitchInvestorUser registerInvestor(@RequestBody InvestorRegisterRequest registerRequest){
+    public PitchInvestorUser registerInvestor(@RequestBody InvestorRegisterRequest registerRequest) throws FirebaseAuthException {
         System.out.println(registerRequest);
 
         PitchInvestorUser investorUser = new PitchInvestorUser(
