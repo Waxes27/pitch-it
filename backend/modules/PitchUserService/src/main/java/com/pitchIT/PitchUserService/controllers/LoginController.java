@@ -50,17 +50,6 @@ public class LoginController {
             System.out.println(authentication.isAuthenticated());
             SecurityContextHolder.getContext().setAuthentication(authentication);
 
-//            HashMap<String, String> map = new HashMap<>();
-//            map.put("username",username);
-//            map.put("password",password);
-//
-//            ResponseEntity<Map> response = restTemplate.postForEntity(
-//                    "http://pitchitltd.co.uk:8017/signin",
-//                    map,
-//                    Map.class
-//            );
-//            System.out.println(response);
-
             return authentication.getPrincipal();
 
         }catch (Exception e){
@@ -70,8 +59,6 @@ public class LoginController {
 
     @PostMapping(path = "/register/business")
     public PitchBusinessUser registerBusiness(@RequestBody BusinessRegisterRequest registerRequest){
-        System.out.println(registerRequest);
-
         PitchBusinessUser businessUser = new PitchBusinessUser(
                 registerRequest.businessName(),
                 registerRequest.representativeFirstName(),
@@ -82,17 +69,7 @@ public class LoginController {
         );
         businessUser = userService.registerBusinessUserByEmail(businessUser);
 
-        HashMap<String, String> map = new HashMap<>();
-        map.put("username",registerRequest.email());
-        map.put("password",registerRequest.password());
 
-        ResponseEntity<Map> response = restTemplate.postForEntity(
-                "http://pitchitltd.co.uk:8017/users",
-                map,
-                Map.class
-        );
-        System.out.println(response);
-        System.out.println(response);
 
         return businessUser;
     }
@@ -118,13 +95,11 @@ public class LoginController {
         map.put("profilePicUrl","profilePicLinkHere");
         System.out.println(map);
 
-        ResponseEntity<Map> response = restTemplate.postForEntity(
-                "http://pitchIt-chat:8017/users",
-                map,
-                Map.class
-        );
-
-        System.out.println(response.getBody());
+//        ResponseEntity<Map> response = restTemplate.postForEntity(
+//                "http://pitchIt-chat:8017/users",
+//                map,
+//                Map.class
+//        );
 
         return investorUser;
     }

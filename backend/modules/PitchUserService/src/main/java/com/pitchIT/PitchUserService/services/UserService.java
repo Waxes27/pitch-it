@@ -1,9 +1,14 @@
 package com.pitchIT.PitchUserService.services;
 
 
+import com.google.api.core.ApiFuture;
+import com.google.cloud.firestore.Firestore;
+import com.google.cloud.firestore.WriteResult;
+import com.google.firebase.cloud.FirestoreClient;
 import com.pitchIT.PitchUserService.models.InvestmentHistory;
 import com.pitchIT.PitchUserService.models.PitchBusinessUser;
 import com.pitchIT.PitchUserService.models.PitchInvestorUser;
+import com.pitchIT.PitchUserService.models.auth.ChatUserCrud;
 import com.pitchIT.PitchUserService.repositories.BusinessUserRepository;
 import com.pitchIT.PitchUserService.repositories.InvestmentHistoryRepository;
 import com.pitchIT.PitchUserService.repositories.InvestorUserRepository;
@@ -43,7 +48,15 @@ public class UserService implements UserDetailsService {
         this.checkUser(pitchBusinessUser.getEmail());
         pitchBusinessUser.setPictureUrl("/assets/user-profile.png");
 
-        System.out.println(businessUserRepository.save(pitchBusinessUser));
+        PitchBusinessUser businessUser = businessUserRepository.save(pitchBusinessUser);
+        ChatUserCrud crud = new ChatUserCrud(
+                businessUser.getId().toString(),
+                businessUser.getBusinessName(),
+                businessUser.getEmail(),
+                businessUser.getId().toString()
+
+        );
+        this.registerUserToFireStore(crud);
         return pitchBusinessUser;
     }
 
@@ -57,7 +70,16 @@ public class UserService implements UserDetailsService {
         investorUser.setInvestmentHistory(investmentHistory);
         investmentHistory.setPitchInvestorUser(investorUser);
         investmentHistoryRepository.save(investmentHistory);
-        return investorUserRepository.save(investorUser);
+        PitchInvestorUser investorUserFromDb = investorUserRepository.save(investorUser);
+        ChatUserCrud crud = new ChatUserCrud(
+                investorUserFromDb.getId().toString(),
+                investorUserFromDb.getEmail(),
+                investorUserFromDb.getEmail(),
+                investorUserFromDb.getId().toString()
+
+        );
+        this.registerUserToFireStore(crud);
+        return investorUser;
     }
 
     private void checkUser(String email) {
@@ -127,5 +149,12 @@ public class UserService implements UserDetailsService {
             return pitchBusinessUser;
         }
 
+    }
+
+    private void registerUserToFireStore(ChatUserCrud crud){
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("users")
+                .document(crud.email())
+                .set(crud);
     }
 }
