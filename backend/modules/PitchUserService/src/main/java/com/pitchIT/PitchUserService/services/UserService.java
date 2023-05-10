@@ -51,7 +51,6 @@ public class UserService implements UserDetailsService {
 
         PitchBusinessUser businessUser = businessUserRepository.save(pitchBusinessUser);
         ChatUserCrud crud = new ChatUserCrud(
-                businessUser.getId().toString(),
                 businessUser.getBusinessName(),
                 businessUser.getEmail(),
                 businessUser.getId().toString()
@@ -73,7 +72,6 @@ public class UserService implements UserDetailsService {
         investmentHistoryRepository.save(investmentHistory);
         PitchInvestorUser investorUserFromDb = investorUserRepository.save(investorUser);
         ChatUserCrud crud = new ChatUserCrud(
-                investorUserFromDb.getId().toString(),
                 investorUserFromDb.getEmail(),
                 investorUserFromDb.getEmail(),
                 investorUserFromDb.getId().toString()
