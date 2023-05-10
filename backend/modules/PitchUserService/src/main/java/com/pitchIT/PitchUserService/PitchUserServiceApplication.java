@@ -6,10 +6,7 @@ import com.google.firebase.FirebaseOptions;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.Objects;
 
 @SpringBootApplication
@@ -18,11 +15,11 @@ public class PitchUserServiceApplication {
 	public static void main(String[] args) throws IOException {
 
 		ClassLoader classLoader = PitchUserServiceApplication.class.getClassLoader();
-		File file = new File(classLoader.getResource("serviceAccountKey.json").getFile());
+		InputStream serviceAccount = classLoader.getResourceAsStream("serviceAccountKey.json");
 
 
-		FileInputStream serviceAccount =
-				new FileInputStream(file.getAbsoluteFile());
+//		FileInputStream serviceAccount =
+//				new FileInputStream(file.);
 
 		FirebaseOptions options = new FirebaseOptions.Builder()
 				.setCredentials(GoogleCredentials.fromStream(serviceAccount))
