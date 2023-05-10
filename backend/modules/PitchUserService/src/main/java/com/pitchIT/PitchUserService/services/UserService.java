@@ -4,6 +4,9 @@ package com.pitchIT.PitchUserService.services;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.WriteResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.UserRecord;
 import com.google.firebase.cloud.FirestoreClient;
 import com.pitchIT.PitchUserService.models.InvestmentHistory;
 import com.pitchIT.PitchUserService.models.PitchBusinessUser;
@@ -44,7 +47,7 @@ public class UserService implements UserDetailsService {
     }
 
 
-    public PitchBusinessUser registerBusinessUserByEmail(PitchBusinessUser pitchBusinessUser){
+    public PitchBusinessUser registerBusinessUserByEmail(PitchBusinessUser pitchBusinessUser) throws FirebaseAuthException {
         this.checkUser(pitchBusinessUser.getEmail());
         pitchBusinessUser.setPictureUrl("/assets/user-profile.png");
 
@@ -56,11 +59,11 @@ public class UserService implements UserDetailsService {
                 businessUser.getId().toString()
 
         );
-        this.registerUserToFireStore(crud);
+        this.registerUserToFireStore(crud, businessUser.getPassword());
         return pitchBusinessUser;
     }
 
-    public PitchInvestorUser registerInvestorUserByEmail(PitchInvestorUser investorUser) {
+    public PitchInvestorUser registerInvestorUserByEmail(PitchInvestorUser investorUser) throws FirebaseAuthException {
         this.checkUser(investorUser.getEmail());
         investorUser.setPictureUrl("/assets/user-profile.png");
 
@@ -78,7 +81,7 @@ public class UserService implements UserDetailsService {
                 investorUserFromDb.getId().toString()
 
         );
-        this.registerUserToFireStore(crud);
+        this.registerUserToFireStore(crud,investorUser.getPassword());
         return investorUser;
     }
 
@@ -151,7 +154,12 @@ public class UserService implements UserDetailsService {
 
     }
 
-    private void registerUserToFireStore(ChatUserCrud crud){
+    private void registerUserToFireStore(ChatUserCrud crud,String password) throws FirebaseAuthException {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        auth.createUser(new UserRecord.CreateRequest()
+                .setEmail(crud.getEmail())
+                .setPassword(password)
+        );
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("users")
                 .document(crud.getEmail())
