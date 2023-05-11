@@ -159,7 +159,7 @@ public class UserService implements UserDetailsService {
                 .setDisplayName(crud.getEmail())
                 .setEmailVerified(false)
                 .setPhotoUrl("http://google.com")
-                .setPhoneNumber("+44")
+                .setPhoneNumber("+27614273890")
 
         );
 
