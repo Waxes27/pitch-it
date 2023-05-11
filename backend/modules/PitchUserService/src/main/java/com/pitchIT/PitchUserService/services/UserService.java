@@ -158,7 +158,7 @@ public class UserService implements UserDetailsService {
                 .setDisabled(false)
                 .setDisplayName(crud.getEmail())
                 .setEmailVerified(false)
-                .setPhotoUrl("")
+                .setPhotoUrl("http://google.com")
                 .setPhoneNumber("")
 
         );
