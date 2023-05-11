@@ -1,12 +1,13 @@
 export const environment = {
   firebase: {
-    projectId: 'angular-chat-app-a96fc',
-    appId: '1:1092136299054:web:845d8dcb584510f1218dbf',
-    storageBucket: 'angular-chat-app-a96fc.appspot.com',
-    locationId: 'us-central',
-    apiKey: 'AIzaSyB17yTBT1WB-_vmUD4UVdUoNr9ECS5EbDY',
-    authDomain: 'angular-chat-app-a96fc.firebaseapp.com',
-    messagingSenderId: '1092136299054',
+    apiKey: "AIzaSyD626vU2wzkGeTYMuLXuYy8TCDpPTGCijQ",
+    authDomain: "chat-4c31c.firebaseapp.com",
+    databaseURL: "https://chat-4c31c-default-rtdb.firebaseio.com",
+    projectId: "chat-4c31c",
+    storageBucket: "chat-4c31c.appspot.com",
+    messagingSenderId: "405362483895",
+    appId: "1:405362483895:web:df6eaaaf4821a6eeb1e332",
+    measurementId: "G-D0KXJ5HEQM"
   },
-  production: true
+  production: false
 };
