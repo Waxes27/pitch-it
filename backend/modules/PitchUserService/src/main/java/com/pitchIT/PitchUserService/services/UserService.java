@@ -159,7 +159,7 @@ public class UserService implements UserDetailsService {
                 .setDisplayName(crud.getEmail())
 //                .setUid(crud.getUid())
                 .setEmailVerified(false)
-        ).getCustomClaims());
+        ));
 
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("users")
