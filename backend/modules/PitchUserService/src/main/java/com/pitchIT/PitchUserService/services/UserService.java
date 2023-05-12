@@ -170,8 +170,8 @@ public class UserService implements UserDetailsService {
 //                .document()
 //                .set(crud);
 
-        DocumentReference documentReference = dbFirestore.collection("users").document();
-        documentReference.update("name",crud.getUid());
+        DocumentReference documentReference = dbFirestore.collection("users").document(crud.getUid());
+//        documentReference.update("name",crud.getUid());
         ApiFuture<WriteResult> collectionsApiFuture = documentReference.set(crud);
 
     }
