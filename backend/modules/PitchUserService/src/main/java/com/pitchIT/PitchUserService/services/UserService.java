@@ -2,6 +2,7 @@ package com.pitchIT.PitchUserService.services;
 
 
 import com.google.api.core.ApiFuture;
+import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -158,8 +159,7 @@ public class UserService implements UserDetailsService {
                 .setDisabled(false)
                 .setDisplayName(crud.getEmail())
                 .setEmailVerified(false)
-                .setUid(crud.getUid())
-                ;
+                .setUid(crud.getUid());
 
 
         UserRecord userRecord = auth.createUser(request);
@@ -169,5 +169,9 @@ public class UserService implements UserDetailsService {
         ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("users")
                 .document()
                 .set(crud);
+
+        DocumentReference documentReference = dbFirestore.collection("users").document();
+        documentReference.update("name",crud.getUid());
+        documentReference.set(crud);
     }
 }

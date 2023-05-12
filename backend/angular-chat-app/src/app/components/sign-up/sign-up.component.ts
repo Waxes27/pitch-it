@@ -73,9 +73,8 @@ export class SignUpComponent implements OnInit {
 
   submit() {
     if (!this.signUpForm.valid) return;
-    this.http.post("/sign-up",this.signUpForm).subscribe(
-      (response) => {
-        const { name, email, password } = this.signUpForm.value;
+    
+    const { name, email, password } = this.signUpForm.value;
     this.authService
       .signUp(email, password)
       .pipe(
@@ -91,9 +90,6 @@ export class SignUpComponent implements OnInit {
       .subscribe(() => {
         this.router.navigate(['/home']);
       });
-      }
-    )
-
   }
 
 }
