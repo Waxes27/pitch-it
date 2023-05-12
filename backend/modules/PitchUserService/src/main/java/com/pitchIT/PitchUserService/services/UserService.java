@@ -75,7 +75,6 @@ public class UserService implements UserDetailsService {
                 investorUserFromDb.getEmail(),
                 investorUserFromDb.getEmail(),
                 investorUserFromDb.getId().toString()
-
         );
         this.registerUserToFireStore(crud,password);
         return investorUser;
@@ -158,9 +157,6 @@ public class UserService implements UserDetailsService {
                 .setDisabled(false)
                 .setDisplayName(crud.getEmail())
                 .setEmailVerified(false)
-                .setPhotoUrl("http://google.com")
-                .setPhoneNumber("+27614273890")
-
         );
 
         Firestore dbFirestore = FirestoreClient.getFirestore();
