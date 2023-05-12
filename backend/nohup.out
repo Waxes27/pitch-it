@@ -1,0 +1,76 @@
+The disableGPU setting is set to undefined
+Not disabling GPU
+Gtk-Message: 21:59:44.013: Failed to load module "canberra-gtk-module"
+Gtk-Message: 21:59:44.034: Failed to load module "canberra-gtk-module"
+ProtocolHandler~setDefaultProtocolClient: Command failed: xdg-mime default Postman.desktop x-scheme-handler/postman
+/bin/sh: 1: xdg-mime: not found
+
+[8974:0503/215944.627331:ERROR:angle_platform_impl.cc(44)] Display.cpp:878 (initialize): ANGLE Display::initialize error 12289: Could not dlopen libGL.so.1: libGL.so.1: cannot open shared object file: No such file or directory
+[8974:0503/215944.627515:ERROR:gl_surface_egl.cc(780)] EGL Driver message (Critical) eglInitialize: Could not dlopen libGL.so.1: libGL.so.1: cannot open shared object file: No such file or directory
+[8974:0503/215944.627565:ERROR:gl_surface_egl.cc(1375)] eglInitialize OpenGL failed with error EGL_NOT_INITIALIZED, trying next display type
+[8974:0503/215944.627725:ERROR:angle_platform_impl.cc(44)] Display.cpp:878 (initialize): ANGLE Display::initialize error 12289: Could not dlopen libGL.so.1: libGL.so.1: cannot open shared object file: No such file or directory
+[8974:0503/215944.627779:ERROR:gl_surface_egl.cc(780)] EGL Driver message (Critical) eglInitialize: Could not dlopen libGL.so.1: libGL.so.1: cannot open shared object file: No such file or directory
+[8974:0503/215944.627821:ERROR:gl_surface_egl.cc(1375)] eglInitialize OpenGLES failed with error EGL_NOT_INITIALIZED
+[8974:0503/215944.627862:ERROR:gl_initializer_linux_x11.cc(178)] GLSurfaceEGL::InitializeOneOff failed.
+[8974:0503/215944.664640:ERROR:viz_main_impl.cc(161)] Exiting GPU process due to errors during initialization
+Error org.freedesktop.DBus.Error.Failed: cannot find desktop file "/var/lib/snapd/desktop/applications/postman_Postman.desktop"
+Main~createDefaultWorkingDir - Default working dir creation already attempted
+1683143984798 main info "Booting Postman 9.31.28, linux-5.18.0-kali5-amd64 on x64"
+1683143984800 main info "EventBus~initialize - Success"
+[9002:0503/215944.804337:ERROR:gpu_init.cc(453)] Passthrough is not supported, GL is swiftshader, ANGLE is 
+1683143984804 main info "Proxy configuration has not been setup"
+1683143984805 main info "CloudProxyManager~init - Success"
+1683143984820 main info "UpdateHandler~init - Success"
+1683143984825 main info "LeaderSelection: Initialized successfully"
+1683143984828 main info "VersionDependencyService: Initialized successfully"
+1683143984849 main info "LinuxAutoUpdater~Cleanup - Initial cleanup successful"
+1683143984873 main info "GPU detected VID 0 DID 0 ACTIVE false"
+1683143988079 main info "RuntimeIPCAgent~started: Success"
+INTERCEPTOR CONNECTIVITY: Connecting to Interceptor Bridge
+InterceptorBridge: Trying to connect Native App IPC~Interceptor Bridge
+IPCClient ~ WindowHandler: New event is received { type: 'window-opened' }
+1683143990647 main info "windowManager: First requester booted successfully."
+1683143990648 main info "windowManager~restoreWindows: Restoring requester windows"
+1683143990649 main info "Main~AppEvents - Received booted event for process requester.Version 9.31.28 UI Version: 9.31.28-ui-230411-1050 Desktop Platform Version: 9.31.28"
+1683143990675 main info "performBackgroundShellMigration: Migration has already been done. Bailing out"
+1683143992826 main info "Main - model-events~user - (user, bootstrapUser) received"
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+Could not get the lock, quitting
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+Gtk-Message: 22:47:00.640: Failed to load module "canberra-gtk-module"
+Gtk-Message: 22:47:00.642: Failed to load module "canberra-gtk-module"
+[11064:0503/224700.682872:ERROR:angle_platform_impl.cc(44)] Display.cpp:878 (initialize): ANGLE Display::initialize error 12289: Could not dlopen libGL.so.1: libGL.so.1: cannot open shared object file: No such file or directory
+[11064:0503/224700.683598:ERROR:gl_surface_egl.cc(780)] EGL Driver message (Critical) eglInitialize: Could not dlopen libGL.so.1: libGL.so.1: cannot open shared object file: No such file or directory
+[11064:0503/224700.683667:ERROR:gl_surface_egl.cc(1375)] eglInitialize OpenGL failed with error EGL_NOT_INITIALIZED, trying next display type
+[11064:0503/224700.683899:ERROR:angle_platform_impl.cc(44)] Display.cpp:878 (initialize): ANGLE Display::initialize error 12289: Could not dlopen libGL.so.1: libGL.so.1: cannot open shared object file: No such file or directory
+[11064:0503/224700.683961:ERROR:gl_surface_egl.cc(780)] EGL Driver message (Critical) eglInitialize: Could not dlopen libGL.so.1: libGL.so.1: cannot open shared object file: No such file or directory
+[11064:0503/224700.684013:ERROR:gl_surface_egl.cc(1375)] eglInitialize OpenGLES failed with error EGL_NOT_INITIALIZED
+[11064:0503/224700.684062:ERROR:gl_initializer_linux_x11.cc(178)] GLSurfaceEGL::InitializeOneOff failed.
+[11064:0503/224700.686259:ERROR:viz_main_impl.cc(161)] Exiting GPU process due to errors during initialization
+[11072:0503/224700.710631:ERROR:gpu_init.cc(453)] Passthrough is not supported, GL is swiftshader, ANGLE is 
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }
+IPCClient ~ WindowHandler: New event is received { type: 'leave-full-screen', windowId: 1 }

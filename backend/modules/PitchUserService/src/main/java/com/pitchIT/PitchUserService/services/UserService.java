@@ -23,6 +23,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
@@ -151,13 +152,14 @@ public class UserService implements UserDetailsService {
 
     private void registerUserToFireStore(ChatUserCrud crud,String password) throws FirebaseAuthException {
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        auth.createUser(new UserRecord.CreateRequest()
+        UserRecord.CreateRequest request = new UserRecord.CreateRequest()
                 .setEmail(crud.getEmail())
                 .setPassword(password)
                 .setDisabled(false)
                 .setDisplayName(crud.getEmail())
-                .setEmailVerified(false)
-        );
+                .setEmailVerified(false);
+        UserRecord userRecord = auth.createUser(request);
+
 
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("users")
