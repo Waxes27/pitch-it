@@ -166,12 +166,13 @@ public class UserService implements UserDetailsService {
 
 
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("users")
-                .document()
-                .set(crud);
+//        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("users")
+//                .document()
+//                .set(crud);
 
         DocumentReference documentReference = dbFirestore.collection("users").document();
         documentReference.update("name",crud.getUid());
-        documentReference.set(crud);
+        ApiFuture<WriteResult> collectionsApiFuture = documentReference.set(crud);
+
     }
 }
