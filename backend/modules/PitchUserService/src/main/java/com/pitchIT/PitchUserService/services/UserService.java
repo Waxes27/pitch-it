@@ -158,6 +158,8 @@ public class UserService implements UserDetailsService {
                 .setDisabled(false)
                 .setDisplayName(crud.getEmail())
                 .setEmailVerified(false);
+
+
         UserRecord userRecord = auth.createUser(request);
 
 
