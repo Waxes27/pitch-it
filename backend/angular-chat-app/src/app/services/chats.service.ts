@@ -30,6 +30,8 @@ export class ChatsService {
     const ref = collection(this.firestore, 'chats');
     return this.usersService.currentUserProfile$.pipe(
       concatMap((user) => {
+        console.log(user);
+
         const myQuery = query(
           ref,
           where('userIds', 'array-contains', user?.uid)

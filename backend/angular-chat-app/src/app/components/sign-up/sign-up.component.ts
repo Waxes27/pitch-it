@@ -7,6 +7,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { switchMap } from 'rxjs';
@@ -48,7 +49,8 @@ export class SignUpComponent implements OnInit {
     private authService: AuthenticationService,
     private toast: HotToastService,
     private router: Router,
-    private usersService: UsersService
+    private usersService: UsersService,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {}
@@ -71,8 +73,9 @@ export class SignUpComponent implements OnInit {
 
   submit() {
     if (!this.signUpForm.valid) return;
-
-    const { name, email, password } = this.signUpForm.value;
+    this.http.post("/sign-up",this.signUpForm).subscribe(
+      (response) => {
+        const { name, email, password } = this.signUpForm.value;
     this.authService
       .signUp(email, password)
       .pipe(
@@ -88,5 +91,9 @@ export class SignUpComponent implements OnInit {
       .subscribe(() => {
         this.router.navigate(['/home']);
       });
+      }
+    )
+
   }
+
 }

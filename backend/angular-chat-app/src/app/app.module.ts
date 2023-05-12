@@ -31,6 +31,7 @@ import { DateDisplayPipe } from './pipes/date-display.pipe';
 import { TimeAgoPipe } from 'time-ago-pipe';
 import { DatePipe } from '@angular/common';
 import { MatDividerModule } from '@angular/material/divider';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { MatDividerModule } from '@angular/material/divider';
     DateDisplayPipe,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,

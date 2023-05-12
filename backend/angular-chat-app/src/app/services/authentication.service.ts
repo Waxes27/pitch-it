@@ -18,8 +18,6 @@ export class AuthenticationService {
   constructor(private auth: Auth) {}
 
   login(username: string, password: string) {
-    // console.log(signInWithEmailAndPassword(this.auth,"a@gmail.com","qwertyuiop"))
-    console.log(signInWithEmailAndPassword(this.auth, username, password))
     return from(signInWithEmailAndPassword(this.auth, username, password));
   }
 
