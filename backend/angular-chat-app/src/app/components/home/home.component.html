@@ -44,6 +44,7 @@
       class="messages-header"
       *ngIf="selectedChat$ | async as selectedChat; else noChatSelected"
     >
+      {{selectedChat.id}}
       <img
         [src]="
           selectedChat.chatPic

@@ -58,6 +58,7 @@ public class UserService implements UserDetailsService {
                 businessUser.getId().toString()
 
         );
+
         this.registerUserToFireStore(crud, password);
         return pitchBusinessUser;
     }

@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import {
   combineLatest,
   map,
@@ -47,15 +48,23 @@ export class HomeComponent implements OnInit {
     })
   );
 
+
+
   selectedChat$ = combineLatest([
     this.chatListControl.valueChanges,
     this.myChats$,
-  ]).pipe(map(([value, chats]) => chats.find((c) => c.id === value[0])));
+  ]).pipe(
+    map(([value, chats]) => chats.find((c) => c.id === value[0])));
+
+  id = "";
+
+
 
   constructor(
     private usersService: UsersService,
-    private chatsService: ChatsService
-  ) {}
+    private chatsService: ChatsService,
+    private route: ActivatedRoute
+    ) {}
 
   ngOnInit(): void {
     this.messages$ = this.chatListControl.valueChanges.pipe(
@@ -65,6 +74,16 @@ export class HomeComponent implements OnInit {
         this.scrollToBottom();
       })
     );
+    this.route.paramMap.subscribe(params => {
+      this.id = params.get('chat')!;
+      this.chatListControl.setValue([this.id]);
+    });
+    this.selectedChat$ = combineLatest([
+      this.chatListControl.valueChanges,
+      this.myChats$,
+    ]).pipe(
+      map(([value, chats]) => chats.find((c) => c.id === value[0])));
+
   }
 
   createChat(user: ProfileUser) {
@@ -85,6 +104,8 @@ export class HomeComponent implements OnInit {
   }
 
   sendMessage() {
+
+
     const message = this.messageControl.value;
     const selectedChatId = this.chatListControl.value[0];
     if (message && selectedChatId) {
