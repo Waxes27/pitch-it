@@ -8,6 +8,7 @@ docker-build-run:
 	chmod -x scripts/*
 	docker build modules/chat-application/
 	docker build modules/chat-application/ -t modules/chat-application
+	docker build angular-chat-app/ -t pitchit/chat
 	#docker build . -t pitchit/frontend
 	#cd ../backend/
 	docker-compose -f modules/chat-application/docker-compose.yml up -d
